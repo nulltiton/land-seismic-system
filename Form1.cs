@@ -16,5 +16,12 @@ namespace LandSeismic
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (!DBConnection.DBConnection.Connect(DBConnection.DBConnection.
+                connectionString))
+                Close();
+        }
     }
 }
