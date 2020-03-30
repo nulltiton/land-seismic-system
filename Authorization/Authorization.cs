@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LandSeismic.Authorization
@@ -35,7 +28,7 @@ namespace LandSeismic.Authorization
                 passwordTextBox.Text != String.Empty)
             {
                 if (AuthorizationClass.LogIn(loginTextBox.Text, passwordTextBox.
-                    Text) == "Ведущий геолог")
+                    Text) != String.Empty)
                 {
                     MainMenu.MainMenu mainMenu = new MainMenu.MainMenu();
                     mainMenu.Show();
@@ -50,12 +43,12 @@ namespace LandSeismic.Authorization
 
         private void loginTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsEnglishSybols(sender, e);
+            e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
         }
 
         private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsEnglishSybols(sender, e);
+            e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
         }
     }
 }

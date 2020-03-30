@@ -7,8 +7,8 @@ namespace LandSeismic.Authorization
         static public String Login;
         static public String LogIn(String login, String password)
         {
-            try
-            {
+            //try
+            //{
 
                 DBConnection.DBConnection.sqlCommand.CommandText =
                     "SELECT COUNT(login) " +
@@ -26,7 +26,7 @@ namespace LandSeismic.Authorization
                             PasswordEncryption(password) + "' " +
                         "AND user.idPosition = position.id";
                     if (DBConnection.DBConnection.sqlCommand.
-                        ExecuteScalar().ToString() != String.Empty)
+                        ExecuteScalar() != null)
                     {
                         Login = login;
                         return DBConnection.DBConnection.sqlCommand.
@@ -51,16 +51,16 @@ namespace LandSeismic.Authorization
                         System.Windows.Forms.MessageBoxIcon.Error);
                     return "";
                 }
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(
-                    "Ошибка при попытке авторизации. " + ex.Message,
-                    "Ошибка авторизации",
-                    System.Windows.Forms.MessageBoxButtons.OK, 
-                    System.Windows.Forms.MessageBoxIcon.Error);
-                return "";
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    System.Windows.Forms.MessageBox.Show(
+            //        "Ошибка при попытке авторизации. " + ex.Message,
+            //        "Ошибка авторизации",
+            //        System.Windows.Forms.MessageBoxButtons.OK, 
+            //        System.Windows.Forms.MessageBoxIcon.Error);
+            //    return "";
+            //}
         }
     }
 }

@@ -20,9 +20,36 @@ namespace LandSeismic.Validation
             return hash;
         }
 
-        static public Boolean IsEnglishSybols(object sender, KeyPressEventArgs e)
+        static public Boolean IsEnglishSybolsOrNumeral(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar >= 'А' && e.KeyChar <= 'я')
+                return true;
+            else
+                return false;
+        }
+
+        static public Boolean IsNumeral(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar) && e.KeyChar != 8)
+                return true;
+            else
+                return false;
+        }
+
+        static public Boolean IsRussianSymbols(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 'А' || e.KeyChar > 'я') && e.KeyChar != 8 && 
+                e.KeyChar != 32)
+                return true;
+            else
+                return false;
+        }
+
+        static public Boolean IsRussianSymbolsOrNumeral(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 'А' || e.KeyChar > 'я') && e.KeyChar != 8 &&
+                e.KeyChar != 32 && e.KeyChar != '.' && e.KeyChar != ',' &&
+                !Char.IsNumber(e.KeyChar))
                 return true;
             else
                 return false;

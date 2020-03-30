@@ -86,9 +86,9 @@
             this.loginLabel.ForeColor = System.Drawing.Color.Gray;
             this.loginLabel.Location = new System.Drawing.Point(27, 159);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(47, 18);
+            this.loginLabel.Size = new System.Drawing.Size(52, 18);
             this.loginLabel.TabIndex = 3;
-            this.loginLabel.Text = "Login";
+            this.loginLabel.Text = "Логин";
             // 
             // passwordLabel
             // 
@@ -96,9 +96,9 @@
             this.passwordLabel.ForeColor = System.Drawing.Color.Gray;
             this.passwordLabel.Location = new System.Drawing.Point(27, 225);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(76, 18);
+            this.passwordLabel.Size = new System.Drawing.Size(62, 18);
             this.passwordLabel.TabIndex = 6;
-            this.passwordLabel.Text = "Password";
+            this.passwordLabel.Text = "Пароль";
             // 
             // passwordUnderlinePanel
             // 
