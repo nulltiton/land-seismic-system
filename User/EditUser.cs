@@ -13,73 +13,73 @@ namespace LandSeismic.User
             InitializeComponent();
         }
 
-        private void backwardsBbutton_Click(object sender, EventArgs e)
+        private void BackwardsButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void loginTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void LoginTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
         }
 
-        private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void PasswordTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
         }
 
-        private void surnameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void SurnameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.Validation.IsRussianSymbolsOrNumeral(sender, e);
         }
 
-        private void phoneMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void PhoneMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.Validation.IsNumeral(sender, e);
         }
 
-        private void addressTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void AddressTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.Validation.IsRussianSymbolsOrNumeral(sender, e);
         }
 
         private void EditUser_Load(object sender, EventArgs e)
         {
-            loginTextBox.Text = User.login;
-            passwordTextBox.Text = User.password;
-            surnameTextBox.Text = User.surname;
-            firstNameTextBox.Text = User.firstName;
-            middleNameTextBox.Text = User.middleName;
-            phoneMaskedTextBox.Text = User.phone;
-            addressTextBox.Text = User.address;
+            LoginTextBox.Text = User.Login;
+            PasswordTextBox.Text = User.Password;
+            SurnameTextBox.Text = User.Surname;
+            FirstNameTextBox.Text = User.FirstName;
+            MiddleNameTextBox.Text = User.MiddleName;
+            PhoneMaskedTextBox.Text = User.Phone;
+            AddressTextBox.Text = User.Address;
 
-            Position.PositionClass.GetPositionList();
-            positionComboBox.DataSource = Position.PositionClass.dtPosition;
-            positionComboBox.DisplayMember = "name";
-            positionComboBox.ValueMember = "id";
-            positionComboBox.Text = User.position;
+            Position.PositionClass.GetPositionListForUser();
+            PositionComboBox.DataSource = Position.PositionClass.DTPosition;
+            PositionComboBox.DisplayMember = "name";
+            PositionComboBox.ValueMember = "id";
+            PositionComboBox.Text = User.Position;
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (loginTextBox.Text != User.login)
+            if (LoginTextBox.Text != User.Login)
                 loginModified = true;
 
-            if (loginTextBox.Text != String.Empty &&
-                passwordTextBox.Text != String.Empty &&
-                surnameTextBox.Text != String.Empty &&
-                firstNameTextBox.Text != String.Empty &&
-                middleNameTextBox.Text != String.Empty &&
-                phoneMaskedTextBox.MaskCompleted &&
-                addressTextBox.Text != String.Empty &&
-                positionComboBox.Text != String.Empty)
+            if (LoginTextBox.Text != String.Empty &&
+                PasswordTextBox.Text != String.Empty &&
+                SurnameTextBox.Text != String.Empty &&
+                FirstNameTextBox.Text != String.Empty &&
+                MiddleNameTextBox.Text != String.Empty &&
+                PhoneMaskedTextBox.MaskCompleted &&
+                AddressTextBox.Text != String.Empty &&
+                PositionComboBox.Text != String.Empty)
             {
-                if (UserClass.EditUser(loginTextBox.Text,
-                    passwordTextBox.Text, surnameTextBox.Text,
-                    firstNameTextBox.Text, middleNameTextBox.Text,
-                    phoneMaskedTextBox.Text, addressTextBox.Text,
-                    positionComboBox.SelectedValue.ToString(),
-                    modified, loginModified, User.login))
+                if (UserClass.EditUser(LoginTextBox.Text,
+                    PasswordTextBox.Text, SurnameTextBox.Text,
+                    FirstNameTextBox.Text, MiddleNameTextBox.Text,
+                    PhoneMaskedTextBox.Text, AddressTextBox.Text,
+                    PositionComboBox.SelectedValue.ToString(),
+                    modified, loginModified, User.Login))
                 {
                     UserClass.GetUserList();
                     Close();
@@ -92,7 +92,7 @@ namespace LandSeismic.User
                                     MessageBoxIcon.Warning);
         }
 
-        private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
         {
             modified = true;
         }

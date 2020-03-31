@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace LandSeismic.User
+namespace LandSeismic.Employee
 {
-    public partial class AddUser : Form
+    public partial class AddEmployee : Form
     {
-        public AddUser()
+        public AddEmployee()
         {
             InitializeComponent();
         }
@@ -15,24 +15,37 @@ namespace LandSeismic.User
             Close();
         }
 
+        private void SurnameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validation.Validation.IsRussianSymbols(sender, e);
+        }
+
+        private void PhoneMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validation.Validation.IsNumeral(sender, e);
+        }
+
+        private void ContactPhoneMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validation.Validation.IsNumeral(sender, e);
+        }
+
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (LoginTextBox.Text != String.Empty && 
-                PasswordTextBox.Text != String.Empty &&
-                SurnameTextBox.Text != String.Empty &&
+            if (SurnameTextBox.Text != String.Empty &&
                 FirstNameTextBox.Text != String.Empty &&
                 MiddleNameTextBox.Text != String.Empty &&
                 PhoneMaskedTextBox.MaskCompleted &&
                 AddressTextBox.Text != String.Empty &&
                 PositionComboBox.Text != String.Empty)
             {
-                if (UserClass.AddUser(LoginTextBox.Text,
-                    PasswordTextBox.Text, SurnameTextBox.Text,
+                if (EmployeeClass.AddEmployee(SurnameTextBox.Text,
                     FirstNameTextBox.Text, MiddleNameTextBox.Text,
                     PhoneMaskedTextBox.Text, AddressTextBox.Text,
+                    ContactPhoneMaskedTextBox.Text,
                     PositionComboBox.SelectedValue.ToString()))
                 {
-                    UserClass.GetUserList();
+                    EmployeeClass.GetEmployeeList();
                     Close();
                 }
             }
@@ -43,24 +56,9 @@ namespace LandSeismic.User
                                     MessageBoxIcon.Warning);
         }
 
-        private void PhoneMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void AddEmployee_Load(object sender, EventArgs e)
         {
-            e.Handled = Validation.Validation.IsNumeral(sender, e);
-        }
-
-        private void LoginTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
-        }
-
-        private void SurnameTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = Validation.Validation.IsRussianSymbols(sender, e);
-        }
-
-        private void AddLeadGeologist_Load(object sender, EventArgs e)
-        {
-            Position.PositionClass.GetPositionListForUser();
+            Position.PositionClass.GetPositionListForEmployee();
             PositionComboBox.DataSource = Position.PositionClass.DTPosition;
             PositionComboBox.DisplayMember = "name";
             PositionComboBox.ValueMember = "id";

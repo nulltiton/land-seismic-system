@@ -6,7 +6,7 @@ namespace LandSeismic.User
 {
     class UserClass
     {
-        static public DataTable dtLeadGeologist = new DataTable();
+        static public DataTable DTUser = new DataTable();
 
         static public void GetUserList()
         {
@@ -26,8 +26,8 @@ namespace LandSeismic.User
                 "WHERE user.idPosition = position.id " +
                 "AND user.isDeleted = 0 " +
                 "ORDER BY user.login";
-            dtLeadGeologist.Clear();
-            DBConnection.DBConnection.sqlDataAdapter.Fill(dtLeadGeologist);
+            DTUser.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(DTUser);
         }
 
         static public Boolean AddUser(String login, String password, 

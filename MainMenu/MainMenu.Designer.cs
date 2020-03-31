@@ -28,145 +28,146 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.formBorderPanel = new System.Windows.Forms.Panel();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.formNameLabel = new System.Windows.Forms.Label();
+            this.FormBorderPanel = new System.Windows.Forms.Panel();
+            this.ExitPictureBox = new System.Windows.Forms.Button();
+            this.FormNameLabel = new System.Windows.Forms.Label();
             this.sideMenuPanel = new System.Windows.Forms.Panel();
-            this.positionButton = new System.Windows.Forms.Button();
-            this.localityStandartButton = new System.Windows.Forms.Button();
-            this.positionStandartButton = new System.Windows.Forms.Button();
-            this.employeeButton = new System.Windows.Forms.Button();
-            this.userButton = new System.Windows.Forms.Button();
-            this.logoPictureBox = new System.Windows.Forms.PictureBox();
-            this.formBorderPanel.SuspendLayout();
+            this.PositionButton = new System.Windows.Forms.Button();
+            this.LocalityStandartButton = new System.Windows.Forms.Button();
+            this.PositionStandartButton = new System.Windows.Forms.Button();
+            this.EmployeeButton = new System.Windows.Forms.Button();
+            this.UserButton = new System.Windows.Forms.Button();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.FormBorderPanel.SuspendLayout();
             this.sideMenuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // formBorderPanel
+            // FormBorderPanel
             // 
-            this.formBorderPanel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.formBorderPanel.Controls.Add(this.exitButton);
-            this.formBorderPanel.Controls.Add(this.formNameLabel);
-            this.formBorderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.formBorderPanel.ForeColor = System.Drawing.Color.White;
-            this.formBorderPanel.Location = new System.Drawing.Point(0, 0);
-            this.formBorderPanel.Name = "formBorderPanel";
-            this.formBorderPanel.Size = new System.Drawing.Size(525, 45);
-            this.formBorderPanel.TabIndex = 0;
-            this.formBorderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formBorderPanel_MouseDown);
+            this.FormBorderPanel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.FormBorderPanel.Controls.Add(this.ExitPictureBox);
+            this.FormBorderPanel.Controls.Add(this.FormNameLabel);
+            this.FormBorderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
+            this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
+            this.FormBorderPanel.Name = "FormBorderPanel";
+            this.FormBorderPanel.Size = new System.Drawing.Size(525, 45);
+            this.FormBorderPanel.TabIndex = 0;
+            this.FormBorderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormBorderPanel_MouseDown);
             // 
-            // exitButton
+            // ExitPictureBox
             // 
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Image = global::LandSeismic.Properties.Resources.shutdown;
-            this.exitButton.Location = new System.Drawing.Point(481, 9);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(25, 25);
-            this.exitButton.TabIndex = 5;
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.ExitPictureBox.FlatAppearance.BorderSize = 0;
+            this.ExitPictureBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitPictureBox.Image = global::LandSeismic.Properties.Resources.shutdown;
+            this.ExitPictureBox.Location = new System.Drawing.Point(481, 9);
+            this.ExitPictureBox.Name = "ExitPictureBox";
+            this.ExitPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.ExitPictureBox.TabIndex = 5;
+            this.ExitPictureBox.UseVisualStyleBackColor = true;
+            this.ExitPictureBox.Click += new System.EventHandler(this.ExitPictureBox_Click);
             // 
-            // formNameLabel
+            // FormNameLabel
             // 
-            this.formNameLabel.AutoSize = true;
-            this.formNameLabel.Location = new System.Drawing.Point(12, 13);
-            this.formNameLabel.Name = "formNameLabel";
-            this.formNameLabel.Size = new System.Drawing.Size(110, 18);
-            this.formNameLabel.TabIndex = 0;
-            this.formNameLabel.Text = "Главное меню";
+            this.FormNameLabel.AutoSize = true;
+            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
+            this.FormNameLabel.Name = "FormNameLabel";
+            this.FormNameLabel.Size = new System.Drawing.Size(110, 18);
+            this.FormNameLabel.TabIndex = 0;
+            this.FormNameLabel.Text = "Главное меню";
             // 
             // sideMenuPanel
             // 
             this.sideMenuPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.sideMenuPanel.Controls.Add(this.positionButton);
-            this.sideMenuPanel.Controls.Add(this.localityStandartButton);
-            this.sideMenuPanel.Controls.Add(this.positionStandartButton);
-            this.sideMenuPanel.Controls.Add(this.employeeButton);
-            this.sideMenuPanel.Controls.Add(this.userButton);
+            this.sideMenuPanel.Controls.Add(this.PositionButton);
+            this.sideMenuPanel.Controls.Add(this.LocalityStandartButton);
+            this.sideMenuPanel.Controls.Add(this.PositionStandartButton);
+            this.sideMenuPanel.Controls.Add(this.EmployeeButton);
+            this.sideMenuPanel.Controls.Add(this.UserButton);
             this.sideMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideMenuPanel.Location = new System.Drawing.Point(0, 45);
             this.sideMenuPanel.Name = "sideMenuPanel";
             this.sideMenuPanel.Size = new System.Drawing.Size(140, 326);
             this.sideMenuPanel.TabIndex = 1;
             // 
-            // positionButton
+            // PositionButton
             // 
-            this.positionButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.positionButton.FlatAppearance.BorderSize = 0;
-            this.positionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.positionButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.positionButton.Location = new System.Drawing.Point(0, 260);
-            this.positionButton.Name = "positionButton";
-            this.positionButton.Size = new System.Drawing.Size(140, 65);
-            this.positionButton.TabIndex = 7;
-            this.positionButton.Text = "Должности";
-            this.positionButton.UseVisualStyleBackColor = true;
+            this.PositionButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PositionButton.FlatAppearance.BorderSize = 0;
+            this.PositionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PositionButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PositionButton.Location = new System.Drawing.Point(0, 260);
+            this.PositionButton.Name = "PositionButton";
+            this.PositionButton.Size = new System.Drawing.Size(140, 65);
+            this.PositionButton.TabIndex = 7;
+            this.PositionButton.Text = "Должности";
+            this.PositionButton.UseVisualStyleBackColor = true;
             // 
-            // localityStandartButton
+            // LocalityStandartButton
             // 
-            this.localityStandartButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.localityStandartButton.FlatAppearance.BorderSize = 0;
-            this.localityStandartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.localityStandartButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.localityStandartButton.Location = new System.Drawing.Point(0, 195);
-            this.localityStandartButton.Name = "localityStandartButton";
-            this.localityStandartButton.Size = new System.Drawing.Size(140, 65);
-            this.localityStandartButton.TabIndex = 5;
-            this.localityStandartButton.Text = "Нормативы местности";
-            this.localityStandartButton.UseVisualStyleBackColor = true;
+            this.LocalityStandartButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LocalityStandartButton.FlatAppearance.BorderSize = 0;
+            this.LocalityStandartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LocalityStandartButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LocalityStandartButton.Location = new System.Drawing.Point(0, 195);
+            this.LocalityStandartButton.Name = "LocalityStandartButton";
+            this.LocalityStandartButton.Size = new System.Drawing.Size(140, 65);
+            this.LocalityStandartButton.TabIndex = 5;
+            this.LocalityStandartButton.Text = "Нормативы местности";
+            this.LocalityStandartButton.UseVisualStyleBackColor = true;
             // 
-            // positionStandartButton
+            // PositionStandartButton
             // 
-            this.positionStandartButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.positionStandartButton.FlatAppearance.BorderSize = 0;
-            this.positionStandartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.positionStandartButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.positionStandartButton.Location = new System.Drawing.Point(0, 130);
-            this.positionStandartButton.Name = "positionStandartButton";
-            this.positionStandartButton.Size = new System.Drawing.Size(140, 65);
-            this.positionStandartButton.TabIndex = 4;
-            this.positionStandartButton.Text = "Нормативы должности";
-            this.positionStandartButton.UseVisualStyleBackColor = true;
+            this.PositionStandartButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PositionStandartButton.FlatAppearance.BorderSize = 0;
+            this.PositionStandartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PositionStandartButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PositionStandartButton.Location = new System.Drawing.Point(0, 130);
+            this.PositionStandartButton.Name = "PositionStandartButton";
+            this.PositionStandartButton.Size = new System.Drawing.Size(140, 65);
+            this.PositionStandartButton.TabIndex = 4;
+            this.PositionStandartButton.Text = "Нормативы должности";
+            this.PositionStandartButton.UseVisualStyleBackColor = true;
             // 
-            // employeeButton
+            // EmployeeButton
             // 
-            this.employeeButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.employeeButton.FlatAppearance.BorderSize = 0;
-            this.employeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.employeeButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.employeeButton.Location = new System.Drawing.Point(0, 65);
-            this.employeeButton.Name = "employeeButton";
-            this.employeeButton.Size = new System.Drawing.Size(140, 65);
-            this.employeeButton.TabIndex = 3;
-            this.employeeButton.Text = "Сотрудники";
-            this.employeeButton.UseVisualStyleBackColor = true;
+            this.EmployeeButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EmployeeButton.FlatAppearance.BorderSize = 0;
+            this.EmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EmployeeButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EmployeeButton.Location = new System.Drawing.Point(0, 65);
+            this.EmployeeButton.Name = "EmployeeButton";
+            this.EmployeeButton.Size = new System.Drawing.Size(140, 65);
+            this.EmployeeButton.TabIndex = 3;
+            this.EmployeeButton.Text = "Сотрудники";
+            this.EmployeeButton.UseVisualStyleBackColor = true;
+            this.EmployeeButton.Click += new System.EventHandler(this.EmployeeButton_Click);
             // 
-            // userButton
+            // UserButton
             // 
-            this.userButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userButton.FlatAppearance.BorderSize = 0;
-            this.userButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userButton.Location = new System.Drawing.Point(0, 0);
-            this.userButton.Name = "userButton";
-            this.userButton.Size = new System.Drawing.Size(140, 65);
-            this.userButton.TabIndex = 0;
-            this.userButton.Text = "Пользователи";
-            this.userButton.UseVisualStyleBackColor = true;
-            this.userButton.Click += new System.EventHandler(this.leadGeologistButton_Click);
+            this.UserButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UserButton.FlatAppearance.BorderSize = 0;
+            this.UserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UserButton.Location = new System.Drawing.Point(0, 0);
+            this.UserButton.Name = "UserButton";
+            this.UserButton.Size = new System.Drawing.Size(140, 65);
+            this.UserButton.TabIndex = 0;
+            this.UserButton.Text = "Пользователи";
+            this.UserButton.UseVisualStyleBackColor = true;
+            this.UserButton.Click += new System.EventHandler(this.UserButton_Click);
             // 
-            // logoPictureBox
+            // LogoPictureBox
             // 
-            this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.Image = global::LandSeismic.Properties.Resources.logo;
-            this.logoPictureBox.Location = new System.Drawing.Point(140, 45);
-            this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(385, 326);
-            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logoPictureBox.TabIndex = 2;
-            this.logoPictureBox.TabStop = false;
+            this.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogoPictureBox.Image = global::LandSeismic.Properties.Resources.logo;
+            this.LogoPictureBox.Location = new System.Drawing.Point(140, 45);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(385, 326);
+            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoPictureBox.TabIndex = 2;
+            this.LogoPictureBox.TabStop = false;
             // 
             // MainMenu
             // 
@@ -175,9 +176,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(525, 371);
             this.ControlBox = false;
-            this.Controls.Add(this.logoPictureBox);
+            this.Controls.Add(this.LogoPictureBox);
             this.Controls.Add(this.sideMenuPanel);
-            this.Controls.Add(this.formBorderPanel);
+            this.Controls.Add(this.FormBorderPanel);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -187,25 +188,25 @@
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
-            this.formBorderPanel.ResumeLayout(false);
-            this.formBorderPanel.PerformLayout();
+            this.FormBorderPanel.ResumeLayout(false);
+            this.FormBorderPanel.PerformLayout();
             this.sideMenuPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel formBorderPanel;
-        private System.Windows.Forms.Label formNameLabel;
+        private System.Windows.Forms.Panel FormBorderPanel;
+        private System.Windows.Forms.Label FormNameLabel;
         private System.Windows.Forms.Panel sideMenuPanel;
-        private System.Windows.Forms.Button userButton;
-        private System.Windows.Forms.Button employeeButton;
-        private System.Windows.Forms.Button localityStandartButton;
-        private System.Windows.Forms.Button positionStandartButton;
-        private System.Windows.Forms.Button positionButton;
-        private System.Windows.Forms.PictureBox logoPictureBox;
-        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button UserButton;
+        private System.Windows.Forms.Button EmployeeButton;
+        private System.Windows.Forms.Button LocalityStandartButton;
+        private System.Windows.Forms.Button PositionStandartButton;
+        private System.Windows.Forms.Button PositionButton;
+        private System.Windows.Forms.PictureBox LogoPictureBox;
+        private System.Windows.Forms.Button ExitPictureBox;
     }
 }

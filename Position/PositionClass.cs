@@ -1,23 +1,40 @@
-﻿using System;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System.Data;
 
 namespace LandSeismic.Position
 {
     class PositionClass
     {
-        static public DataTable dtPosition = new DataTable();
+        static public DataTable DTPosition = new DataTable();
 
-        static public void GetPositionList()
+        static public void GetPositionListForUser()
         {
             DBConnection.DBConnection.sqlDataAdapter =
                 new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
             DBConnection.DBConnection.sqlCommand.CommandText =
                 "SELECT * " +
                 "FROM position " +
+                "WHERE name = 'Геолог' " +
+                "OR name = 'Начальник сейсмотряда' " +
+                "OR name = 'Ведущий геолог' " +
                 "ORDER BY name";
-            dtPosition.Clear();
-            DBConnection.DBConnection.sqlDataAdapter.Fill(dtPosition);
+            DTPosition.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(DTPosition);
+        }
+
+        static public void GetPositionListForEmployee()
+        {
+            DBConnection.DBConnection.sqlDataAdapter =
+                new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT * " +
+                "FROM position " +
+                "WHERE name <> 'Геолог' " +
+                "AND name <> 'Начальник сейсмотряда' " +
+                "AND name <> 'Ведущий геолог' " +
+                "ORDER BY name";
+            DTPosition.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(DTPosition);
         }
     }
 }

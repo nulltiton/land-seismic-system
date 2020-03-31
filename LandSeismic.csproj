@@ -55,6 +55,25 @@
     </Compile>
     <Compile Include="Authorization\AuthorizationClass.cs" />
     <Compile Include="DBConnection\DBConnection.cs" />
+    <Compile Include="Employee\AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeClass.cs" />
     <Compile Include="Position\PositionClass.cs" />
     <Compile Include="User\AddUser.cs">
       <SubType>Form</SubType>
@@ -91,6 +110,15 @@
     <Compile Include="Validation\Validation.cs" />
     <EmbeddedResource Include="Authorization\Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>

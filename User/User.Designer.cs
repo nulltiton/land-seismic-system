@@ -32,11 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.formBorderPanel = new System.Windows.Forms.Panel();
-            this.backwardsButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.formNameLabel = new System.Windows.Forms.Label();
-            this.userGrid = new System.Windows.Forms.DataGridView();
+            this.FormBorderPanel = new System.Windows.Forms.Panel();
+            this.BackwardsButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.FormNameLabel = new System.Windows.Forms.Label();
+            this.UserGrid = new System.Windows.Forms.DataGridView();
             this.userlogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userpassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,69 +45,70 @@
             this.userphone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.useraddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userposition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.drop = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.formBorderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userGrid)).BeginInit();
+            this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.FormBorderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // formBorderPanel
+            // FormBorderPanel
             // 
-            this.formBorderPanel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.formBorderPanel.Controls.Add(this.backwardsButton);
-            this.formBorderPanel.Controls.Add(this.addButton);
-            this.formBorderPanel.Controls.Add(this.formNameLabel);
-            this.formBorderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.formBorderPanel.ForeColor = System.Drawing.Color.White;
-            this.formBorderPanel.Location = new System.Drawing.Point(0, 0);
-            this.formBorderPanel.Name = "formBorderPanel";
-            this.formBorderPanel.Size = new System.Drawing.Size(1153, 45);
-            this.formBorderPanel.TabIndex = 0;
+            this.FormBorderPanel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.FormBorderPanel.Controls.Add(this.BackwardsButton);
+            this.FormBorderPanel.Controls.Add(this.AddButton);
+            this.FormBorderPanel.Controls.Add(this.FormNameLabel);
+            this.FormBorderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
+            this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
+            this.FormBorderPanel.Name = "FormBorderPanel";
+            this.FormBorderPanel.Size = new System.Drawing.Size(1153, 45);
+            this.FormBorderPanel.TabIndex = 0;
             // 
-            // backwardsButton
+            // BackwardsButton
             // 
-            this.backwardsButton.FlatAppearance.BorderSize = 0;
-            this.backwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("backwardsButton.Image")));
-            this.backwardsButton.Location = new System.Drawing.Point(1107, 10);
-            this.backwardsButton.Name = "backwardsButton";
-            this.backwardsButton.Size = new System.Drawing.Size(25, 25);
-            this.backwardsButton.TabIndex = 2;
-            this.backwardsButton.UseVisualStyleBackColor = true;
-            this.backwardsButton.Click += new System.EventHandler(this.backwardsBbutton_Click);
+            this.BackwardsButton.FlatAppearance.BorderSize = 0;
+            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
+            this.BackwardsButton.Location = new System.Drawing.Point(1107, 10);
+            this.BackwardsButton.Name = "BackwardsButton";
+            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
+            this.BackwardsButton.TabIndex = 2;
+            this.BackwardsButton.UseVisualStyleBackColor = true;
+            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsBbutton_Click);
             // 
-            // addButton
+            // AddButton
             // 
-            this.addButton.FlatAppearance.BorderSize = 0;
-            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Image = global::LandSeismic.Properties.Resources.plus;
-            this.addButton.Location = new System.Drawing.Point(1058, 10);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(25, 25);
-            this.addButton.TabIndex = 1;
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.AddButton.FlatAppearance.BorderSize = 0;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
+            this.AddButton.Location = new System.Drawing.Point(1058, 10);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(25, 25);
+            this.AddButton.TabIndex = 1;
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // formNameLabel
+            // FormNameLabel
             // 
-            this.formNameLabel.AutoSize = true;
-            this.formNameLabel.Location = new System.Drawing.Point(12, 13);
-            this.formNameLabel.Name = "formNameLabel";
-            this.formNameLabel.Size = new System.Drawing.Size(135, 18);
-            this.formNameLabel.TabIndex = 0;
-            this.formNameLabel.Text = "Ведущие геологи";
+            this.FormNameLabel.AutoSize = true;
+            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
+            this.FormNameLabel.Name = "FormNameLabel";
+            this.FormNameLabel.Size = new System.Drawing.Size(110, 18);
+            this.FormNameLabel.TabIndex = 0;
+            this.FormNameLabel.Text = "Пользователи";
             // 
-            // userGrid
+            // UserGrid
             // 
-            this.userGrid.AllowUserToAddRows = false;
-            this.userGrid.AllowUserToDeleteRows = false;
+            this.UserGrid.AllowUserToAddRows = false;
+            this.UserGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.userGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.userGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UserGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.UserGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.UserGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UserGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userlogin,
             this.userpassword,
             this.usersurname,
@@ -116,8 +117,8 @@
             this.userphone,
             this.useraddress,
             this.userposition,
-            this.edit,
-            this.drop});
+            this.EditButton,
+            this.DeleteButton});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -125,12 +126,12 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.userGrid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.userGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userGrid.GridColor = System.Drawing.Color.Gainsboro;
-            this.userGrid.Location = new System.Drawing.Point(0, 45);
-            this.userGrid.Name = "userGrid";
-            this.userGrid.ReadOnly = true;
+            this.UserGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.UserGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserGrid.GridColor = System.Drawing.Color.Gainsboro;
+            this.UserGrid.Location = new System.Drawing.Point(0, 45);
+            this.UserGrid.Name = "UserGrid";
+            this.UserGrid.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -138,11 +139,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.userGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.userGrid.Size = new System.Drawing.Size(1153, 381);
-            this.userGrid.TabIndex = 1;
-            this.userGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGrid_CellContentClick);
+            this.UserGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.UserGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.UserGrid.Size = new System.Drawing.Size(1153, 381);
+            this.UserGrid.TabIndex = 1;
+            this.UserGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserGrid_CellContentClick);
             // 
             // userlogin
             // 
@@ -223,25 +224,25 @@
             this.userposition.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.userposition.Width = 190;
             // 
-            // edit
+            // EditButton
             // 
-            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit.HeaderText = "";
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Text = "Редактировать";
-            this.edit.UseColumnTextForButtonValue = true;
-            this.edit.Width = 120;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.HeaderText = "";
+            this.EditButton.Name = "EditButton";
+            this.EditButton.ReadOnly = true;
+            this.EditButton.Text = "Редактировать";
+            this.EditButton.UseColumnTextForButtonValue = true;
+            this.EditButton.Width = 120;
             // 
-            // drop
+            // DeleteButton
             // 
-            this.drop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drop.HeaderText = "";
-            this.drop.Name = "drop";
-            this.drop.ReadOnly = true;
-            this.drop.Text = "Удалить";
-            this.drop.UseColumnTextForButtonValue = true;
-            this.drop.Width = 90;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.HeaderText = "";
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.ReadOnly = true;
+            this.DeleteButton.Text = "Удалить";
+            this.DeleteButton.UseColumnTextForButtonValue = true;
+            this.DeleteButton.Width = 90;
             // 
             // User
             // 
@@ -250,8 +251,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1153, 426);
             this.ControlBox = false;
-            this.Controls.Add(this.userGrid);
-            this.Controls.Add(this.formBorderPanel);
+            this.Controls.Add(this.UserGrid);
+            this.Controls.Add(this.FormBorderPanel);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -262,20 +263,20 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LeadGeologist";
             this.Load += new System.EventHandler(this.User_Load);
-            this.formBorderPanel.ResumeLayout(false);
-            this.formBorderPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userGrid)).EndInit();
+            this.FormBorderPanel.ResumeLayout(false);
+            this.FormBorderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel formBorderPanel;
-        private System.Windows.Forms.Label formNameLabel;
-        private System.Windows.Forms.Button backwardsButton;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.DataGridView userGrid;
+        private System.Windows.Forms.Panel FormBorderPanel;
+        private System.Windows.Forms.Label FormNameLabel;
+        private System.Windows.Forms.Button BackwardsButton;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.DataGridView UserGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn userlogin;
         private System.Windows.Forms.DataGridViewTextBoxColumn userpassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn usersurname;
@@ -284,7 +285,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn userphone;
         private System.Windows.Forms.DataGridViewTextBoxColumn useraddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn userposition;
-        private System.Windows.Forms.DataGridViewButtonColumn edit;
-        private System.Windows.Forms.DataGridViewButtonColumn drop;
+        private System.Windows.Forms.DataGridViewButtonColumn EditButton;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteButton;
     }
 }

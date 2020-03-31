@@ -5,31 +5,31 @@ namespace LandSeismic.User
 {
     public partial class User : Form
     {
-        static public String login;
-        static public String password;
-        static public String surname;
-        static public String firstName;
-        static public String middleName;
-        static public String phone;
-        static public String address;
-        static public String position;
+        static public String Login;
+        static public String Password;
+        static public String Surname;
+        static public String FirstName;
+        static public String MiddleName;
+        static public String Phone;
+        static public String Address;
+        static public String Position;
 
         public User()
         {
             InitializeComponent();
         }
 
-        private void backwardsButton_Click(object sender, EventArgs e)
+        private void BackwardsButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void backwardsBbutton_Click(object sender, EventArgs e)
+        private void BackwardsBbutton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
             AddUser addUser = new AddUser();
             addUser.Show();
@@ -38,32 +38,31 @@ namespace LandSeismic.User
         private void User_Load(object sender, EventArgs e)
         {
             UserClass.GetUserList();
-            userGrid.DataSource = UserClass.dtLeadGeologist;
+            UserGrid.DataSource = UserClass.DTUser;
         }
 
-        private void userGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void UserGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
-                login = userGrid.CurrentRow.Cells[2].Value.ToString();
-                password = userGrid.CurrentRow.Cells[3].Value.ToString();
-                surname = userGrid.CurrentRow.Cells[4].Value.ToString();
-                firstName = userGrid.CurrentRow.Cells[5].Value.ToString();
-                middleName = userGrid.CurrentRow.Cells[6].Value.ToString();
-                phone = userGrid.CurrentRow.Cells[7].Value.ToString();
-                address = userGrid.CurrentRow.Cells[8].Value.ToString();
-                position = userGrid.CurrentRow.Cells[9].Value.ToString();
+                Login = UserGrid.CurrentRow.Cells[2].Value.ToString();
+                Password = UserGrid.CurrentRow.Cells[3].Value.ToString();
+                Surname = UserGrid.CurrentRow.Cells[4].Value.ToString();
+                FirstName = UserGrid.CurrentRow.Cells[5].Value.ToString();
+                MiddleName = UserGrid.CurrentRow.Cells[6].Value.ToString();
+                Phone = UserGrid.CurrentRow.Cells[7].Value.ToString();
+                Address = UserGrid.CurrentRow.Cells[8].Value.ToString();
+                Position = UserGrid.CurrentRow.Cells[9].Value.ToString();
                 EditUser editUser = new EditUser();
                 editUser.Show();
             }
-
-            if (e.ColumnIndex == 1)
+            else if (e.ColumnIndex == 1)
             {
                 if (DialogResult.Yes == MessageBox.Show("Вы уверены?",
                     "Подтверждение удаления",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question))
-                    if (UserClass.DropUser(userGrid.
+                    if (UserClass.DropUser(UserGrid.
                         CurrentRow.Cells[2].Value.ToString()))
                         UserClass.GetUserList();
             }

@@ -10,7 +10,7 @@ namespace LandSeismic.Authorization
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -22,12 +22,12 @@ namespace LandSeismic.Authorization
                 Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void EnterButton_Click(object sender, EventArgs e)
         {
-            if (loginTextBox.Text != String.Empty ||
-                passwordTextBox.Text != String.Empty)
+            if (LoginTextBox.Text != String.Empty ||
+                PasswordTextBox.Text != String.Empty)
             {
-                if (AuthorizationClass.LogIn(loginTextBox.Text, passwordTextBox.
+                if (AuthorizationClass.LogIn(LoginTextBox.Text, PasswordTextBox.
                     Text) != String.Empty)
                 {
                     MainMenu.MainMenu mainMenu = new MainMenu.MainMenu();
@@ -41,12 +41,12 @@ namespace LandSeismic.Authorization
                     MessageBoxIcon.Warning);
         }
 
-        private void loginTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void LoginTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
         }
 
-        private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void PasswordTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
         }
