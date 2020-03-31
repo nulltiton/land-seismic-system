@@ -31,7 +31,15 @@
             this.FormBorderPanel = new System.Windows.Forms.Panel();
             this.ExitPictureBox = new System.Windows.Forms.Button();
             this.FormNameLabel = new System.Windows.Forms.Label();
-            this.sideMenuPanel = new System.Windows.Forms.Panel();
+            this.SideMenuPanel = new System.Windows.Forms.Panel();
+            this.GroupTypeButton = new System.Windows.Forms.Button();
+            this.GroupButton = new System.Windows.Forms.Button();
+            this.SquadButton = new System.Windows.Forms.Button();
+            this.MaterialAndTechnicalResourceButton = new System.Windows.Forms.Button();
+            this.LocalityTypeButton = new System.Windows.Forms.Button();
+            this.LocalityButton = new System.Windows.Forms.Button();
+            this.InventoryListButton = new System.Windows.Forms.Button();
+            this.SeismicExplorationTypeButton = new System.Windows.Forms.Button();
             this.PositionButton = new System.Windows.Forms.Button();
             this.LocalityStandartButton = new System.Windows.Forms.Button();
             this.PositionStandartButton = new System.Windows.Forms.Button();
@@ -39,7 +47,7 @@
             this.UserButton = new System.Windows.Forms.Button();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.FormBorderPanel.SuspendLayout();
-            this.sideMenuPanel.SuspendLayout();
+            this.SideMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,16 +60,15 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(525, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(1370, 45);
             this.FormBorderPanel.TabIndex = 0;
-            this.FormBorderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormBorderPanel_MouseDown);
             // 
             // ExitPictureBox
             // 
             this.ExitPictureBox.FlatAppearance.BorderSize = 0;
             this.ExitPictureBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitPictureBox.Image = global::LandSeismic.Properties.Resources.shutdown;
-            this.ExitPictureBox.Location = new System.Drawing.Point(481, 9);
+            this.ExitPictureBox.Location = new System.Drawing.Point(521, 9);
             this.ExitPictureBox.Name = "ExitPictureBox";
             this.ExitPictureBox.Size = new System.Drawing.Size(25, 25);
             this.ExitPictureBox.TabIndex = 5;
@@ -77,19 +84,131 @@
             this.FormNameLabel.TabIndex = 0;
             this.FormNameLabel.Text = "Главное меню";
             // 
-            // sideMenuPanel
+            // SideMenuPanel
             // 
-            this.sideMenuPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.sideMenuPanel.Controls.Add(this.PositionButton);
-            this.sideMenuPanel.Controls.Add(this.LocalityStandartButton);
-            this.sideMenuPanel.Controls.Add(this.PositionStandartButton);
-            this.sideMenuPanel.Controls.Add(this.EmployeeButton);
-            this.sideMenuPanel.Controls.Add(this.UserButton);
-            this.sideMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sideMenuPanel.Location = new System.Drawing.Point(0, 45);
-            this.sideMenuPanel.Name = "sideMenuPanel";
-            this.sideMenuPanel.Size = new System.Drawing.Size(140, 326);
-            this.sideMenuPanel.TabIndex = 1;
+            this.SideMenuPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.SideMenuPanel.Controls.Add(this.GroupTypeButton);
+            this.SideMenuPanel.Controls.Add(this.GroupButton);
+            this.SideMenuPanel.Controls.Add(this.SquadButton);
+            this.SideMenuPanel.Controls.Add(this.MaterialAndTechnicalResourceButton);
+            this.SideMenuPanel.Controls.Add(this.LocalityTypeButton);
+            this.SideMenuPanel.Controls.Add(this.LocalityButton);
+            this.SideMenuPanel.Controls.Add(this.InventoryListButton);
+            this.SideMenuPanel.Controls.Add(this.SeismicExplorationTypeButton);
+            this.SideMenuPanel.Controls.Add(this.PositionButton);
+            this.SideMenuPanel.Controls.Add(this.LocalityStandartButton);
+            this.SideMenuPanel.Controls.Add(this.PositionStandartButton);
+            this.SideMenuPanel.Controls.Add(this.EmployeeButton);
+            this.SideMenuPanel.Controls.Add(this.UserButton);
+            this.SideMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SideMenuPanel.Location = new System.Drawing.Point(0, 45);
+            this.SideMenuPanel.Name = "SideMenuPanel";
+            this.SideMenuPanel.Size = new System.Drawing.Size(140, 727);
+            this.SideMenuPanel.TabIndex = 1;
+            // 
+            // GroupTypeButton
+            // 
+            this.GroupTypeButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GroupTypeButton.FlatAppearance.BorderSize = 0;
+            this.GroupTypeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GroupTypeButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GroupTypeButton.Location = new System.Drawing.Point(0, 780);
+            this.GroupTypeButton.Name = "GroupTypeButton";
+            this.GroupTypeButton.Size = new System.Drawing.Size(140, 65);
+            this.GroupTypeButton.TabIndex = 15;
+            this.GroupTypeButton.Text = "Тип группы";
+            this.GroupTypeButton.UseVisualStyleBackColor = true;
+            // 
+            // GroupButton
+            // 
+            this.GroupButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GroupButton.FlatAppearance.BorderSize = 0;
+            this.GroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GroupButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GroupButton.Location = new System.Drawing.Point(0, 715);
+            this.GroupButton.Name = "GroupButton";
+            this.GroupButton.Size = new System.Drawing.Size(140, 65);
+            this.GroupButton.TabIndex = 14;
+            this.GroupButton.Text = "Группы";
+            this.GroupButton.UseVisualStyleBackColor = true;
+            // 
+            // SquadButton
+            // 
+            this.SquadButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SquadButton.FlatAppearance.BorderSize = 0;
+            this.SquadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SquadButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SquadButton.Location = new System.Drawing.Point(0, 650);
+            this.SquadButton.Name = "SquadButton";
+            this.SquadButton.Size = new System.Drawing.Size(140, 65);
+            this.SquadButton.TabIndex = 13;
+            this.SquadButton.Text = "Отряды";
+            this.SquadButton.UseVisualStyleBackColor = true;
+            // 
+            // MaterialAndTechnicalResourceButton
+            // 
+            this.MaterialAndTechnicalResourceButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MaterialAndTechnicalResourceButton.FlatAppearance.BorderSize = 0;
+            this.MaterialAndTechnicalResourceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaterialAndTechnicalResourceButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MaterialAndTechnicalResourceButton.Location = new System.Drawing.Point(0, 585);
+            this.MaterialAndTechnicalResourceButton.Name = "MaterialAndTechnicalResourceButton";
+            this.MaterialAndTechnicalResourceButton.Size = new System.Drawing.Size(140, 65);
+            this.MaterialAndTechnicalResourceButton.TabIndex = 12;
+            this.MaterialAndTechnicalResourceButton.Text = "Материально- технические ресурсы";
+            this.MaterialAndTechnicalResourceButton.UseVisualStyleBackColor = true;
+            // 
+            // LocalityTypeButton
+            // 
+            this.LocalityTypeButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LocalityTypeButton.FlatAppearance.BorderSize = 0;
+            this.LocalityTypeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LocalityTypeButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LocalityTypeButton.Location = new System.Drawing.Point(0, 520);
+            this.LocalityTypeButton.Name = "LocalityTypeButton";
+            this.LocalityTypeButton.Size = new System.Drawing.Size(140, 65);
+            this.LocalityTypeButton.TabIndex = 11;
+            this.LocalityTypeButton.Text = "Тип местности";
+            this.LocalityTypeButton.UseVisualStyleBackColor = true;
+            // 
+            // LocalityButton
+            // 
+            this.LocalityButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LocalityButton.FlatAppearance.BorderSize = 0;
+            this.LocalityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LocalityButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LocalityButton.Location = new System.Drawing.Point(0, 455);
+            this.LocalityButton.Name = "LocalityButton";
+            this.LocalityButton.Size = new System.Drawing.Size(140, 65);
+            this.LocalityButton.TabIndex = 10;
+            this.LocalityButton.Text = "Местность";
+            this.LocalityButton.UseVisualStyleBackColor = true;
+            // 
+            // InventoryListButton
+            // 
+            this.InventoryListButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.InventoryListButton.FlatAppearance.BorderSize = 0;
+            this.InventoryListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InventoryListButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.InventoryListButton.Location = new System.Drawing.Point(0, 390);
+            this.InventoryListButton.Name = "InventoryListButton";
+            this.InventoryListButton.Size = new System.Drawing.Size(140, 65);
+            this.InventoryListButton.TabIndex = 9;
+            this.InventoryListButton.Text = "Перечень ресурсов";
+            this.InventoryListButton.UseVisualStyleBackColor = true;
+            // 
+            // SeismicExplorationTypeButton
+            // 
+            this.SeismicExplorationTypeButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SeismicExplorationTypeButton.FlatAppearance.BorderSize = 0;
+            this.SeismicExplorationTypeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SeismicExplorationTypeButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SeismicExplorationTypeButton.Location = new System.Drawing.Point(0, 325);
+            this.SeismicExplorationTypeButton.Name = "SeismicExplorationTypeButton";
+            this.SeismicExplorationTypeButton.Size = new System.Drawing.Size(140, 65);
+            this.SeismicExplorationTypeButton.TabIndex = 8;
+            this.SeismicExplorationTypeButton.Text = "Тип сейсморазведки";
+            this.SeismicExplorationTypeButton.UseVisualStyleBackColor = true;
             // 
             // PositionButton
             // 
@@ -164,7 +283,7 @@
             this.LogoPictureBox.Image = global::LandSeismic.Properties.Resources.logo;
             this.LogoPictureBox.Location = new System.Drawing.Point(140, 45);
             this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(385, 326);
+            this.LogoPictureBox.Size = new System.Drawing.Size(1230, 727);
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoPictureBox.TabIndex = 2;
             this.LogoPictureBox.TabStop = false;
@@ -174,10 +293,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(525, 371);
+            this.ClientSize = new System.Drawing.Size(1370, 772);
             this.ControlBox = false;
             this.Controls.Add(this.LogoPictureBox);
-            this.Controls.Add(this.sideMenuPanel);
+            this.Controls.Add(this.SideMenuPanel);
             this.Controls.Add(this.FormBorderPanel);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
@@ -186,11 +305,13 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "MainMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
-            this.sideMenuPanel.ResumeLayout(false);
+            this.SideMenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -200,7 +321,7 @@
 
         private System.Windows.Forms.Panel FormBorderPanel;
         private System.Windows.Forms.Label FormNameLabel;
-        private System.Windows.Forms.Panel sideMenuPanel;
+        private System.Windows.Forms.Panel SideMenuPanel;
         private System.Windows.Forms.Button UserButton;
         private System.Windows.Forms.Button EmployeeButton;
         private System.Windows.Forms.Button LocalityStandartButton;
@@ -208,5 +329,13 @@
         private System.Windows.Forms.Button PositionButton;
         private System.Windows.Forms.PictureBox LogoPictureBox;
         private System.Windows.Forms.Button ExitPictureBox;
+        private System.Windows.Forms.Button SeismicExplorationTypeButton;
+        private System.Windows.Forms.Button GroupTypeButton;
+        private System.Windows.Forms.Button GroupButton;
+        private System.Windows.Forms.Button SquadButton;
+        private System.Windows.Forms.Button MaterialAndTechnicalResourceButton;
+        private System.Windows.Forms.Button LocalityTypeButton;
+        private System.Windows.Forms.Button LocalityButton;
+        private System.Windows.Forms.Button InventoryListButton;
     }
 }

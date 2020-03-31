@@ -30,6 +30,30 @@ namespace LandSeismic.User
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTUser);
         }
 
+        static public String GetUserFullName(String login)
+        {
+            String fullName;
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT surname " +
+                "FROM user " +
+                "WHERE login = '" + login + "'";
+            fullName = DBConnection.DBConnection.sqlCommand.ExecuteScalar().
+                ToString();
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT firstName " +
+                "FROM user " +
+                "WHERE login = '" + login + "'";
+            fullName += " " + DBConnection.DBConnection.sqlCommand.ExecuteScalar().
+                ToString();
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT middleName " +
+                "FROM user " +
+                "WHERE login = '" + login + "'";
+            fullName += " " + DBConnection.DBConnection.sqlCommand.ExecuteScalar().
+                ToString();
+            return fullName;
+        }
+
         static public Boolean AddUser(String login, String password, 
             String surname, String firstName, String middleName, String phone, 
             String address, String position)
