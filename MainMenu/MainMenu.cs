@@ -110,5 +110,13 @@ namespace LandSeismic.MainMenu
             Position.Position position = new Position.Position();
             position.Show();
         }
+
+        private void SeismicExplorationTypeButton_Click(object sender, EventArgs e)
+        {
+            SeismicExplorationType.SeismicExplorationType
+                seismicExplorationType = new SeismicExplorationType.
+                SeismicExplorationType();
+            seismicExplorationType.Show();
+        }
     }
 }

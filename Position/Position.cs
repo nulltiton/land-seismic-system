@@ -13,11 +13,6 @@ namespace LandSeismic.Position
             InitializeComponent();
         }
 
-        private void backwardsButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void BackwardsButton_Click(object sender, EventArgs e)
         {
             Close();

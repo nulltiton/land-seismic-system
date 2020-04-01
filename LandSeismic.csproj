@@ -93,6 +93,25 @@
       <DependentUpon>Position.cs</DependentUpon>
     </Compile>
     <Compile Include="Position\PositionClass.cs" />
+    <Compile Include="SeismicExplorationType\AddSeismicExmplorationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeismicExplorationType\AddSeismicExmplorationType.Designer.cs">
+      <DependentUpon>AddSeismicExmplorationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeismicExplorationType\EditSeismicExplorationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeismicExplorationType\EditSeismicExplorationType.Designer.cs">
+      <DependentUpon>EditSeismicExplorationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeismicExplorationType\SeismicExplorationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeismicExplorationType\SeismicExplorationType.Designer.cs">
+      <DependentUpon>SeismicExplorationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeismicExplorationType\SeismicExplorationTypeClass.cs" />
     <Compile Include="User\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +165,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Position\Position.resx">
       <DependentUpon>Position.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeismicExplorationType\AddSeismicExmplorationType.resx">
+      <DependentUpon>AddSeismicExmplorationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeismicExplorationType\EditSeismicExplorationType.resx">
+      <DependentUpon>EditSeismicExplorationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeismicExplorationType\SeismicExplorationType.resx">
+      <DependentUpon>SeismicExplorationType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
