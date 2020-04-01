@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.FormBorderPanel = new System.Windows.Forms.Panel();
-            this.ExitPictureBox = new System.Windows.Forms.Button();
             this.FormNameLabel = new System.Windows.Forms.Label();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
             this.GroupTypeButton = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.EmployeeButton = new System.Windows.Forms.Button();
             this.UserButton = new System.Windows.Forms.Button();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.ExitPictureBox = new System.Windows.Forms.Button();
             this.FormBorderPanel.SuspendLayout();
             this.SideMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -60,20 +60,8 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(1370, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(567, 45);
             this.FormBorderPanel.TabIndex = 0;
-            // 
-            // ExitPictureBox
-            // 
-            this.ExitPictureBox.FlatAppearance.BorderSize = 0;
-            this.ExitPictureBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitPictureBox.Image = global::LandSeismic.Properties.Resources.shutdown;
-            this.ExitPictureBox.Location = new System.Drawing.Point(521, 9);
-            this.ExitPictureBox.Name = "ExitPictureBox";
-            this.ExitPictureBox.Size = new System.Drawing.Size(25, 25);
-            this.ExitPictureBox.TabIndex = 5;
-            this.ExitPictureBox.UseVisualStyleBackColor = true;
-            this.ExitPictureBox.Click += new System.EventHandler(this.ExitPictureBox_Click);
             // 
             // FormNameLabel
             // 
@@ -103,7 +91,7 @@
             this.SideMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideMenuPanel.Location = new System.Drawing.Point(0, 45);
             this.SideMenuPanel.Name = "SideMenuPanel";
-            this.SideMenuPanel.Size = new System.Drawing.Size(140, 727);
+            this.SideMenuPanel.Size = new System.Drawing.Size(140, 390);
             this.SideMenuPanel.TabIndex = 1;
             // 
             // GroupTypeButton
@@ -222,6 +210,7 @@
             this.PositionButton.TabIndex = 7;
             this.PositionButton.Text = "Должности";
             this.PositionButton.UseVisualStyleBackColor = true;
+            this.PositionButton.Click += new System.EventHandler(this.PositionButton_Click);
             // 
             // LocalityStandartButton
             // 
@@ -283,17 +272,29 @@
             this.LogoPictureBox.Image = global::LandSeismic.Properties.Resources.logo;
             this.LogoPictureBox.Location = new System.Drawing.Point(140, 45);
             this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(1230, 727);
+            this.LogoPictureBox.Size = new System.Drawing.Size(427, 390);
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoPictureBox.TabIndex = 2;
             this.LogoPictureBox.TabStop = false;
+            // 
+            // ExitPictureBox
+            // 
+            this.ExitPictureBox.FlatAppearance.BorderSize = 0;
+            this.ExitPictureBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitPictureBox.Image = global::LandSeismic.Properties.Resources.shutdown;
+            this.ExitPictureBox.Location = new System.Drawing.Point(521, 9);
+            this.ExitPictureBox.Name = "ExitPictureBox";
+            this.ExitPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.ExitPictureBox.TabIndex = 5;
+            this.ExitPictureBox.UseVisualStyleBackColor = true;
+            this.ExitPictureBox.Click += new System.EventHandler(this.ExitPictureBox_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 772);
+            this.ClientSize = new System.Drawing.Size(567, 435);
             this.ControlBox = false;
             this.Controls.Add(this.LogoPictureBox);
             this.Controls.Add(this.SideMenuPanel);

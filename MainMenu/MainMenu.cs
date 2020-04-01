@@ -104,5 +104,11 @@ namespace LandSeismic.MainMenu
             streamWriter.WriteLine(Log);
             streamWriter.Close();
         }
+
+        private void PositionButton_Click(object sender, EventArgs e)
+        {
+            Position.Position position = new Position.Position();
+            position.Show();
+        }
     }
 }

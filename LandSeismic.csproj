@@ -74,6 +74,24 @@
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee\EmployeeClass.cs" />
+    <Compile Include="Position\AddPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Position\AddPosition.Designer.cs">
+      <DependentUpon>AddPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Position\EditPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Position\EditPosition.Designer.cs">
+      <DependentUpon>EditPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Position\Position.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Position\Position.Designer.cs">
+      <DependentUpon>Position.cs</DependentUpon>
+    </Compile>
     <Compile Include="Position\PositionClass.cs" />
     <Compile Include="User\AddUser.cs">
       <SubType>Form</SubType>
@@ -119,6 +137,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Position\AddPosition.resx">
+      <DependentUpon>AddPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Position\EditPosition.resx">
+      <DependentUpon>EditPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Position\Position.resx">
+      <DependentUpon>Position.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
