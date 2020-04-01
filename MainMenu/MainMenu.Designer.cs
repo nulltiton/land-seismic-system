@@ -171,6 +171,7 @@
             this.LocalityTypeButton.TabIndex = 11;
             this.LocalityTypeButton.Text = "Тип местности";
             this.LocalityTypeButton.UseVisualStyleBackColor = true;
+            this.LocalityTypeButton.Click += new System.EventHandler(this.LocalityTypeButton_Click);
             // 
             // LocalityButton
             // 

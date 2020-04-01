@@ -17,17 +17,17 @@ namespace LandSeismic.Employee
 
         private void SurnameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsRussianSymbols(sender, e);
+            e.Handled = Validation.ValidationClass.IsRussianSymbols(sender, e);
         }
 
         private void PhoneMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsNumeral(sender, e);
+            e.Handled = Validation.ValidationClass.IsNumeral(sender, e);
         }
 
         private void ContactPhoneMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsNumeral(sender, e);
+            e.Handled = Validation.ValidationClass.IsNumeral(sender, e);
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace LandSeismic.Employee
 
         private void AddressTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsRussianSymbolsOrNumeral(sender, e);
+            e.Handled = Validation.ValidationClass.IsRussianSymbolsOrNumeral(sender, e);
         }
     }
 }

@@ -61,7 +61,7 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(1153, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(1170, 45);
             this.FormBorderPanel.TabIndex = 0;
             // 
             // BackwardsButton
@@ -69,7 +69,7 @@
             this.BackwardsButton.FlatAppearance.BorderSize = 0;
             this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(1107, 10);
+            this.BackwardsButton.Location = new System.Drawing.Point(1125, 10);
             this.BackwardsButton.Name = "BackwardsButton";
             this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
             this.BackwardsButton.TabIndex = 2;
@@ -81,7 +81,7 @@
             this.AddButton.FlatAppearance.BorderSize = 0;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
-            this.AddButton.Location = new System.Drawing.Point(1058, 10);
+            this.AddButton.Location = new System.Drawing.Point(1076, 10);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(25, 25);
             this.AddButton.TabIndex = 1;
@@ -141,7 +141,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.UserGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.UserGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.UserGrid.Size = new System.Drawing.Size(1153, 381);
+            this.UserGrid.Size = new System.Drawing.Size(1170, 381);
             this.UserGrid.TabIndex = 1;
             this.UserGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserGrid_CellContentClick);
             // 
@@ -249,7 +249,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1153, 426);
+            this.ClientSize = new System.Drawing.Size(1170, 426);
             this.ControlBox = false;
             this.Controls.Add(this.UserGrid);
             this.Controls.Add(this.FormBorderPanel);

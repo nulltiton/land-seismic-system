@@ -1,6 +1,6 @@
-﻿namespace LandSeismic.MaterialAndTechnicalResource
+﻿namespace LandSeismic.LocalityType
 {
-    partial class AddMaterialAndTechnicalResource
+    partial class EditLocalityType
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMaterialAndTechnicalResource));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditLocalityType));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
             this.SaveButton = new System.Windows.Forms.Button();
             this.BackwardsButton = new System.Windows.Forms.Button();
@@ -81,19 +81,20 @@
             this.FormNameLabel.AutoSize = true;
             this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
             this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(94, 18);
+            this.FormNameLabel.Size = new System.Drawing.Size(128, 18);
             this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Добавление";
+            this.FormNameLabel.Text = "Редактирование";
             // 
             // NameTextBox
             // 
             this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameTextBox.ForeColor = System.Drawing.Color.Gray;
             this.NameTextBox.Location = new System.Drawing.Point(31, 94);
-            this.NameTextBox.MaxLength = 25;
+            this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(200, 19);
-            this.NameTextBox.TabIndex = 51;
+            this.NameTextBox.TabIndex = 54;
+            this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // NameLabel
             // 
@@ -102,7 +103,7 @@
             this.NameLabel.Location = new System.Drawing.Point(28, 69);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(114, 18);
-            this.NameLabel.TabIndex = 53;
+            this.NameLabel.TabIndex = 56;
             this.NameLabel.Text = "Наименование";
             // 
             // NamePanel
@@ -111,9 +112,9 @@
             this.NamePanel.Location = new System.Drawing.Point(31, 115);
             this.NamePanel.Name = "NamePanel";
             this.NamePanel.Size = new System.Drawing.Size(200, 1);
-            this.NamePanel.TabIndex = 52;
+            this.NamePanel.TabIndex = 55;
             // 
-            // AddMaterialAndTechnicalResource
+            // EditLocalityType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,9 +131,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddMaterialAndTechnicalResource";
+            this.Name = "EditLocalityType";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
+            this.Load += new System.EventHandler(this.EditLocalityType_Load);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);

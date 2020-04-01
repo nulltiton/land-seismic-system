@@ -126,5 +126,12 @@ namespace LandSeismic.MainMenu
                 new MaterialAndTechnicalResource.MaterialAndTechnicalResource();
             materialAndTechnicalResource.Show();
         }
+
+        private void LocalityTypeButton_Click(object sender, EventArgs e)
+        {
+            LocalityType.LocalityType localityType =
+                new LocalityType.LocalityType();
+            localityType.Show();
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace LandSeismic.Position
 
         private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsRussianSymbols(sender, e);
+            e.Handled = Validation.ValidationClass.IsRussianSymbols(sender, e);
         }
 
         private void SaveButton_Click(object sender, EventArgs e)

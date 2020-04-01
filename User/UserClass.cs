@@ -70,7 +70,7 @@ namespace LandSeismic.User
                     DBConnection.DBConnection.sqlCommand.CommandText =
                     "INSERT INTO user " +
                     "VALUES('" + login + "'" +
-                    ", '" + Validation.Validation.PasswordEncryption(password) + "'" +
+                    ", '" + Validation.ValidationClass.PasswordEncryption(password) + "'" +
                     ", '" + surname + "'" +
                     ", '" + firstName + "'" +
                     ", '" + middleName + "'" +
@@ -117,7 +117,7 @@ namespace LandSeismic.User
                     {
                         DBConnection.DBConnection.sqlCommand.CommandText =
                             "UPDATE user " +
-                            "SET password = '" + Validation.Validation.
+                            "SET password = '" + Validation.ValidationClass.
                                 PasswordEncryption(password) + "'" +
                             ", surname = '" + surname + "'" +
                             ", firstName = '" + firstName + "'" +
@@ -144,7 +144,7 @@ namespace LandSeismic.User
                             DBConnection.DBConnection.sqlCommand.CommandText =
                                 "UPDATE user " +
                                 "SET login = '" + login + "'" +
-                                ", password = '" + Validation.Validation.
+                                ", password = '" + Validation.ValidationClass.
                                     PasswordEncryption(password) + "'" +
                                 ", surname = '" + surname + "'" +
                                 ", firstName = '" + firstName + "'" +

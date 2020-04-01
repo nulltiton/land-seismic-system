@@ -90,7 +90,7 @@
             this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameTextBox.ForeColor = System.Drawing.Color.Gray;
             this.NameTextBox.Location = new System.Drawing.Point(31, 94);
-            this.NameTextBox.MaxLength = 40;
+            this.NameTextBox.MaxLength = 25;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(200, 19);
             this.NameTextBox.TabIndex = 54;

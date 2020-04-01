@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeismicExplorationType));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.FormBorderPanel = new System.Windows.Forms.Panel();
-            this.FormNameLabel = new System.Windows.Forms.Label();
-            this.SeismicExplorationTypeGrid = new System.Windows.Forms.DataGridView();
             this.BackwardsButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
+            this.FormNameLabel = new System.Windows.Forms.Label();
+            this.SeismicExplorationTypeGrid = new System.Windows.Forms.DataGridView();
             this.IdSeismicExploration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SeismicExmplorationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -53,17 +53,41 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(370, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(387, 45);
             this.FormBorderPanel.TabIndex = 0;
+            // 
+            // BackwardsButton
+            // 
+            this.BackwardsButton.FlatAppearance.BorderSize = 0;
+            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
+            this.BackwardsButton.Location = new System.Drawing.Point(344, 10);
+            this.BackwardsButton.Name = "BackwardsButton";
+            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
+            this.BackwardsButton.TabIndex = 2;
+            this.BackwardsButton.UseVisualStyleBackColor = true;
+            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
+            // 
+            // AddButton
+            // 
+            this.AddButton.FlatAppearance.BorderSize = 0;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
+            this.AddButton.Location = new System.Drawing.Point(295, 10);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(25, 25);
+            this.AddButton.TabIndex = 1;
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // FormNameLabel
             // 
             this.FormNameLabel.AutoSize = true;
             this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
             this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(77, 18);
+            this.FormNameLabel.Size = new System.Drawing.Size(169, 18);
             this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Название";
+            this.FormNameLabel.Text = "Типы сейсморазведки";
             // 
             // SeismicExplorationTypeGrid
             // 
@@ -93,33 +117,9 @@
             this.SeismicExplorationTypeGrid.ReadOnly = true;
             this.SeismicExplorationTypeGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.SeismicExplorationTypeGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SeismicExplorationTypeGrid.Size = new System.Drawing.Size(370, 383);
+            this.SeismicExplorationTypeGrid.Size = new System.Drawing.Size(387, 383);
             this.SeismicExplorationTypeGrid.TabIndex = 1;
             this.SeismicExplorationTypeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SeismicExplorationTypeGrid_CellContentClick);
-            // 
-            // BackwardsButton
-            // 
-            this.BackwardsButton.FlatAppearance.BorderSize = 0;
-            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(324, 10);
-            this.BackwardsButton.Name = "BackwardsButton";
-            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
-            this.BackwardsButton.TabIndex = 2;
-            this.BackwardsButton.UseVisualStyleBackColor = true;
-            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
-            // 
-            // AddButton
-            // 
-            this.AddButton.FlatAppearance.BorderSize = 0;
-            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
-            this.AddButton.Location = new System.Drawing.Point(275, 10);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(25, 25);
-            this.AddButton.TabIndex = 1;
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // IdSeismicExploration
             // 
@@ -165,7 +165,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(370, 428);
+            this.ClientSize = new System.Drawing.Size(387, 428);
             this.ControlBox = false;
             this.Controls.Add(this.SeismicExplorationTypeGrid);
             this.Controls.Add(this.FormBorderPanel);

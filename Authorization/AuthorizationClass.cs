@@ -22,7 +22,7 @@ namespace LandSeismic.Authorization
                         "FROM user" +
                         ", position " +
                         "WHERE user.login = '" + login + "' " +
-                        "AND user.password = '" + Validation.Validation.
+                        "AND user.password = '" + Validation.ValidationClass.
                             PasswordEncryption(password) + "' " +
                         "AND user.idPosition = position.id";
                     if (DBConnection.DBConnection.sqlCommand.

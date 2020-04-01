@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LandSeismic.Position
+namespace LandSeismic.LocalityType
 {
-    public partial class AddPosition : Form
+    public partial class AddLocalityType : Form
     {
-        public AddPosition()
+        public AddLocalityType()
         {
             InitializeComponent();
         }
@@ -26,9 +19,11 @@ namespace LandSeismic.Position
         {
             if (NameTextBox.Text != String.Empty)
             {
-                if (PositionClass.AddPosition(NameTextBox.Text))
+                if (LocalityTypeClass.AddLocalityType(
+                    NameTextBox.Text))
                 {
-                    PositionClass.GetPositionList();
+                    LocalityTypeClass.
+                        GetLocalityTypeList();
                     Close();
                 }
             }

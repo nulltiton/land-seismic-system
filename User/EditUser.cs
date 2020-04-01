@@ -20,27 +20,27 @@ namespace LandSeismic.User
 
         private void LoginTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
+            e.Handled = Validation.ValidationClass.IsEnglishSybolsOrNumeral(sender, e);
         }
 
         private void PasswordTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
+            e.Handled = Validation.ValidationClass.IsEnglishSybolsOrNumeral(sender, e);
         }
 
         private void SurnameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsRussianSymbolsOrNumeral(sender, e);
+            e.Handled = Validation.ValidationClass.IsRussianSymbolsOrNumeral(sender, e);
         }
 
         private void PhoneMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsNumeral(sender, e);
+            e.Handled = Validation.ValidationClass.IsNumeral(sender, e);
         }
 
         private void AddressTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsRussianSymbolsOrNumeral(sender, e);
+            e.Handled = Validation.ValidationClass.IsRussianSymbolsOrNumeral(sender, e);
         }
 
         private void EditUser_Load(object sender, EventArgs e)

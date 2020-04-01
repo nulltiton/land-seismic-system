@@ -43,12 +43,12 @@ namespace LandSeismic.Authorization
 
         private void LoginTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
+            e.Handled = Validation.ValidationClass.IsEnglishSybolsOrNumeral(sender, e);
         }
 
         private void PasswordTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Validation.Validation.IsEnglishSybolsOrNumeral(sender, e);
+            e.Handled = Validation.ValidationClass.IsEnglishSybolsOrNumeral(sender, e);
         }
     }
 }

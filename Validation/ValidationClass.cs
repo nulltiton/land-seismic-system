@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace LandSeismic.Validation
 {
-    class Validation
+    class ValidationClass
     {
         static public string PasswordEncryption(string password)
         {
@@ -39,7 +37,7 @@ namespace LandSeismic.Validation
         static public Boolean IsRussianSymbols(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 'А' || e.KeyChar > 'я') && e.KeyChar != 8 && 
-                e.KeyChar != 32)
+                e.KeyChar != 32 && e.KeyChar != '-')
                 return true;
             else
                 return false;

@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LandSeismic.Position
+namespace LandSeismic.LocalityType
 {
-    public partial class AddPosition : Form
+    public partial class EditLocalityType : Form
     {
-        public AddPosition()
+        public EditLocalityType()
         {
             InitializeComponent();
         }
@@ -26,9 +19,11 @@ namespace LandSeismic.Position
         {
             if (NameTextBox.Text != String.Empty)
             {
-                if (PositionClass.AddPosition(NameTextBox.Text))
+                if (LocalityTypeClass.EditLocalityType(
+                    LocalityType.LocalityTypeId, NameTextBox.Text))
                 {
-                    PositionClass.GetPositionList();
+                    LocalityTypeClass.
+                        GetLocalityTypeList();
                     Close();
                 }
             }
@@ -42,6 +37,11 @@ namespace LandSeismic.Position
         private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.ValidationClass.IsRussianSymbols(sender, e);
+        }
+
+        private void EditLocalityType_Load(object sender, EventArgs e)
+        {
+            NameTextBox.Text = LocalityType.LocalityTypeName;
         }
     }
 }

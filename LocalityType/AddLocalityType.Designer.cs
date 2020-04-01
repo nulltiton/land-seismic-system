@@ -1,6 +1,6 @@
-﻿namespace LandSeismic.MaterialAndTechnicalResource
+﻿namespace LandSeismic.LocalityType
 {
-    partial class AddMaterialAndTechnicalResource
+    partial class AddLocalityType
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMaterialAndTechnicalResource));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddLocalityType));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
+            this.FormNameLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.BackwardsButton = new System.Windows.Forms.Button();
-            this.FormNameLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.NamePanel = new System.Windows.Forms.Panel();
@@ -51,6 +51,15 @@
             this.FormBorderPanel.Name = "FormBorderPanel";
             this.FormBorderPanel.Size = new System.Drawing.Size(263, 45);
             this.FormBorderPanel.TabIndex = 0;
+            // 
+            // FormNameLabel
+            // 
+            this.FormNameLabel.AutoSize = true;
+            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
+            this.FormNameLabel.Name = "FormNameLabel";
+            this.FormNameLabel.Size = new System.Drawing.Size(94, 18);
+            this.FormNameLabel.TabIndex = 0;
+            this.FormNameLabel.Text = "Добавление";
             // 
             // SaveButton
             // 
@@ -76,24 +85,16 @@
             this.BackwardsButton.UseVisualStyleBackColor = true;
             this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
             // 
-            // FormNameLabel
-            // 
-            this.FormNameLabel.AutoSize = true;
-            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
-            this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(94, 18);
-            this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Добавление";
-            // 
             // NameTextBox
             // 
             this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameTextBox.ForeColor = System.Drawing.Color.Gray;
             this.NameTextBox.Location = new System.Drawing.Point(31, 94);
-            this.NameTextBox.MaxLength = 25;
+            this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(200, 19);
             this.NameTextBox.TabIndex = 51;
+            this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // NameLabel
             // 
@@ -113,7 +114,7 @@
             this.NamePanel.Size = new System.Drawing.Size(200, 1);
             this.NamePanel.TabIndex = 52;
             // 
-            // AddMaterialAndTechnicalResource
+            // AddLocalityType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,7 +131,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddMaterialAndTechnicalResource";
+            this.Name = "AddLocalityType";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.FormBorderPanel.ResumeLayout(false);

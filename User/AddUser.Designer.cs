@@ -156,7 +156,7 @@
             this.LoginTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LoginTextBox.ForeColor = System.Drawing.Color.Gray;
             this.LoginTextBox.Location = new System.Drawing.Point(31, 94);
-            this.LoginTextBox.MaxLength = 20;
+            this.LoginTextBox.MaxLength = 10;
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.Size = new System.Drawing.Size(200, 19);
             this.LoginTextBox.TabIndex = 1;
@@ -316,7 +316,7 @@
             this.AddressTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AddressTextBox.ForeColor = System.Drawing.Color.Gray;
             this.AddressTextBox.Location = new System.Drawing.Point(31, 492);
-            this.AddressTextBox.MaxLength = 150;
+            this.AddressTextBox.MaxLength = 40;
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(200, 19);
             this.AddressTextBox.TabIndex = 7;
