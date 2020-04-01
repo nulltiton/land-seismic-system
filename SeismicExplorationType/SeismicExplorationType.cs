@@ -51,7 +51,7 @@ namespace LandSeismic.SeismicExplorationType
                     "Подтверждение удаления",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question))
-                    if (SeismicExplorationTypeClass.DropSeismicExploration(
+                    if (SeismicExplorationTypeClass.DropSeismicExplorationType(
                         SeismicExplorationTypeGrid.CurrentRow.Cells[2].Value.
                         ToString()))
                         SeismicExplorationTypeClass.

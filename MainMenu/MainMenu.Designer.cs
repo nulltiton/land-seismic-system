@@ -157,6 +157,7 @@
             this.MaterialAndTechnicalResourceButton.TabIndex = 12;
             this.MaterialAndTechnicalResourceButton.Text = "Материально- технические ресурсы";
             this.MaterialAndTechnicalResourceButton.UseVisualStyleBackColor = true;
+            this.MaterialAndTechnicalResourceButton.Click += new System.EventHandler(this.MaterialAndTechnicalResourceButton_Click);
             // 
             // LocalityTypeButton
             // 

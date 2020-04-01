@@ -118,5 +118,13 @@ namespace LandSeismic.MainMenu
                 SeismicExplorationType();
             seismicExplorationType.Show();
         }
+
+        private void MaterialAndTechnicalResourceButton_Click(object sender, EventArgs e)
+        {
+            MaterialAndTechnicalResource.MaterialAndTechnicalResource
+                materialAndTechnicalResource = 
+                new MaterialAndTechnicalResource.MaterialAndTechnicalResource();
+            materialAndTechnicalResource.Show();
+        }
     }
 }

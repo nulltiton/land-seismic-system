@@ -2,31 +2,32 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace LandSeismic.SeismicExplorationType
+namespace LandSeismic.MaterialAndTechnicalResource
 {
-    class SeismicExplorationTypeClass
+    class MaterialAndTechnicalResourceClass
     {
-        static public DataTable DTSeismicExplorationType = new DataTable();
+        static public DataTable DTMaterialAndTechnicalResource = 
+            new DataTable();
 
-        static public void GetSeismicExplorationTypeList()
+        static public void GetMaterialAndTechnicalResourceList()
         {
             DBConnection.DBConnection.sqlDataAdapter = new MySqlDataAdapter(
                 DBConnection.DBConnection.sqlCommand);
             DBConnection.DBConnection.sqlCommand.CommandText =
                 "SELECT * " +
-                "FROM seismicExplorationType " +
+                "FROM MaterialAndTechnicalResource " +
                 "ORDER BY name";
-            DTSeismicExplorationType.Clear();
+            DTMaterialAndTechnicalResource.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(
-                DTSeismicExplorationType);
+                DTMaterialAndTechnicalResource);
         }
 
-        static public Boolean AddSeismicExplorationType(String name)
+        static public Boolean AddMaterialAndTechnicalResource(String name)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "INSERT INTO seismicExplorationType " +
+                    "INSERT INTO MaterialAndTechnicalResource " +
                     "VALUES(NULL" +
                     ", '" + name + "')";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
@@ -37,7 +38,8 @@ namespace LandSeismic.SeismicExplorationType
             catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Ошибка при добавлении типа сейсморазведки. " + ex,
+                    "Ошибка при добавлении материально-тезнического ресурса. "
+                    + ex,
                     "Ошибка добавления",
                     System.Windows.Forms.MessageBoxButtons.OK,
                     System.Windows.Forms.MessageBoxIcon.Error);
@@ -45,12 +47,12 @@ namespace LandSeismic.SeismicExplorationType
             }
         }
 
-        static public Boolean EditSeismicExplorationType(String id, String name)
+        static public Boolean EditMaterialAndTechnicalResource(String id, String name)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "UPDATE seismicExplorationType " +
+                    "UPDATE MaterialAndTechnicalResource " +
                     "SET name = '" + name + "' " +
                     "WHERE id = '" + id + "'";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
@@ -61,7 +63,8 @@ namespace LandSeismic.SeismicExplorationType
             catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(
-                  "Ошибка при изменении типа сейсморазведки. " + ex,
+                  "Ошибка при изменении материально-технического ресурса. "
+                  + ex,
                   "Ошибка изменения",
                   System.Windows.Forms.MessageBoxButtons.OK,
                   System.Windows.Forms.MessageBoxIcon.Error);
@@ -69,12 +72,12 @@ namespace LandSeismic.SeismicExplorationType
             }
         }
 
-        static public Boolean DropSeismicExplorationType(String id)
+        static public Boolean DropMaterialAndTechnicalResource(String id)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "DELETE FROM seismicExplorationType " +
+                    "DELETE FROM MaterialAndTechnicalResource " +
                     "WHERE id = '" + id + "'";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
                     return true;
@@ -84,7 +87,8 @@ namespace LandSeismic.SeismicExplorationType
             catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(
-                   "Ошибка при удалении типа сейсморазведки. " + ex,
+                   "Ошибка при удалении материально-технического ресурса. "
+                   + ex,
                    "Ошибка удаления",
                    System.Windows.Forms.MessageBoxButtons.OK,
                    System.Windows.Forms.MessageBoxIcon.Error);

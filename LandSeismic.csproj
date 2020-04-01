@@ -74,6 +74,25 @@
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee\EmployeeClass.cs" />
+    <Compile Include="MaterialAndTechnicalResource\AddMaterialAndTechnicalResource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialAndTechnicalResource\AddMaterialAndTechnicalResource.Designer.cs">
+      <DependentUpon>AddMaterialAndTechnicalResource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialAndTechnicalResource\EditMaterialAndTechnicalResource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialAndTechnicalResource\EditMaterialAndTechnicalResource.Designer.cs">
+      <DependentUpon>EditMaterialAndTechnicalResource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialAndTechnicalResource\MaterialAndTechnicalResource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialAndTechnicalResource\MaterialAndTechnicalResource.Designer.cs">
+      <DependentUpon>MaterialAndTechnicalResource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialAndTechnicalResource\MaterialAndTechnicalResourceClass.cs" />
     <Compile Include="Position\AddPosition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +175,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialAndTechnicalResource\AddMaterialAndTechnicalResource.resx">
+      <DependentUpon>AddMaterialAndTechnicalResource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialAndTechnicalResource\EditMaterialAndTechnicalResource.resx">
+      <DependentUpon>EditMaterialAndTechnicalResource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialAndTechnicalResource\MaterialAndTechnicalResource.resx">
+      <DependentUpon>MaterialAndTechnicalResource.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Position\AddPosition.resx">
       <DependentUpon>AddPosition.cs</DependentUpon>
