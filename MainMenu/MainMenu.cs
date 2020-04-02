@@ -16,7 +16,7 @@ namespace LandSeismic.MainMenu
 
         private void UserButton_Click(object sender, EventArgs e)
         {
-            User.User user = new User.User();
+            var user = new User.User();
             user.Show();
         }
 
@@ -27,7 +27,7 @@ namespace LandSeismic.MainMenu
 
         private void EmployeeButton_Click(object sender, EventArgs e)
         {
-            Employee.Employee employee = new Employee.Employee();
+            var employee = new Employee.Employee();
             employee.Show();
         }
 
@@ -97,9 +97,9 @@ namespace LandSeismic.MainMenu
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Log += ", время выхода: " + DateTime.Now.ToShortTimeString();
-            FileStream fileStream = new FileStream("Log.txt", FileMode.Append,
+            var fileStream = new FileStream("Log.txt", FileMode.Append,
                 FileAccess.Write);
-            StreamWriter streamWriter = new StreamWriter(fileStream, Encoding.
+            var streamWriter = new StreamWriter(fileStream, Encoding.
                 UTF8);
             streamWriter.WriteLine(Log);
             streamWriter.Close();
@@ -107,31 +107,34 @@ namespace LandSeismic.MainMenu
 
         private void PositionButton_Click(object sender, EventArgs e)
         {
-            Position.Position position = new Position.Position();
+            var position = new Position.Position();
             position.Show();
         }
 
         private void SeismicExplorationTypeButton_Click(object sender, EventArgs e)
         {
-            SeismicExplorationType.SeismicExplorationType
-                seismicExplorationType = new SeismicExplorationType.
+            var seismicExplorationType = new SeismicExplorationType.
                 SeismicExplorationType();
             seismicExplorationType.Show();
         }
 
         private void MaterialAndTechnicalResourceButton_Click(object sender, EventArgs e)
         {
-            MaterialAndTechnicalResource.MaterialAndTechnicalResource
-                materialAndTechnicalResource = 
+            var materialAndTechnicalResource = 
                 new MaterialAndTechnicalResource.MaterialAndTechnicalResource();
             materialAndTechnicalResource.Show();
         }
 
         private void LocalityTypeButton_Click(object sender, EventArgs e)
         {
-            LocalityType.LocalityType localityType =
-                new LocalityType.LocalityType();
+            var localityType = new LocalityType.LocalityType();
             localityType.Show();
+        }
+
+        private void GroupTypeButton_Click(object sender, EventArgs e)
+        {
+            var groupType = new GroupType.GroupType();
+            groupType.Show();
         }
     }
 }

@@ -74,6 +74,25 @@
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee\EmployeeClass.cs" />
+    <Compile Include="GroupType\AddGroupType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupType\AddGroupType.Designer.cs">
+      <DependentUpon>AddGroupType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupType\EditGroupType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupType\EditGroupType.Designer.cs">
+      <DependentUpon>EditGroupType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupType\GroupType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupType\GroupType.Designer.cs">
+      <DependentUpon>GroupType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupType\GroupTypeClass.cs" />
     <Compile Include="LocalityType\AddLocalityType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +214,15 @@
     <EmbeddedResource Include="Employee\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GroupType\AddGroupType.resx">
+      <DependentUpon>AddGroupType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupType\EditGroupType.resx">
+      <DependentUpon>EditGroupType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupType\GroupType.resx">
+      <DependentUpon>GroupType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LocalityType\AddLocalityType.resx">
       <DependentUpon>AddLocalityType.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,5 +304,6 @@
   <ItemGroup>
     <None Include="Resources\plus.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

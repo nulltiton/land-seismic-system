@@ -28,7 +28,7 @@ namespace LandSeismic.MaterialAndTechnicalResource
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            AddMaterialAndTechnicalResource materialAndTechnicalResource =
+            var materialAndTechnicalResource =
                 new AddMaterialAndTechnicalResource();
             materialAndTechnicalResource.Show();
         }
@@ -43,8 +43,7 @@ namespace LandSeismic.MaterialAndTechnicalResource
                 MaterialAndTechnicalResourceName =
                     MaterialAndTechnicalResourceGrid.CurrentRow.Cells[3].Value.
                     ToString();
-                EditMaterialAndTechnicalResource
-                    editMaterialAndTechnicalResource =
+                var editMaterialAndTechnicalResource =
                     new EditMaterialAndTechnicalResource();
                 editMaterialAndTechnicalResource.Show();
             }

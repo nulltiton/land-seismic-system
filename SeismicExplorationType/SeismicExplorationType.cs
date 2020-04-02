@@ -27,7 +27,7 @@ namespace LandSeismic.SeismicExplorationType
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            AddSeismicExmplorationType addSeismicExmplorationType =
+            var addSeismicExmplorationType =
                 new AddSeismicExmplorationType();
             addSeismicExmplorationType.Show();
         }
@@ -40,7 +40,7 @@ namespace LandSeismic.SeismicExplorationType
                     CurrentRow.Cells[2].Value.ToString();
                 SeismicExplorationTypeName = SeismicExplorationTypeGrid.
                     CurrentRow.Cells[3].Value.ToString();
-                EditSeismicExplorationType editSeismicExplorationType =
+                var editSeismicExplorationType =
                     new EditSeismicExplorationType();
                 editSeismicExplorationType.Show();
 

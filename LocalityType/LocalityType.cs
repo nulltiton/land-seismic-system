@@ -26,7 +26,7 @@ namespace LandSeismic.LocalityType
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            AddLocalityType addLocalityType = new AddLocalityType();
+            var addLocalityType = new AddLocalityType();
             addLocalityType.Show();
         }
 
@@ -38,7 +38,7 @@ namespace LandSeismic.LocalityType
                     ToString();
                 LocalityTypeName = LocalityTypeGrid.CurrentRow.Cells[3].Value.
                     ToString();
-                EditLocalityType editLocalityType = new EditLocalityType();
+                var editLocalityType = new EditLocalityType();
                 editLocalityType.Show();
             }
             else if (e.ColumnIndex == 1)

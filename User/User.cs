@@ -31,7 +31,7 @@ namespace LandSeismic.User
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            AddUser addUser = new AddUser();
+            var addUser = new AddUser();
             addUser.Show();
         }
 
@@ -53,7 +53,7 @@ namespace LandSeismic.User
                 Phone = UserGrid.CurrentRow.Cells[7].Value.ToString();
                 Address = UserGrid.CurrentRow.Cells[8].Value.ToString();
                 Position = UserGrid.CurrentRow.Cells[9].Value.ToString();
-                EditUser editUser = new EditUser();
+                var editUser = new EditUser();
                 editUser.Show();
             }
             else if (e.ColumnIndex == 1)

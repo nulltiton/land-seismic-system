@@ -26,7 +26,7 @@ namespace LandSeismic.Position
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            AddPosition addPosition = new AddPosition();
+            var addPosition = new AddPosition();
             addPosition.Show();
         }
 
@@ -37,7 +37,7 @@ namespace LandSeismic.Position
                 PositionId = PositionGrid.CurrentRow.Cells[2].Value.ToString();
                 PositionName = PositionGrid.CurrentRow.Cells[3].Value.
                     ToString();
-                EditPosition editPosition = new EditPosition();
+                var editPosition = new EditPosition();
                 editPosition.Show();
             }
             else if (e.ColumnIndex == 1)

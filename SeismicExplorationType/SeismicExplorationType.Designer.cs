@@ -85,9 +85,9 @@
             this.FormNameLabel.AutoSize = true;
             this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
             this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(169, 18);
+            this.FormNameLabel.Size = new System.Drawing.Size(157, 18);
             this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Типы сейсморазведки";
+            this.FormNameLabel.Text = "Тип сейсморазведки";
             // 
             // SeismicExplorationTypeGrid
             // 

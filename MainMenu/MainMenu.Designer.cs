@@ -118,6 +118,7 @@
             this.GroupTypeButton.TabIndex = 15;
             this.GroupTypeButton.Text = "Тип группы";
             this.GroupTypeButton.UseVisualStyleBackColor = true;
+            this.GroupTypeButton.Click += new System.EventHandler(this.GroupTypeButton_Click);
             // 
             // GroupButton
             // 

@@ -30,7 +30,7 @@ namespace LandSeismic.Authorization
                 if (AuthorizationClass.LogIn(LoginTextBox.Text, PasswordTextBox.
                     Text) != String.Empty)
                 {
-                    MainMenu.MainMenu mainMenu = new MainMenu.MainMenu();
+                    var mainMenu = new MainMenu.MainMenu();
                     mainMenu.Show();
                 }
             }

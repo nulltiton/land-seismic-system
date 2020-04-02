@@ -31,7 +31,7 @@ namespace LandSeismic.Employee
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            AddEmployee addEmployee = new AddEmployee();
+            var addEmployee = new AddEmployee();
             addEmployee.Show();
         }
 
@@ -53,7 +53,7 @@ namespace LandSeismic.Employee
                 Address = EmployeeGrid.CurrentRow.Cells[7].Value.ToString();
                 ContactPhone = EmployeeGrid.CurrentRow.Cells[8].Value.ToString();
                 Position = EmployeeGrid.CurrentRow.Cells[9].Value.ToString();
-                EditEmployee editEmployee = new EditEmployee();
+                var editEmployee = new EditEmployee();
                 editEmployee.Show();
             }
             else if (e.ColumnIndex == 1)
