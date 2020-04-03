@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.FormBorderPanel = new System.Windows.Forms.Panel();
-            this.ExitPictureBox = new System.Windows.Forms.Button();
             this.FormNameLabel = new System.Windows.Forms.Label();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
             this.GroupTypeButton = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.EmployeeButton = new System.Windows.Forms.Button();
             this.UserButton = new System.Windows.Forms.Button();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.ExitPictureBox = new System.Windows.Forms.Button();
             this.FormBorderPanel.SuspendLayout();
             this.SideMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -62,18 +62,6 @@
             this.FormBorderPanel.Name = "FormBorderPanel";
             this.FormBorderPanel.Size = new System.Drawing.Size(567, 45);
             this.FormBorderPanel.TabIndex = 0;
-            // 
-            // ExitPictureBox
-            // 
-            this.ExitPictureBox.FlatAppearance.BorderSize = 0;
-            this.ExitPictureBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitPictureBox.Image = global::LandSeismic.Properties.Resources.shutdown;
-            this.ExitPictureBox.Location = new System.Drawing.Point(521, 9);
-            this.ExitPictureBox.Name = "ExitPictureBox";
-            this.ExitPictureBox.Size = new System.Drawing.Size(25, 25);
-            this.ExitPictureBox.TabIndex = 5;
-            this.ExitPictureBox.UseVisualStyleBackColor = true;
-            this.ExitPictureBox.Click += new System.EventHandler(this.ExitPictureBox_Click);
             // 
             // FormNameLabel
             // 
@@ -253,6 +241,7 @@
             this.PositionStandartButton.TabIndex = 4;
             this.PositionStandartButton.Text = "Нормативы должности";
             this.PositionStandartButton.UseVisualStyleBackColor = true;
+            this.PositionStandartButton.Click += new System.EventHandler(this.PositionStandartButton_Click);
             // 
             // EmployeeButton
             // 
@@ -292,6 +281,18 @@
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoPictureBox.TabIndex = 2;
             this.LogoPictureBox.TabStop = false;
+            // 
+            // ExitPictureBox
+            // 
+            this.ExitPictureBox.FlatAppearance.BorderSize = 0;
+            this.ExitPictureBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitPictureBox.Image = global::LandSeismic.Properties.Resources.shutdown;
+            this.ExitPictureBox.Location = new System.Drawing.Point(521, 9);
+            this.ExitPictureBox.Name = "ExitPictureBox";
+            this.ExitPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.ExitPictureBox.TabIndex = 5;
+            this.ExitPictureBox.UseVisualStyleBackColor = true;
+            this.ExitPictureBox.Click += new System.EventHandler(this.ExitPictureBox_Click);
             // 
             // MainMenu
             // 

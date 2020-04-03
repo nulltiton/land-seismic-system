@@ -136,5 +136,11 @@ namespace LandSeismic.MainMenu
             var groupType = new GroupType.GroupType();
             groupType.Show();
         }
+
+        private void PositionStandartButton_Click(object sender, EventArgs e)
+        {
+            var positionStandart = new PositionStandart.PositionStandart();
+            positionStandart.Show();
+        }
     }
 }
