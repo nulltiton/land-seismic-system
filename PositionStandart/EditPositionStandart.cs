@@ -38,21 +38,21 @@ namespace LandSeismic.PositionStandart
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            Boolean modified = false;
-            Boolean minorChange = false;
+            Boolean modified;
+            Boolean minorChange;
             if (PositionComboBox.Text != String.Empty &&
                 ResourceComboBox.Text != String.Empty &&
                 AmountNumericUpDown.Value != null)
             {
-                if (PositionComboBox.Text !=
-                    PositionStandart.PrimordialPositionName && 
+                modified = PositionComboBox.Text !=
+                    PositionStandart.PrimordialPositionName || 
                     ResourceComboBox.Text != 
-                    PositionStandart.PrimordialResourceName)
-                    modified = true;
+                    PositionStandart.PrimordialResourceName ?
+                    true : false;
 
-                if (AmountNumericUpDown.Value.ToString() !=
-                    PositionStandart.PrimordialAmount)
-                    minorChange = true;
+                minorChange = AmountNumericUpDown.Value.ToString() !=
+                    PositionStandart.PrimordialAmount ?
+                    true : false;
 
 
                 if (PositionStandartClass.EditPositionStandart(

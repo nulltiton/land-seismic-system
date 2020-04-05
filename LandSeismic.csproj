@@ -93,6 +93,25 @@
       <DependentUpon>GroupType.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupType\GroupTypeClass.cs" />
+    <Compile Include="LocalityStandart\AddLocalityStandart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalityStandart\AddLocalityStandart.Designer.cs">
+      <DependentUpon>AddLocalityStandart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalityStandart\EditLocalityStandart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalityStandart\EditLocalityStandart.Designer.cs">
+      <DependentUpon>EditLocalityStandart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalityStandart\LocalityStandart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalityStandart\LocalityStandart.Designer.cs">
+      <DependentUpon>LocalityStandart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalityStandart\LocalityStandartClass.cs" />
     <Compile Include="LocalityType\AddLocalityType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +260,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GroupType\GroupType.resx">
       <DependentUpon>GroupType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalityStandart\AddLocalityStandart.resx">
+      <DependentUpon>AddLocalityStandart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalityStandart\EditLocalityStandart.resx">
+      <DependentUpon>EditLocalityStandart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalityStandart\LocalityStandart.resx">
+      <DependentUpon>LocalityStandart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalityType\AddLocalityType.resx">
       <DependentUpon>AddLocalityType.cs</DependentUpon>
