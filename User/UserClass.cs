@@ -7,6 +7,8 @@ namespace LandSeismic.User
     class UserClass
     {
         static public DataTable DTUser = new DataTable();
+        static public DataTable DTLeadGeologist = new DataTable();
+        static public DataTable DTSquadLeader = new DataTable();
 
         static public void GetUserList()
         {
@@ -30,26 +32,54 @@ namespace LandSeismic.User
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTUser);
         }
 
+        static public void GetLeadGeologistList()
+        {
+            DBConnection.DBConnection.sqlDataAdapter =
+                new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT user.login" +
+                ", CONCAT_WS(' ', user.surname" +
+                ", user.firstname" +
+                ", user.middlename) " +
+                "AS name " +
+                "FROM user" +
+                ", position " +
+                "WHERE user.idPosition = position.id " +
+                "AND user.isDeleted = 0 " +
+                "AND position.name = 'Ведущий геолог'";
+            DTLeadGeologist.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(DTLeadGeologist);
+        }
+
+        static public void GetSquadLeaderList()
+        {
+            DBConnection.DBConnection.sqlDataAdapter =
+                new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT user.login" +
+                ", CONCAT_WS(' ', user.surname" +
+                ", user.firstname" +
+                ", user.middlename) " +
+                "AS name " +
+                "FROM user" +
+                ", position " +
+                "WHERE user.idPosition = position.id " +
+                "AND user.isDeleted = 0 " +
+                "AND position.name = 'Начальник сейсмотряда'";
+            DTSquadLeader.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(DTSquadLeader);
+        }
+
         static public String GetUserFullName(String login)
         {
             String fullName;
             DBConnection.DBConnection.sqlCommand.CommandText =
-                "SELECT surname " +
+                "SELECT CONCAT_WS(' ', surname " +
+                ", firstName" +
+                ", middleName) " +
                 "FROM user " +
                 "WHERE login = '" + login + "'";
             fullName = DBConnection.DBConnection.sqlCommand.ExecuteScalar().
-                ToString();
-            DBConnection.DBConnection.sqlCommand.CommandText =
-                "SELECT firstName " +
-                "FROM user " +
-                "WHERE login = '" + login + "'";
-            fullName += " " + DBConnection.DBConnection.sqlCommand.ExecuteScalar().
-                ToString();
-            DBConnection.DBConnection.sqlCommand.CommandText =
-                "SELECT middleName " +
-                "FROM user " +
-                "WHERE login = '" + login + "'";
-            fullName += " " + DBConnection.DBConnection.sqlCommand.ExecuteScalar().
                 ToString();
             return fullName;
         }

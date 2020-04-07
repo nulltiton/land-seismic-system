@@ -153,9 +153,9 @@
             this.PositionLabel.ForeColor = System.Drawing.Color.Gray;
             this.PositionLabel.Location = new System.Drawing.Point(28, 69);
             this.PositionLabel.Name = "PositionLabel";
-            this.PositionLabel.Size = new System.Drawing.Size(88, 18);
+            this.PositionLabel.Size = new System.Drawing.Size(86, 18);
             this.PositionLabel.TabIndex = 61;
-            this.PositionLabel.Text = "Должность";
+            this.PositionLabel.Text = "Местность";
             // 
             // AddLocalityStandart
             // 

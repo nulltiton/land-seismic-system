@@ -186,6 +186,7 @@
             this.LocalityButton.TabIndex = 10;
             this.LocalityButton.Text = "Местность";
             this.LocalityButton.UseVisualStyleBackColor = true;
+            this.LocalityButton.Click += new System.EventHandler(this.LocalityButton_Click);
             // 
             // InventoryListButton
             // 

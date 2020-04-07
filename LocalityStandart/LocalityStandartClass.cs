@@ -104,7 +104,7 @@ namespace LandSeismic.LocalityStandart
                     {
                         System.Windows.Forms.MessageBox.Show(
                             "Данный норматив уже существует",
-                            "Ошибка добавления",
+                            "Ошибка изменения",
                             System.Windows.Forms.MessageBoxButtons.OK,
                             System.Windows.Forms.MessageBoxIcon.Error);
                         return false;

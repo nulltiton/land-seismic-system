@@ -148,5 +148,11 @@ namespace LandSeismic.MainMenu
             var localityStandart = new LocalityStandart.LocalityStandart();
             localityStandart.Show();
         }
+
+        private void LocalityButton_Click(object sender, EventArgs e)
+        {
+            var locality = new Locality.Locality();
+            locality.Show();
+        }
     }
 }
