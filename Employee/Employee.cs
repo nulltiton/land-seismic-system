@@ -37,6 +37,11 @@ namespace LandSeismic.Employee
 
         private void Employee_Load(object sender, EventArgs e)
         {
+            LandSeismic.Position.PositionClass.GetPositionListForEmployee();
+            FilterByPositionComboBox.DataSource = LandSeismic.Position.
+                PositionClass.DTPosition;
+            FilterByPositionComboBox.DisplayMember = "name";
+            FilterByPositionComboBox.ValueMember = "id";
             EmployeeClass.GetEmployeeList();
             EmployeeGrid.DataSource = EmployeeClass.DTEmployee;
         }
@@ -66,6 +71,19 @@ namespace LandSeismic.Employee
                         CurrentRow.Cells[2].Value.ToString()))
                         EmployeeClass.GetEmployeeList();
             }
+        }
+
+        private void FilterByPositionComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            EmployeeClass.FilterByPosition(FilterByPositionComboBox.
+                SelectedValue.ToString());
+            EmployeeGrid.DataSource = EmployeeClass.DTFilteredEmployee;
+        }
+
+        private void FilterCancellationButton_Click(object sender, EventArgs e)
+        {
+            EmployeeClass.GetEmployeeList();
+            EmployeeGrid.DataSource = EmployeeClass.DTEmployee;
         }
     }
 }

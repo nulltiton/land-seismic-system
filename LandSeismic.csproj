@@ -226,6 +226,39 @@
       <DependentUpon>SeismicExplorationType.cs</DependentUpon>
     </Compile>
     <Compile Include="SeismicExplorationType\SeismicExplorationTypeClass.cs" />
+    <Compile Include="Squad\AddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Squad\AddGroup.Designer.cs">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Squad\AddSquad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Squad\AddSquad.Designer.cs">
+      <DependentUpon>AddSquad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Squad\EditGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Squad\EditGroup.Designer.cs">
+      <DependentUpon>EditGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Squad\EditSquad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Squad\EditSquad.Designer.cs">
+      <DependentUpon>EditSquad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Squad\GroupClass.cs" />
+    <Compile Include="Squad\Squad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Squad\Squad.Designer.cs">
+      <DependentUpon>Squad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Squad\SquadClass.cs" />
+    <Compile Include="Squad\SquadMemberClass.cs" />
     <Compile Include="User\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +375,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SeismicExplorationType\SeismicExplorationType.resx">
       <DependentUpon>SeismicExplorationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Squad\AddGroup.resx">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Squad\AddSquad.resx">
+      <DependentUpon>AddSquad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Squad\EditGroup.resx">
+      <DependentUpon>EditGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Squad\EditSquad.resx">
+      <DependentUpon>EditSquad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Squad\Squad.resx">
+      <DependentUpon>Squad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>

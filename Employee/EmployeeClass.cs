@@ -7,6 +7,7 @@ namespace LandSeismic.Employee
     class EmployeeClass
     {
         static public DataTable DTEmployee = new DataTable();
+        static public DataTable DTFilteredEmployee = new DataTable();
 
         static public void GetEmployeeList()
         {
@@ -28,6 +29,29 @@ namespace LandSeismic.Employee
                 "ORDER BY employee.surname";
             DTEmployee.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTEmployee);
+        }
+
+        static public void FilterByPosition(String positionId)
+        {
+            DBConnection.DBConnection.sqlDataAdapter =
+                new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT employee.id" +
+                ", employee.surname" +
+                ", employee.firstname" +
+                ", employee.middlename" +
+                ", employee.phone" +
+                ", employee.address" +
+                ", employee.contactPhone" +
+                ", position.name " +
+                "FROM employee" +
+                ", position " +
+                "WHERE employee.idPosition = position.id " +
+                "AND employee.isDeleted = 0 " +
+                "AND position.id = '" + positionId + "'" +
+                "ORDER BY employee.surname";
+            DTFilteredEmployee.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(DTFilteredEmployee);
         }
 
         static public Boolean AddEmployee(String surname, String firstName,

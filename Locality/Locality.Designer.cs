@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Locality));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Locality));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
+            this.BackwardsButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             this.FormNameLabel = new System.Windows.Forms.Label();
             this.LocalityGrid = new System.Windows.Forms.DataGridView();
             this.IdLocality = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +53,6 @@
             this.UsabilityLocality = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.BackwardsButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
             this.FormBorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LocalityGrid)).BeginInit();
             this.SuspendLayout();
@@ -67,8 +67,32 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(1346, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(1370, 45);
             this.FormBorderPanel.TabIndex = 0;
+            // 
+            // BackwardsButton
+            // 
+            this.BackwardsButton.FlatAppearance.BorderSize = 0;
+            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
+            this.BackwardsButton.Location = new System.Drawing.Point(1324, 10);
+            this.BackwardsButton.Name = "BackwardsButton";
+            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
+            this.BackwardsButton.TabIndex = 2;
+            this.BackwardsButton.UseVisualStyleBackColor = true;
+            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
+            // 
+            // AddButton
+            // 
+            this.AddButton.FlatAppearance.BorderSize = 0;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
+            this.AddButton.Location = new System.Drawing.Point(1275, 10);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(25, 25);
+            this.AddButton.TabIndex = 1;
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // FormNameLabel
             // 
@@ -120,17 +144,18 @@
             this.LocalityGrid.ReadOnly = true;
             this.LocalityGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.LocalityGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.LocalityGrid.Size = new System.Drawing.Size(1346, 381);
+            this.LocalityGrid.Size = new System.Drawing.Size(1370, 381);
             this.LocalityGrid.TabIndex = 1;
             this.LocalityGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LocalityGrid_CellContentClick);
             // 
             // IdLocality
             // 
+            this.IdLocality.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.IdLocality.DataPropertyName = "id";
-            this.IdLocality.HeaderText = "IdLocality";
+            this.IdLocality.HeaderText = "ID";
             this.IdLocality.Name = "IdLocality";
             this.IdLocality.ReadOnly = true;
-            this.IdLocality.Visible = false;
+            this.IdLocality.Width = 30;
             // 
             // IdLocalityType
             // 
@@ -280,36 +305,12 @@
             this.DeleteButton.UseColumnTextForButtonValue = true;
             this.DeleteButton.Width = 85;
             // 
-            // BackwardsButton
-            // 
-            this.BackwardsButton.FlatAppearance.BorderSize = 0;
-            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(1300, 10);
-            this.BackwardsButton.Name = "BackwardsButton";
-            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
-            this.BackwardsButton.TabIndex = 2;
-            this.BackwardsButton.UseVisualStyleBackColor = true;
-            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
-            // 
-            // AddButton
-            // 
-            this.AddButton.FlatAppearance.BorderSize = 0;
-            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
-            this.AddButton.Location = new System.Drawing.Point(1251, 10);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(25, 25);
-            this.AddButton.TabIndex = 1;
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
             // Locality
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1346, 426);
+            this.ClientSize = new System.Drawing.Size(1370, 426);
             this.ControlBox = false;
             this.Controls.Add(this.LocalityGrid);
             this.Controls.Add(this.FormBorderPanel);

@@ -44,7 +44,6 @@ namespace LandSeismic.MainMenu
                 LocalityTypeButton.Visible = false;
                 MaterialAndTechnicalResourceButton.Visible = false;
                 SquadButton.Visible = false;
-                GroupButton.Visible = false;
                 GroupTypeButton.Visible = false;
                 Log = "Ведущий геолог " + User.UserClass.GetUserFullName(
                     Authorization.AuthorizationClass.Login) + ", дата входа: " 
@@ -60,7 +59,6 @@ namespace LandSeismic.MainMenu
                 PositionButton.Visible = false;
                 SeismicExplorationTypeButton.Visible = false;
                 SquadButton.Visible = false;
-                GroupButton.Visible = false;
                 GroupTypeButton.Visible = false;
                 InventoryListButton.Location = new Point(0, 0);
                 LocalityButton.Location = new Point(0, 65);
@@ -85,8 +83,7 @@ namespace LandSeismic.MainMenu
                 LocalityTypeButton.Visible = false;
                 MaterialAndTechnicalResourceButton.Visible = false;
                 SquadButton.Location = new Point(0, 0);
-                GroupButton.Location = new Point(0, 65);
-                GroupTypeButton.Location = new Point(0, 130);
+                GroupTypeButton.Location = new Point(0, 65);
                 Log = "Начальник сейсмотряда " + User.UserClass.
                     GetUserFullName(Authorization.AuthorizationClass.Login) + 
                     ", дата входа: " + DateTime.Now.ToShortDateString() + 
@@ -153,6 +150,12 @@ namespace LandSeismic.MainMenu
         {
             var locality = new Locality.Locality();
             locality.Show();
+        }
+
+        private void SquadButton_Click(object sender, EventArgs e)
+        {
+            var squad = new Squad.Squad();
+            squad.Show();
         }
     }
 }

@@ -33,7 +33,6 @@
             this.FormNameLabel = new System.Windows.Forms.Label();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
             this.GroupTypeButton = new System.Windows.Forms.Button();
-            this.GroupButton = new System.Windows.Forms.Button();
             this.SquadButton = new System.Windows.Forms.Button();
             this.MaterialAndTechnicalResourceButton = new System.Windows.Forms.Button();
             this.LocalityTypeButton = new System.Windows.Forms.Button();
@@ -88,7 +87,6 @@
             // 
             this.SideMenuPanel.BackColor = System.Drawing.Color.Gainsboro;
             this.SideMenuPanel.Controls.Add(this.GroupTypeButton);
-            this.SideMenuPanel.Controls.Add(this.GroupButton);
             this.SideMenuPanel.Controls.Add(this.SquadButton);
             this.SideMenuPanel.Controls.Add(this.MaterialAndTechnicalResourceButton);
             this.SideMenuPanel.Controls.Add(this.LocalityTypeButton);
@@ -112,26 +110,13 @@
             this.GroupTypeButton.FlatAppearance.BorderSize = 0;
             this.GroupTypeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GroupTypeButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GroupTypeButton.Location = new System.Drawing.Point(0, 780);
+            this.GroupTypeButton.Location = new System.Drawing.Point(0, 715);
             this.GroupTypeButton.Name = "GroupTypeButton";
             this.GroupTypeButton.Size = new System.Drawing.Size(140, 65);
             this.GroupTypeButton.TabIndex = 15;
             this.GroupTypeButton.Text = "Тип группы";
             this.GroupTypeButton.UseVisualStyleBackColor = true;
             this.GroupTypeButton.Click += new System.EventHandler(this.GroupTypeButton_Click);
-            // 
-            // GroupButton
-            // 
-            this.GroupButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GroupButton.FlatAppearance.BorderSize = 0;
-            this.GroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GroupButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GroupButton.Location = new System.Drawing.Point(0, 715);
-            this.GroupButton.Name = "GroupButton";
-            this.GroupButton.Size = new System.Drawing.Size(140, 65);
-            this.GroupButton.TabIndex = 14;
-            this.GroupButton.Text = "Группы";
-            this.GroupButton.UseVisualStyleBackColor = true;
             // 
             // SquadButton
             // 
@@ -145,6 +130,7 @@
             this.SquadButton.TabIndex = 13;
             this.SquadButton.Text = "Отряды";
             this.SquadButton.UseVisualStyleBackColor = true;
+            this.SquadButton.Click += new System.EventHandler(this.SquadButton_Click);
             // 
             // MaterialAndTechnicalResourceButton
             // 
@@ -339,7 +325,6 @@
         private System.Windows.Forms.Button ExitPictureBox;
         private System.Windows.Forms.Button SeismicExplorationTypeButton;
         private System.Windows.Forms.Button GroupTypeButton;
-        private System.Windows.Forms.Button GroupButton;
         private System.Windows.Forms.Button SquadButton;
         private System.Windows.Forms.Button MaterialAndTechnicalResourceButton;
         private System.Windows.Forms.Button LocalityTypeButton;
