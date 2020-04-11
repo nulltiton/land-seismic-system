@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Squad));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Squad));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
+            this.BackwardsButton = new System.Windows.Forms.Button();
             this.FormNameLabel = new System.Windows.Forms.Label();
             this.GroupGrid = new System.Windows.Forms.DataGridView();
             this.IdGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +56,22 @@
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SquadFilterPanel = new System.Windows.Forms.Panel();
-            this.FilterByPositionComboBox = new System.Windows.Forms.ComboBox();
-            this.AddSquadButton = new System.Windows.Forms.Button();
-            this.BackwardsButton = new System.Windows.Forms.Button();
+            this.CancellingFilterByActualReturnDateTimePickerButton = new System.Windows.Forms.Button();
+            this.FilterByActualReturnDateButton = new System.Windows.Forms.Button();
+            this.FilterByActualReturnDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FilterByActualReturnDateLabel = new System.Windows.Forms.Label();
+            this.CancellingFilterByReturnDateButton = new System.Windows.Forms.Button();
+            this.FilterByReturnDateButton = new System.Windows.Forms.Button();
+            this.FilterByReturnDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FilterByReturnDateLabel = new System.Windows.Forms.Label();
+            this.CancellingFilterByDepartureDate = new System.Windows.Forms.Button();
+            this.FilterByDepartureDateButton = new System.Windows.Forms.Button();
+            this.FilterByDepartureDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FilterByDepartureDateLabel = new System.Windows.Forms.Label();
+            this.JobAssignmentButton = new System.Windows.Forms.Button();
             this.AddGroupButton = new System.Windows.Forms.Button();
+            this.AddSquadButton = new System.Windows.Forms.Button();
+            this.JobAssignmentSaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.FormBorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SquadGrid)).BeginInit();
@@ -74,8 +87,20 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(1177, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(1192, 45);
             this.FormBorderPanel.TabIndex = 0;
+            // 
+            // BackwardsButton
+            // 
+            this.BackwardsButton.FlatAppearance.BorderSize = 0;
+            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
+            this.BackwardsButton.Location = new System.Drawing.Point(1146, 10);
+            this.BackwardsButton.Name = "BackwardsButton";
+            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
+            this.BackwardsButton.TabIndex = 2;
+            this.BackwardsButton.UseVisualStyleBackColor = true;
+            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
             // 
             // FormNameLabel
             // 
@@ -320,65 +345,176 @@
             // SquadFilterPanel
             // 
             this.SquadFilterPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.SquadFilterPanel.Controls.Add(this.CancellingFilterByActualReturnDateTimePickerButton);
+            this.SquadFilterPanel.Controls.Add(this.FilterByActualReturnDateButton);
+            this.SquadFilterPanel.Controls.Add(this.FilterByActualReturnDateTimePicker);
+            this.SquadFilterPanel.Controls.Add(this.FilterByActualReturnDateLabel);
+            this.SquadFilterPanel.Controls.Add(this.CancellingFilterByReturnDateButton);
+            this.SquadFilterPanel.Controls.Add(this.FilterByReturnDateButton);
+            this.SquadFilterPanel.Controls.Add(this.FilterByReturnDateTimePicker);
+            this.SquadFilterPanel.Controls.Add(this.FilterByReturnDateLabel);
+            this.SquadFilterPanel.Controls.Add(this.CancellingFilterByDepartureDate);
+            this.SquadFilterPanel.Controls.Add(this.FilterByDepartureDateButton);
+            this.SquadFilterPanel.Controls.Add(this.FilterByDepartureDateTimePicker);
+            this.SquadFilterPanel.Controls.Add(this.FilterByDepartureDateLabel);
+            this.SquadFilterPanel.Controls.Add(this.JobAssignmentButton);
             this.SquadFilterPanel.Controls.Add(this.AddGroupButton);
-            this.SquadFilterPanel.Controls.Add(this.FilterByPositionComboBox);
             this.SquadFilterPanel.Controls.Add(this.AddSquadButton);
             this.SquadFilterPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.SquadFilterPanel.Location = new System.Drawing.Point(977, 45);
+            this.SquadFilterPanel.Location = new System.Drawing.Point(978, 45);
             this.SquadFilterPanel.Name = "SquadFilterPanel";
-            this.SquadFilterPanel.Size = new System.Drawing.Size(200, 690);
+            this.SquadFilterPanel.Size = new System.Drawing.Size(214, 690);
             this.SquadFilterPanel.TabIndex = 3;
             // 
-            // FilterByPositionComboBox
+            // CancellingFilterByActualReturnDateTimePickerButton
             // 
-            this.FilterByPositionComboBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.FilterByPositionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.FilterByPositionComboBox.ForeColor = System.Drawing.Color.Black;
-            this.FilterByPositionComboBox.FormattingEnabled = true;
-            this.FilterByPositionComboBox.Location = new System.Drawing.Point(0, 30);
-            this.FilterByPositionComboBox.Name = "FilterByPositionComboBox";
-            this.FilterByPositionComboBox.Size = new System.Drawing.Size(200, 26);
-            this.FilterByPositionComboBox.TabIndex = 1;
+            this.CancellingFilterByActualReturnDateTimePickerButton.Location = new System.Drawing.Point(0, 458);
+            this.CancellingFilterByActualReturnDateTimePickerButton.Name = "CancellingFilterByActualReturnDateTimePickerButton";
+            this.CancellingFilterByActualReturnDateTimePickerButton.Size = new System.Drawing.Size(214, 30);
+            this.CancellingFilterByActualReturnDateTimePickerButton.TabIndex = 18;
+            this.CancellingFilterByActualReturnDateTimePickerButton.Text = "Отмена";
+            this.CancellingFilterByActualReturnDateTimePickerButton.UseVisualStyleBackColor = true;
+            this.CancellingFilterByActualReturnDateTimePickerButton.Click += new System.EventHandler(this.CancellingFilterByActualReturnDateTimePickerButton_Click);
+            // 
+            // FilterByActualReturnDateButton
+            // 
+            this.FilterByActualReturnDateButton.Location = new System.Drawing.Point(0, 428);
+            this.FilterByActualReturnDateButton.Name = "FilterByActualReturnDateButton";
+            this.FilterByActualReturnDateButton.Size = new System.Drawing.Size(214, 30);
+            this.FilterByActualReturnDateButton.TabIndex = 17;
+            this.FilterByActualReturnDateButton.Text = "Фильтровать";
+            this.FilterByActualReturnDateButton.UseVisualStyleBackColor = true;
+            this.FilterByActualReturnDateButton.Click += new System.EventHandler(this.FilterByActualReturnDateTimePicker_Click);
+            // 
+            // FilterByActualReturnDateTimePicker
+            // 
+            this.FilterByActualReturnDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FilterByActualReturnDateTimePicker.Location = new System.Drawing.Point(0, 401);
+            this.FilterByActualReturnDateTimePicker.Name = "FilterByActualReturnDateTimePicker";
+            this.FilterByActualReturnDateTimePicker.Size = new System.Drawing.Size(214, 26);
+            this.FilterByActualReturnDateTimePicker.TabIndex = 16;
+            // 
+            // FilterByActualReturnDateLabel
+            // 
+            this.FilterByActualReturnDateLabel.AutoSize = true;
+            this.FilterByActualReturnDateLabel.Location = new System.Drawing.Point(1, 377);
+            this.FilterByActualReturnDateLabel.Name = "FilterByActualReturnDateLabel";
+            this.FilterByActualReturnDateLabel.Size = new System.Drawing.Size(213, 18);
+            this.FilterByActualReturnDateLabel.TabIndex = 15;
+            this.FilterByActualReturnDateLabel.Text = "Отряд по фактической дате";
+            // 
+            // CancellingFilterByReturnDateButton
+            // 
+            this.CancellingFilterByReturnDateButton.Location = new System.Drawing.Point(0, 255);
+            this.CancellingFilterByReturnDateButton.Name = "CancellingFilterByReturnDateButton";
+            this.CancellingFilterByReturnDateButton.Size = new System.Drawing.Size(214, 30);
+            this.CancellingFilterByReturnDateButton.TabIndex = 14;
+            this.CancellingFilterByReturnDateButton.Text = "Отмена";
+            this.CancellingFilterByReturnDateButton.UseVisualStyleBackColor = true;
+            this.CancellingFilterByReturnDateButton.Click += new System.EventHandler(this.CancellingFilterByReturnDateButton_Click);
+            // 
+            // FilterByReturnDateButton
+            // 
+            this.FilterByReturnDateButton.Location = new System.Drawing.Point(0, 225);
+            this.FilterByReturnDateButton.Name = "FilterByReturnDateButton";
+            this.FilterByReturnDateButton.Size = new System.Drawing.Size(214, 30);
+            this.FilterByReturnDateButton.TabIndex = 13;
+            this.FilterByReturnDateButton.Text = "Фильтровать";
+            this.FilterByReturnDateButton.UseVisualStyleBackColor = true;
+            this.FilterByReturnDateButton.Click += new System.EventHandler(this.FilterByReturnDateButton_Click);
+            // 
+            // FilterByReturnDateTimePicker
+            // 
+            this.FilterByReturnDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FilterByReturnDateTimePicker.Location = new System.Drawing.Point(0, 198);
+            this.FilterByReturnDateTimePicker.Name = "FilterByReturnDateTimePicker";
+            this.FilterByReturnDateTimePicker.Size = new System.Drawing.Size(214, 26);
+            this.FilterByReturnDateTimePicker.TabIndex = 12;
+            // 
+            // FilterByReturnDateLabel
+            // 
+            this.FilterByReturnDateLabel.AutoSize = true;
+            this.FilterByReturnDateLabel.Location = new System.Drawing.Point(1, 175);
+            this.FilterByReturnDateLabel.Name = "FilterByReturnDateLabel";
+            this.FilterByReturnDateLabel.Size = new System.Drawing.Size(214, 18);
+            this.FilterByReturnDateLabel.TabIndex = 11;
+            this.FilterByReturnDateLabel.Text = "Отряд по дате возвращения";
+            // 
+            // CancellingFilterByDepartureDate
+            // 
+            this.CancellingFilterByDepartureDate.Location = new System.Drawing.Point(0, 143);
+            this.CancellingFilterByDepartureDate.Name = "CancellingFilterByDepartureDate";
+            this.CancellingFilterByDepartureDate.Size = new System.Drawing.Size(214, 30);
+            this.CancellingFilterByDepartureDate.TabIndex = 10;
+            this.CancellingFilterByDepartureDate.Text = "Отмена";
+            this.CancellingFilterByDepartureDate.UseVisualStyleBackColor = true;
+            this.CancellingFilterByDepartureDate.Click += new System.EventHandler(this.CancellingFilterByDepartureDate_Click);
+            // 
+            // FilterByDepartureDateButton
+            // 
+            this.FilterByDepartureDateButton.Location = new System.Drawing.Point(0, 113);
+            this.FilterByDepartureDateButton.Name = "FilterByDepartureDateButton";
+            this.FilterByDepartureDateButton.Size = new System.Drawing.Size(214, 30);
+            this.FilterByDepartureDateButton.TabIndex = 9;
+            this.FilterByDepartureDateButton.Text = "Фильтровать";
+            this.FilterByDepartureDateButton.UseVisualStyleBackColor = true;
+            this.FilterByDepartureDateButton.Click += new System.EventHandler(this.FilterByDepartureDateButton_Click);
+            // 
+            // FilterByDepartureDateTimePicker
+            // 
+            this.FilterByDepartureDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FilterByDepartureDateTimePicker.Location = new System.Drawing.Point(0, 86);
+            this.FilterByDepartureDateTimePicker.Name = "FilterByDepartureDateTimePicker";
+            this.FilterByDepartureDateTimePicker.Size = new System.Drawing.Size(214, 26);
+            this.FilterByDepartureDateTimePicker.TabIndex = 6;
+            // 
+            // FilterByDepartureDateLabel
+            // 
+            this.FilterByDepartureDateLabel.AutoSize = true;
+            this.FilterByDepartureDateLabel.Location = new System.Drawing.Point(25, 63);
+            this.FilterByDepartureDateLabel.Name = "FilterByDepartureDateLabel";
+            this.FilterByDepartureDateLabel.Size = new System.Drawing.Size(171, 18);
+            this.FilterByDepartureDateLabel.TabIndex = 4;
+            this.FilterByDepartureDateLabel.Text = "Отряд по дате выхода";
+            // 
+            // JobAssignmentButton
+            // 
+            this.JobAssignmentButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.JobAssignmentButton.Location = new System.Drawing.Point(0, 30);
+            this.JobAssignmentButton.Name = "JobAssignmentButton";
+            this.JobAssignmentButton.Size = new System.Drawing.Size(214, 30);
+            this.JobAssignmentButton.TabIndex = 3;
+            this.JobAssignmentButton.Text = "Служебное задание";
+            this.JobAssignmentButton.UseVisualStyleBackColor = true;
+            this.JobAssignmentButton.Click += new System.EventHandler(this.JobAssignmentButton_Click);
+            // 
+            // AddGroupButton
+            // 
+            this.AddGroupButton.Location = new System.Drawing.Point(0, 345);
+            this.AddGroupButton.Name = "AddGroupButton";
+            this.AddGroupButton.Size = new System.Drawing.Size(214, 30);
+            this.AddGroupButton.TabIndex = 2;
+            this.AddGroupButton.Text = "Добавить";
+            this.AddGroupButton.UseVisualStyleBackColor = true;
+            this.AddGroupButton.Click += new System.EventHandler(this.AddGroupButton_Click);
             // 
             // AddSquadButton
             // 
             this.AddSquadButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.AddSquadButton.Location = new System.Drawing.Point(0, 0);
             this.AddSquadButton.Name = "AddSquadButton";
-            this.AddSquadButton.Size = new System.Drawing.Size(200, 30);
+            this.AddSquadButton.Size = new System.Drawing.Size(214, 30);
             this.AddSquadButton.TabIndex = 0;
             this.AddSquadButton.Text = "Добавить";
             this.AddSquadButton.UseVisualStyleBackColor = true;
             this.AddSquadButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // BackwardsButton
-            // 
-            this.BackwardsButton.FlatAppearance.BorderSize = 0;
-            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(1131, 10);
-            this.BackwardsButton.Name = "BackwardsButton";
-            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
-            this.BackwardsButton.TabIndex = 2;
-            this.BackwardsButton.UseVisualStyleBackColor = true;
-            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
-            // 
-            // AddGroupButton
-            // 
-            this.AddGroupButton.Location = new System.Drawing.Point(0, 345);
-            this.AddGroupButton.Name = "AddGroupButton";
-            this.AddGroupButton.Size = new System.Drawing.Size(200, 30);
-            this.AddGroupButton.TabIndex = 2;
-            this.AddGroupButton.Text = "Добавить";
-            this.AddGroupButton.UseVisualStyleBackColor = true;
-            this.AddGroupButton.Click += new System.EventHandler(this.AddGroupButton_Click);
             // 
             // Squad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1177, 735);
+            this.ClientSize = new System.Drawing.Size(1192, 735);
             this.ControlBox = false;
             this.Controls.Add(this.SquadFilterPanel);
             this.Controls.Add(this.SquadGrid);
@@ -399,6 +535,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GroupGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SquadGrid)).EndInit();
             this.SquadFilterPanel.ResumeLayout(false);
+            this.SquadFilterPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -428,7 +565,20 @@
         private System.Windows.Forms.DataGridViewButtonColumn EditButton;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteButton;
         private System.Windows.Forms.Button AddSquadButton;
-        private System.Windows.Forms.ComboBox FilterByPositionComboBox;
         private System.Windows.Forms.Button AddGroupButton;
+        private System.Windows.Forms.Button JobAssignmentButton;
+        private System.Windows.Forms.DateTimePicker FilterByDepartureDateTimePicker;
+        private System.Windows.Forms.Label FilterByDepartureDateLabel;
+        private System.Windows.Forms.Button CancellingFilterByDepartureDate;
+        private System.Windows.Forms.Button FilterByDepartureDateButton;
+        private System.Windows.Forms.Button CancellingFilterByReturnDateButton;
+        private System.Windows.Forms.Button FilterByReturnDateButton;
+        private System.Windows.Forms.DateTimePicker FilterByReturnDateTimePicker;
+        private System.Windows.Forms.Label FilterByReturnDateLabel;
+        private System.Windows.Forms.Button CancellingFilterByActualReturnDateTimePickerButton;
+        private System.Windows.Forms.Button FilterByActualReturnDateButton;
+        private System.Windows.Forms.DateTimePicker FilterByActualReturnDateTimePicker;
+        private System.Windows.Forms.Label FilterByActualReturnDateLabel;
+        private System.Windows.Forms.SaveFileDialog JobAssignmentSaveDialog;
     }
 }

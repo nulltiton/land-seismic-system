@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace LandSeismic.Squad
 {
@@ -80,7 +81,9 @@ namespace LandSeismic.Squad
         {
             if (e.ColumnIndex == 0)
             {
-
+                GroupId = GroupGrid.CurrentRow.Cells[3].Value.ToString();
+                var squadMember = new SquadMember.SqaudMember();
+                squadMember.Show();
             }
             else if (e.ColumnIndex == 1)
             {
@@ -108,6 +111,81 @@ namespace LandSeismic.Squad
             GroupSquadId = SquadGrid.CurrentRow.Cells[2].Value.ToString();
             var addGroup = new AddGroup();
             addGroup.Show();
+        }
+
+        private void CancellingFilterByDepartureDate_Click(object sender, EventArgs e)
+        {
+            SquadClass.GetSquadList();
+            SquadGrid.DataSource = SquadClass.DTSquad;
+        }
+
+        private void FilterByDepartureDateButton_Click(object sender, EventArgs e)
+        {
+            SquadClass.FilterByDepartureDate(FilterByDepartureDateTimePicker.
+                Text);
+            SquadGrid.DataSource = SquadClass.DTSquad;
+        }
+
+        private void FilterByReturnDateButton_Click(object sender, EventArgs e)
+        {
+            SquadClass.FilterByReturnDate(FilterByReturnDateTimePicker.Text);
+            SquadGrid.DataSource = SquadClass.DTSquad;
+        }
+
+        private void CancellingFilterByReturnDateButton_Click(object sender, EventArgs e)
+        {
+            SquadClass.GetSquadList();
+            SquadGrid.DataSource = SquadClass.DTSquad;
+        }
+
+        private void FilterByActualReturnDateTimePicker_Click(object sender, EventArgs e)
+        {
+            SquadClass.FilterByActualReturnDate(FilterByActualReturnDateTimePicker.Text);
+            SquadGrid.DataSource = SquadClass.DTSquad;
+        }
+
+        private void CancellingFilterByActualReturnDateTimePickerButton_Click(object sender, EventArgs e)
+        {
+            SquadClass.GetSquadList();
+            SquadGrid.DataSource = SquadClass.DTSquad;
+        }
+
+        private void JobAssignmentButton_Click(object sender, EventArgs e)
+        {
+            JobAssignmentSaveDialog.Filter = "Word | *.docx";
+            if (JobAssignmentSaveDialog.ShowDialog() == DialogResult.OK)
+            {
+                DateTime departureDate = Convert.ToDateTime(SquadGrid.
+                    CurrentRow.Cells[6].Value.ToString());
+                DateTime returnDate = Convert.ToDateTime(SquadGrid.CurrentRow.
+                    Cells[7].Value.ToString());
+                Int32 dateCount = returnDate.Day - departureDate.Day;
+                var app = new Word.Application();
+                app.Visible = false;
+                String path = Environment.CurrentDirectory + 
+                    @"\Templates\Служебное задание.docx";
+                var doc = app.Documents.Open(path);
+                doc.Activate();
+
+                doc.Bookmarks["idDoc"].Range.Text = SquadGrid.CurrentRow.
+                    Cells[2].Value.ToString();
+                doc.Bookmarks["createDate"].Range.Text = DateTime.Now.ToShortDateString();
+                doc.Bookmarks["seismicExploration"].Range.Text = "Сейсмотряд";
+                doc.Bookmarks["position"].Range.Text = SquadClass.
+                    GetPositionList(SquadGrid.CurrentRow.Cells[2].Value.
+                    ToString());
+                doc.Bookmarks["departureDate"].Range.Text = departureDate.
+                    ToString("dd.MM.yyyy");
+                doc.Bookmarks["returnDate"].Range.Text = returnDate.
+                    ToString("dd.MM.yyyy");
+                doc.Bookmarks["dateCount"].Range.Text = dateCount.ToString();
+                doc.Bookmarks["organization"].Range.Text = "ОАО МАГЭ";
+
+                doc.Saved = true;
+                doc.SaveAs2(JobAssignmentSaveDialog.FileName);
+
+                doc.Close();
+            }
         }
     }
 }

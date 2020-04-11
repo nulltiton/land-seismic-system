@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -226,6 +230,24 @@
       <DependentUpon>SeismicExplorationType.cs</DependentUpon>
     </Compile>
     <Compile Include="SeismicExplorationType\SeismicExplorationTypeClass.cs" />
+    <Compile Include="SquadMember\AddSquadMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SquadMember\AddSquadMember.Designer.cs">
+      <DependentUpon>AddSquadMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SquadMember\EditSquadMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SquadMember\EditSquadMember.Designer.cs">
+      <DependentUpon>EditSquadMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SquadMember\SqaudMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SquadMember\SqaudMember.Designer.cs">
+      <DependentUpon>SqaudMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Squad\AddGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,7 +280,7 @@
       <DependentUpon>Squad.cs</DependentUpon>
     </Compile>
     <Compile Include="Squad\SquadClass.cs" />
-    <Compile Include="Squad\SquadMemberClass.cs" />
+    <Compile Include="SquadMember\SquadMemberClass.cs" />
     <Compile Include="User\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,6 +398,15 @@
     <EmbeddedResource Include="SeismicExplorationType\SeismicExplorationType.resx">
       <DependentUpon>SeismicExplorationType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SquadMember\AddSquadMember.resx">
+      <DependentUpon>AddSquadMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SquadMember\EditSquadMember.resx">
+      <DependentUpon>EditSquadMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SquadMember\SqaudMember.resx">
+      <DependentUpon>SqaudMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Squad\AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -408,6 +439,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

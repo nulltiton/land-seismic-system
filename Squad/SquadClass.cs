@@ -2,6 +2,7 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 
+
 namespace LandSeismic.Squad
 {
     class SquadClass
@@ -33,6 +34,102 @@ namespace LandSeismic.Squad
                 "AND Position.name = 'Начальник сейсмотряда' " +
                 "AND Squad.idLocality = Locality.id " +
                 "ORDER BY Squad.id";
+            DTSquad.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(
+                DTSquad);
+        }
+
+        static public void FilterByDepartureDate(String departureDate)
+        {
+            DateTime date = Convert.ToDateTime(departureDate);
+            DBConnection.DBConnection.sqlDataAdapter = new MySqlDataAdapter(
+                DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT `Squad`.`id`" +
+                ", `Squad`.`loginSquadLeader`" +
+                ", CONCAT_WS(' '" +
+                ", `User`.`surname`" +
+                ", `User`.`firstName`" +
+                ", `User`.`middleName`) " +
+                "AS `fullName`" +
+                ", `Squad`.`idLocality`" +
+                ", `Squad`.`departureDate`" +
+                ", `Squad`.`returnDate`" +
+                ", `Squad`.`actualReturnDate` " +
+                "FROM `Squad`" +
+                ", `User`" +
+                ", `Locality`" +
+                ", `Position` " +
+                "WHERE `Squad`.`loginSquadLeader` = `User`.`login` " +
+                "AND `User`.`idPosition` = `Position`.`id` " +
+                "AND `Position`.`name` = 'Начальник сейсмотряда' " +
+                "AND `Squad`.`idLocality` = `Locality`.`id` " +
+                "AND `Squad`.`departureDate` = '" + date.ToString("yyyy-MM-dd") + "' " +
+                "ORDER BY `Squad`.`id`";
+            DTSquad.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(
+                DTSquad);
+        }
+
+        static public void FilterByReturnDate(String returnDate)
+        {
+            DateTime date = Convert.ToDateTime(returnDate);
+            DBConnection.DBConnection.sqlDataAdapter = new MySqlDataAdapter(
+                DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT `Squad`.`id`" +
+                ", `Squad`.`loginSquadLeader`" +
+                ", CONCAT_WS(' '" +
+                ", `User`.`surname`" +
+                ", `User`.`firstName`" +
+                ", `User`.`middleName`) " +
+                "AS `fullName`" +
+                ", `Squad`.`idLocality`" +
+                ", `Squad`.`departureDate`" +
+                ", `Squad`.`returnDate`" +
+                ", `Squad`.`actualReturnDate` " +
+                "FROM `Squad`" +
+                ", `User`" +
+                ", `Locality`" +
+                ", `Position` " +
+                "WHERE `Squad`.`loginSquadLeader` = `User`.`login` " +
+                "AND `User`.`idPosition` = `Position`.`id` " +
+                "AND `Position`.`name` = 'Начальник сейсмотряда' " +
+                "AND `Squad`.`idLocality` = `Locality`.`id` " +
+                "AND `Squad`.`returnDate` = '" + date.ToString("yyyy-MM-dd") + "' " +
+                "ORDER BY `Squad`.`id`";
+            DTSquad.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(
+                DTSquad);
+        }
+
+        static public void FilterByActualReturnDate(String actualReturnDate)
+        {
+            DateTime date = Convert.ToDateTime(actualReturnDate);
+            DBConnection.DBConnection.sqlDataAdapter = new MySqlDataAdapter(
+                DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT `Squad`.`id`" +
+                ", `Squad`.`loginSquadLeader`" +
+                ", CONCAT_WS(' '" +
+                ", `User`.`surname`" +
+                ", `User`.`firstName`" +
+                ", `User`.`middleName`) " +
+                "AS `fullName`" +
+                ", `Squad`.`idLocality`" +
+                ", `Squad`.`departureDate`" +
+                ", `Squad`.`returnDate`" +
+                ", `Squad`.`actualReturnDate` " +
+                "FROM `Squad`" +
+                ", `User`" +
+                ", `Locality`" +
+                ", `Position` " +
+                "WHERE `Squad`.`loginSquadLeader` = `User`.`login` " +
+                "AND `User`.`idPosition` = `Position`.`id` " +
+                "AND `Position`.`name` = 'Начальник сейсмотряда' " +
+                "AND `Squad`.`idLocality` = `Locality`.`id` " +
+                "AND `Squad`.`actualReturnDate` = '" + date.ToString("yyyy-MM-dd") + "' " +
+                "ORDER BY `Squad`.`id`";
             DTSquad.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(
                 DTSquad);
@@ -143,6 +240,32 @@ namespace LandSeismic.Squad
                    System.Windows.Forms.MessageBoxIcon.Error);
                 return false;
             }
+        }
+
+        static public String GetPositionList(String idSquad)
+        {
+            String position = String.Empty;
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT `position`.`name` " +
+                "FROM `position`" +
+                ", `employee`" +
+                ", `squadmember`" +
+                ", `group`" +
+                ", `squad` " +
+                "WHERE `position`.`id` = `employee`.`idPosition` " +
+                "AND `squadmember`.`idEmployee` = `employee`.`id` " +
+                "AND `group`.id = `squadmember`.`idGroup` " +
+                "AND `squad`.`id` = `group`.`idSquad` " +
+                "AND `squad`.`id` = '" + idSquad + "'";
+            using (MySqlDataReader reader = DBConnection.DBConnection.
+                sqlCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                    position += reader[0] + "\n";
+                reader.Close();
+            }
+            return position;
+
         }
     }
 }

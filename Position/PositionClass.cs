@@ -50,6 +50,21 @@ namespace LandSeismic.Position
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTPosition);
         }
 
+        static public void GetPositionById(String id)
+        {
+            DBConnection.DBConnection.sqlDataAdapter =
+                new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT `id` " +
+                "FROM `position`" +
+                ", `employee` " +
+                "WHERE `employee`.`idPosition` = `position`.`id` " +
+                "AND `position`.`id` = '" + id + "' " +
+                "ORDER BY name";
+            DTPosition.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(DTPosition);
+        }
+
         static public Boolean AddPosition(String name)
         {
             try

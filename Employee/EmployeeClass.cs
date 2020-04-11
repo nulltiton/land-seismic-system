@@ -31,6 +31,24 @@ namespace LandSeismic.Employee
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTEmployee);
         }
 
+        static public void GetEmployeeFullName()
+        {
+            DBConnection.DBConnection.sqlDataAdapter =
+                new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT `id`" +
+                ", CONCAT_WS(' '" +
+                ", `surname`" +
+                ", `firstname`" +
+                ", `middlename`) " +
+                "AS `fullName`" +
+                "FROM `employee` " +
+                "WHERE `isDeleted` = 0 " +
+                "ORDER BY `fullName`";
+            DTEmployee.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(DTEmployee);
+        }
+
         static public void FilterByPosition(String positionId)
         {
             DBConnection.DBConnection.sqlDataAdapter =
