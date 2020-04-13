@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialAndTechnicalResource));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.FormBorderPanel = new System.Windows.Forms.Panel();
-            this.FormNameLabel = new System.Windows.Forms.Label();
-            this.MaterialAndTechnicalResourceGrid = new System.Windows.Forms.DataGridView();
             this.BackwardsButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
+            this.FormNameLabel = new System.Windows.Forms.Label();
+            this.MaterialAndTechnicalResourceGrid = new System.Windows.Forms.DataGridView();
             this.IdMaterialAndTechnicalResource = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameMaterialAndTechnicalResource = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsConsumableResource = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.FormBorderPanel.SuspendLayout();
@@ -54,8 +55,32 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(501, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(596, 45);
             this.FormBorderPanel.TabIndex = 0;
+            // 
+            // BackwardsButton
+            // 
+            this.BackwardsButton.FlatAppearance.BorderSize = 0;
+            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
+            this.BackwardsButton.Location = new System.Drawing.Point(550, 10);
+            this.BackwardsButton.Name = "BackwardsButton";
+            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
+            this.BackwardsButton.TabIndex = 2;
+            this.BackwardsButton.UseVisualStyleBackColor = true;
+            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
+            // 
+            // AddButton
+            // 
+            this.AddButton.FlatAppearance.BorderSize = 0;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
+            this.AddButton.Location = new System.Drawing.Point(501, 10);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(25, 25);
+            this.AddButton.TabIndex = 1;
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // FormNameLabel
             // 
@@ -78,6 +103,7 @@
             this.MaterialAndTechnicalResourceGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdMaterialAndTechnicalResource,
             this.NameMaterialAndTechnicalResource,
+            this.IsConsumableResource,
             this.EditButton,
             this.DeleteButton});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -94,33 +120,9 @@
             this.MaterialAndTechnicalResourceGrid.ReadOnly = true;
             this.MaterialAndTechnicalResourceGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.MaterialAndTechnicalResourceGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MaterialAndTechnicalResourceGrid.Size = new System.Drawing.Size(501, 314);
+            this.MaterialAndTechnicalResourceGrid.Size = new System.Drawing.Size(596, 381);
             this.MaterialAndTechnicalResourceGrid.TabIndex = 1;
             this.MaterialAndTechnicalResourceGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MaterialAndTechnicalResourceGrid_CellContentClick);
-            // 
-            // BackwardsButton
-            // 
-            this.BackwardsButton.FlatAppearance.BorderSize = 0;
-            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(455, 10);
-            this.BackwardsButton.Name = "BackwardsButton";
-            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
-            this.BackwardsButton.TabIndex = 2;
-            this.BackwardsButton.UseVisualStyleBackColor = true;
-            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
-            // 
-            // AddButton
-            // 
-            this.AddButton.FlatAppearance.BorderSize = 0;
-            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
-            this.AddButton.Location = new System.Drawing.Point(406, 10);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(25, 25);
-            this.AddButton.TabIndex = 1;
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // IdMaterialAndTechnicalResource
             // 
@@ -139,9 +141,18 @@
             this.NameMaterialAndTechnicalResource.ReadOnly = true;
             this.NameMaterialAndTechnicalResource.Width = 233;
             // 
+            // IsConsumableResource
+            // 
+            this.IsConsumableResource.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.IsConsumableResource.DataPropertyName = "isConsumable";
+            this.IsConsumableResource.HeaderText = "Питание";
+            this.IsConsumableResource.Name = "IsConsumableResource";
+            this.IsConsumableResource.ReadOnly = true;
+            this.IsConsumableResource.Width = 90;
+            // 
             // EditButton
             // 
-            this.EditButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.EditButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.EditButton.DefaultCellStyle = dataGridViewCellStyle1;
@@ -151,25 +162,25 @@
             this.EditButton.ReadOnly = true;
             this.EditButton.Text = "Редактировать";
             this.EditButton.UseColumnTextForButtonValue = true;
-            this.EditButton.Width = 5;
+            this.EditButton.Width = 130;
             // 
             // DeleteButton
             // 
-            this.DeleteButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DeleteButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteButton.HeaderText = "";
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.ReadOnly = true;
             this.DeleteButton.Text = "Удалить";
             this.DeleteButton.UseColumnTextForButtonValue = true;
-            this.DeleteButton.Width = 5;
+            this.DeleteButton.Width = 85;
             // 
             // MaterialAndTechnicalResource
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(501, 359);
+            this.ClientSize = new System.Drawing.Size(596, 426);
             this.ControlBox = false;
             this.Controls.Add(this.MaterialAndTechnicalResourceGrid);
             this.Controls.Add(this.FormBorderPanel);
@@ -199,6 +210,7 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMaterialAndTechnicalResource;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameMaterialAndTechnicalResource;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsConsumableResource;
         private System.Windows.Forms.DataGridViewButtonColumn EditButton;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteButton;
     }

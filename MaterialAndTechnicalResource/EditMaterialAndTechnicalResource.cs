@@ -29,7 +29,8 @@ namespace LandSeismic.MaterialAndTechnicalResource
                 if (MaterialAndTechnicalResourceClass.
                     EditMaterialAndTechnicalResource(
                     MaterialAndTechnicalResource.
-                    MaterialAndTechnicalResourceId, NameTextBox.Text))
+                    MaterialAndTechnicalResourceId, NameTextBox.Text, 
+                    ConsumableCheckBox.Checked))
                 {
                     MaterialAndTechnicalResourceClass.
                         GetMaterialAndTechnicalResourceList();
@@ -47,6 +48,9 @@ namespace LandSeismic.MaterialAndTechnicalResource
         {
             NameTextBox.Text = MaterialAndTechnicalResource.
                 MaterialAndTechnicalResourceName;
+            ConsumableCheckBox.Checked =
+                MaterialAndTechnicalResource.
+                MaterialAndTechnicalResourceIsConsumable;
         }
     }
 }

@@ -186,6 +186,7 @@
             this.InventoryListButton.TabIndex = 9;
             this.InventoryListButton.Text = "Перечень ресурсов";
             this.InventoryListButton.UseVisualStyleBackColor = true;
+            this.InventoryListButton.Click += new System.EventHandler(this.InventoryListButton_Click);
             // 
             // SeismicExplorationTypeButton
             // 

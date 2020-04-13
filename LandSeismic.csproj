@@ -97,6 +97,20 @@
       <DependentUpon>GroupType.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupType\GroupTypeClass.cs" />
+    <Compile Include="InventoryList\EditInventoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryList\EditInventoryList.Designer.cs">
+      <DependentUpon>EditInventoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryList\InventoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryList\InventoryList.Designer.cs">
+      <DependentUpon>InventoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryList\InventoryListClass.cs" />
+    <Compile Include="InventoryList\ResourceInListClass.cs" />
     <Compile Include="LocalityStandart\AddLocalityStandart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +349,12 @@
     <EmbeddedResource Include="GroupType\GroupType.resx">
       <DependentUpon>GroupType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InventoryList\EditInventoryList.resx">
+      <DependentUpon>EditInventoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryList\InventoryList.resx">
+      <DependentUpon>InventoryList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LocalityStandart\AddLocalityStandart.resx">
       <DependentUpon>AddLocalityStandart.cs</DependentUpon>
     </EmbeddedResource>
@@ -468,6 +488,8 @@
   <ItemGroup>
     <None Include="Resources\plus.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\document.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

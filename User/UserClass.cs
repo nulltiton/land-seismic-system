@@ -7,6 +7,7 @@ namespace LandSeismic.User
     class UserClass
     {
         static public DataTable DTUser = new DataTable();
+        static public DataTable DTGeologist = new DataTable();
         static public DataTable DTLeadGeologist = new DataTable();
         static public DataTable DTSquadLeader = new DataTable();
 
@@ -30,6 +31,25 @@ namespace LandSeismic.User
                 "ORDER BY user.login";
             DTUser.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTUser);
+        }
+
+        static public void GetGeologistList()
+        {
+            DBConnection.DBConnection.sqlDataAdapter =
+                new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT user.login" +
+                ", CONCAT_WS(' ', user.surname" +
+                ", user.firstname" +
+                ", user.middlename) " +
+                "AS name " +
+                "FROM user" +
+                ", position " +
+                "WHERE user.idPosition = position.id " +
+                "AND user.isDeleted = 0 " +
+                "AND position.name = 'Геолог'";
+            DTGeologist.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(DTGeologist);
         }
 
         static public void GetLeadGeologistList()

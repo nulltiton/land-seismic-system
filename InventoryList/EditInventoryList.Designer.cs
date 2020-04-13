@@ -1,6 +1,6 @@
-﻿namespace LandSeismic.MaterialAndTechnicalResource
+﻿namespace LandSeismic.InventoryList
 {
-    partial class EditMaterialAndTechnicalResource
+    partial class EditInventoryList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMaterialAndTechnicalResource));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditInventoryList));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
+            this.FormNameLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.BackwardsButton = new System.Windows.Forms.Button();
-            this.FormNameLabel = new System.Windows.Forms.Label();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.NamePanel = new System.Windows.Forms.Panel();
-            this.ConsumableCheckBox = new System.Windows.Forms.CheckBox();
-            this.ConcumableLabel = new System.Windows.Forms.Label();
+            this.UserComboBox = new System.Windows.Forms.ComboBox();
             this.FormBorderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +50,15 @@
             this.FormBorderPanel.Name = "FormBorderPanel";
             this.FormBorderPanel.Size = new System.Drawing.Size(263, 45);
             this.FormBorderPanel.TabIndex = 0;
+            // 
+            // FormNameLabel
+            // 
+            this.FormNameLabel.AutoSize = true;
+            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
+            this.FormNameLabel.Name = "FormNameLabel";
+            this.FormNameLabel.Size = new System.Drawing.Size(128, 18);
+            this.FormNameLabel.TabIndex = 0;
+            this.FormNameLabel.Text = "Редактирование";
             // 
             // SaveButton
             // 
@@ -78,75 +84,37 @@
             this.BackwardsButton.UseVisualStyleBackColor = true;
             this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
             // 
-            // FormNameLabel
-            // 
-            this.FormNameLabel.AutoSize = true;
-            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
-            this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(128, 18);
-            this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Редактирование";
-            // 
-            // NameTextBox
-            // 
-            this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NameTextBox.ForeColor = System.Drawing.Color.Gray;
-            this.NameTextBox.Location = new System.Drawing.Point(31, 94);
-            this.NameTextBox.MaxLength = 25;
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(200, 19);
-            this.NameTextBox.TabIndex = 54;
-            // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
             this.NameLabel.ForeColor = System.Drawing.Color.Gray;
             this.NameLabel.Location = new System.Drawing.Point(28, 69);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(114, 18);
-            this.NameLabel.TabIndex = 56;
-            this.NameLabel.Text = "Наименование";
+            this.NameLabel.Size = new System.Drawing.Size(104, 18);
+            this.NameLabel.TabIndex = 59;
+            this.NameLabel.Text = "ФИО геолога";
             // 
-            // NamePanel
+            // UserComboBox
             // 
-            this.NamePanel.BackColor = System.Drawing.Color.LightGray;
-            this.NamePanel.Location = new System.Drawing.Point(31, 115);
-            this.NamePanel.Name = "NamePanel";
-            this.NamePanel.Size = new System.Drawing.Size(200, 1);
-            this.NamePanel.TabIndex = 55;
+            this.UserComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.UserComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserComboBox.ForeColor = System.Drawing.Color.Gray;
+            this.UserComboBox.FormattingEnabled = true;
+            this.UserComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.UserComboBox.Location = new System.Drawing.Point(29, 90);
+            this.UserComboBox.Name = "UserComboBox";
+            this.UserComboBox.Size = new System.Drawing.Size(204, 26);
+            this.UserComboBox.TabIndex = 60;
             // 
-            // ConsumableCheckBox
-            // 
-            this.ConsumableCheckBox.AutoSize = true;
-            this.ConsumableCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsumableCheckBox.Location = new System.Drawing.Point(34, 157);
-            this.ConsumableCheckBox.Name = "ConsumableCheckBox";
-            this.ConsumableCheckBox.Size = new System.Drawing.Size(12, 11);
-            this.ConsumableCheckBox.TabIndex = 88;
-            this.ConsumableCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // ConcumableLabel
-            // 
-            this.ConcumableLabel.AutoSize = true;
-            this.ConcumableLabel.ForeColor = System.Drawing.Color.Gray;
-            this.ConcumableLabel.Location = new System.Drawing.Point(29, 131);
-            this.ConcumableLabel.Name = "ConcumableLabel";
-            this.ConcumableLabel.Size = new System.Drawing.Size(71, 18);
-            this.ConcumableLabel.TabIndex = 87;
-            this.ConcumableLabel.Text = "Питание";
-            // 
-            // EditMaterialAndTechnicalResource
+            // EditInventoryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(263, 200);
+            this.ClientSize = new System.Drawing.Size(263, 147);
             this.ControlBox = false;
-            this.Controls.Add(this.ConsumableCheckBox);
-            this.Controls.Add(this.ConcumableLabel);
-            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.UserComboBox);
             this.Controls.Add(this.NameLabel);
-            this.Controls.Add(this.NamePanel);
             this.Controls.Add(this.FormBorderPanel);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
@@ -154,10 +122,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditMaterialAndTechnicalResource";
+            this.Name = "EditInventoryList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
-            this.Load += new System.EventHandler(this.EditMaterialAndTechnicalResource_Load);
+            this.Load += new System.EventHandler(this.EditInventoryList_Load);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -171,10 +139,7 @@
         private System.Windows.Forms.Label FormNameLabel;
         private System.Windows.Forms.Button BackwardsButton;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Panel NamePanel;
-        private System.Windows.Forms.CheckBox ConsumableCheckBox;
-        private System.Windows.Forms.Label ConcumableLabel;
+        private System.Windows.Forms.ComboBox UserComboBox;
     }
 }

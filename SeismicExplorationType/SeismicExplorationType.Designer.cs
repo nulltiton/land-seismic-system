@@ -117,7 +117,7 @@
             this.SeismicExplorationTypeGrid.ReadOnly = true;
             this.SeismicExplorationTypeGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.SeismicExplorationTypeGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SeismicExplorationTypeGrid.Size = new System.Drawing.Size(387, 383);
+            this.SeismicExplorationTypeGrid.Size = new System.Drawing.Size(387, 381);
             this.SeismicExplorationTypeGrid.TabIndex = 1;
             this.SeismicExplorationTypeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SeismicExplorationTypeGrid_CellContentClick);
             // 
@@ -165,7 +165,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(387, 428);
+            this.ClientSize = new System.Drawing.Size(387, 426);
             this.ControlBox = false;
             this.Controls.Add(this.SeismicExplorationTypeGrid);
             this.Controls.Add(this.FormBorderPanel);

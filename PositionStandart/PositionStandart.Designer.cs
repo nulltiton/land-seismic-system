@@ -124,7 +124,7 @@
             this.PositionStandartGrid.ReadOnly = true;
             this.PositionStandartGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.PositionStandartGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PositionStandartGrid.Size = new System.Drawing.Size(773, 383);
+            this.PositionStandartGrid.Size = new System.Drawing.Size(773, 381);
             this.PositionStandartGrid.TabIndex = 1;
             this.PositionStandartGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PositionStandartGrid_CellContentClick);
             // 
@@ -200,7 +200,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(773, 428);
+            this.ClientSize = new System.Drawing.Size(773, 426);
             this.ControlBox = false;
             this.Controls.Add(this.PositionStandartGrid);
             this.Controls.Add(this.FormBorderPanel);

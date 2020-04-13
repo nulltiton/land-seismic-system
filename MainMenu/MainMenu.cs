@@ -157,5 +157,11 @@ namespace LandSeismic.MainMenu
             var squad = new Squad.Squad();
             squad.Show();
         }
+
+        private void InventoryListButton_Click(object sender, EventArgs e)
+        {
+            var inventoryList = new InventoryList.InventoryList();
+            inventoryList.Show();
+        }
     }
 }

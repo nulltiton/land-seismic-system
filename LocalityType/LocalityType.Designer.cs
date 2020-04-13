@@ -118,7 +118,7 @@
             this.LocalityTypeGrid.ReadOnly = true;
             this.LocalityTypeGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.LocalityTypeGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.LocalityTypeGrid.Size = new System.Drawing.Size(446, 383);
+            this.LocalityTypeGrid.Size = new System.Drawing.Size(446, 381);
             this.LocalityTypeGrid.TabIndex = 1;
             this.LocalityTypeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LocalityTypeGrid_CellContentClick);
             // 
@@ -169,7 +169,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(446, 428);
+            this.ClientSize = new System.Drawing.Size(446, 426);
             this.ControlBox = false;
             this.Controls.Add(this.LocalityTypeGrid);
             this.Controls.Add(this.FormBorderPanel);
