@@ -36,8 +36,6 @@
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.NamePanel = new System.Windows.Forms.Panel();
-            this.ConsumableCheckBox = new System.Windows.Forms.CheckBox();
-            this.ConcumableLabel = new System.Windows.Forms.Label();
             this.FormBorderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,35 +113,13 @@
             this.NamePanel.Size = new System.Drawing.Size(200, 1);
             this.NamePanel.TabIndex = 55;
             // 
-            // ConsumableCheckBox
-            // 
-            this.ConsumableCheckBox.AutoSize = true;
-            this.ConsumableCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsumableCheckBox.Location = new System.Drawing.Point(34, 157);
-            this.ConsumableCheckBox.Name = "ConsumableCheckBox";
-            this.ConsumableCheckBox.Size = new System.Drawing.Size(12, 11);
-            this.ConsumableCheckBox.TabIndex = 88;
-            this.ConsumableCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // ConcumableLabel
-            // 
-            this.ConcumableLabel.AutoSize = true;
-            this.ConcumableLabel.ForeColor = System.Drawing.Color.Gray;
-            this.ConcumableLabel.Location = new System.Drawing.Point(29, 131);
-            this.ConcumableLabel.Name = "ConcumableLabel";
-            this.ConcumableLabel.Size = new System.Drawing.Size(71, 18);
-            this.ConcumableLabel.TabIndex = 87;
-            this.ConcumableLabel.Text = "Питание";
-            // 
             // EditMaterialAndTechnicalResource
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(263, 200);
+            this.ClientSize = new System.Drawing.Size(263, 147);
             this.ControlBox = false;
-            this.Controls.Add(this.ConsumableCheckBox);
-            this.Controls.Add(this.ConcumableLabel);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.NamePanel);
@@ -174,7 +150,5 @@
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Panel NamePanel;
-        private System.Windows.Forms.CheckBox ConsumableCheckBox;
-        private System.Windows.Forms.Label ConcumableLabel;
     }
 }

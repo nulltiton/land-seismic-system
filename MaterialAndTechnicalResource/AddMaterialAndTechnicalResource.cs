@@ -27,8 +27,7 @@ namespace LandSeismic.MaterialAndTechnicalResource
             if (NameTextBox.Text != String.Empty)
             {
                 if (MaterialAndTechnicalResourceClass.
-                    AddMaterialAndTechnicalResource(NameTextBox.Text, 
-                    ConsumableCheckBox.Checked))
+                    AddMaterialAndTechnicalResource(NameTextBox.Text))
                 {
                     MaterialAndTechnicalResourceClass.
                         GetMaterialAndTechnicalResourceList();
