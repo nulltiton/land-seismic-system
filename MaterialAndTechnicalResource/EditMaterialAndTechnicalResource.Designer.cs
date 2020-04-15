@@ -36,6 +36,8 @@
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.NamePanel = new System.Windows.Forms.Panel();
+            this.FoodCheckBox = new System.Windows.Forms.CheckBox();
+            this.FoodLabel = new System.Windows.Forms.Label();
             this.FormBorderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,13 +115,35 @@
             this.NamePanel.Size = new System.Drawing.Size(200, 1);
             this.NamePanel.TabIndex = 55;
             // 
+            // FoodCheckBox
+            // 
+            this.FoodCheckBox.AutoSize = true;
+            this.FoodCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FoodCheckBox.Location = new System.Drawing.Point(33, 160);
+            this.FoodCheckBox.Name = "FoodCheckBox";
+            this.FoodCheckBox.Size = new System.Drawing.Size(12, 11);
+            this.FoodCheckBox.TabIndex = 88;
+            this.FoodCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // FoodLabel
+            // 
+            this.FoodLabel.AutoSize = true;
+            this.FoodLabel.ForeColor = System.Drawing.Color.Gray;
+            this.FoodLabel.Location = new System.Drawing.Point(28, 134);
+            this.FoodLabel.Name = "FoodLabel";
+            this.FoodLabel.Size = new System.Drawing.Size(71, 18);
+            this.FoodLabel.TabIndex = 87;
+            this.FoodLabel.Text = "Питание";
+            // 
             // EditMaterialAndTechnicalResource
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(263, 147);
+            this.ClientSize = new System.Drawing.Size(263, 200);
             this.ControlBox = false;
+            this.Controls.Add(this.FoodCheckBox);
+            this.Controls.Add(this.FoodLabel);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.NamePanel);
@@ -150,5 +174,7 @@
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Panel NamePanel;
+        private System.Windows.Forms.CheckBox FoodCheckBox;
+        private System.Windows.Forms.Label FoodLabel;
     }
 }

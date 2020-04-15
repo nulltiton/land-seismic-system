@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace LandSeismic.InventoryList
@@ -20,8 +22,16 @@ namespace LandSeismic.InventoryList
 
         private void InventoryList_Load(object sender, EventArgs e)
         {
-            InventoryListClass.GetInventoryList();
+            InventoryListClass.GetInventoryList(Authorization.
+                AuthorizationClass.Login);
             InventoryListGrid.DataSource = InventoryListClass.DTInventoryList;
+            if (InventoryListGrid.Rows.Count != 0)
+            {
+                InventoryListClass.GetResourceInList(InventoryListGrid.CurrentRow.
+                    Cells[2].Value.ToString());
+                ResourceGrid.DataSource = InventoryListClass.DTResourceInListList;
+            }
+
         }
 
         private void InventoryListGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -44,8 +54,35 @@ namespace LandSeismic.InventoryList
                     if (InventoryListClass.DropInventoryList(
                         InventoryListGrid.CurrentRow.Cells[2].Value.
                         ToString()))
-                        InventoryListClass.GetInventoryList();
+                        InventoryListClass.GetInventoryList(Authorization.
+                            AuthorizationClass.Login);
+            }
+            else
+                InventoryListClass.GetResourceInList(InventoryListGrid.
+                    CurrentRow.Cells[2].Value.ToString());
+        }
+
+        private void AddInventoryListButton_Click(object sender, EventArgs e)
+        {
+            var addInventoryList = new AddInventoryList();
+            addInventoryList.Show();
+        }
+
+        private void DocumentButton_Click(object sender, EventArgs e)
+        {
+
+            InventoryListSaveDialog.Filter = "Excel | *.csv";
+            if (InventoryListSaveDialog.ShowDialog() == DialogResult.OK)
+            {
+                InventoryListClass.DocumentInventoryList(InventoryListGrid.
+                    CurrentRow.Cells[2].Value.ToString(), InventoryListGrid.
+                    CurrentRow.Cells[3].Value.ToString(), InventoryListClass.
+                    DepartureDateBySquad(InventoryListGrid.CurrentRow.
+                    Cells[3].Value.ToString()), InventoryListClass.
+                    ReturnDateBySquad(InventoryListGrid.CurrentRow.Cells[3].
+                    Value.ToString()), InventoryListSaveDialog.FileName);
             }
         }
+                
     }
 }

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace LandSeismic.Authorization
 {
     public partial class Authorization : Form
-    {
+    {        
         public Authorization()
         {
             InitializeComponent();
@@ -12,7 +12,7 @@ namespace LandSeismic.Authorization
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void Authorization_Load(object sender, EventArgs e)
@@ -32,6 +32,7 @@ namespace LandSeismic.Authorization
                 {
                     var mainMenu = new MainMenu.MainMenu();
                     mainMenu.Show();
+                    Hide();
                 }
             }
             else

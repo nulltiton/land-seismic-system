@@ -140,6 +140,15 @@ namespace LandSeismic.Locality
                 else
                     return false;
             }
+            catch (MySqlException)
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    "Невозможно удалить местность, так как она используется.",
+                    "Ошибка удаления",
+                    System.Windows.Forms.MessageBoxButtons.OK,
+                    System.Windows.Forms.MessageBoxIcon.Error);
+                return false;
+            }
             catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(

@@ -31,10 +31,12 @@ namespace LandSeismic.Squad
         {
             SquadClass.GetSquadList();
             SquadGrid.DataSource = SquadClass.DTSquad;
-
-            GroupClass.GetGroupList(SquadGrid.CurrentRow.Cells[2].Value.
-                ToString());
-            GroupGrid.DataSource = GroupClass.DTGroup;
+            if (SquadGrid.Rows.Count != 0)
+            {
+                GroupClass.GetGroupList(SquadGrid.CurrentRow.Cells[2].Value.
+                    ToString());
+                GroupGrid.DataSource = GroupClass.DTGroup;
+            }
         }
 
         private void SquadGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -62,13 +64,13 @@ namespace LandSeismic.Squad
             }
             else
             {
-                GroupClass.GetGroupList(SquadGrid.CurrentRow.Cells[2].Value.
-                    ToString());
-                GroupGrid.DataSource = GroupClass.DTGroup;
+                if (SquadGrid.Rows.Count != 0)
+                {
+                    GroupClass.GetGroupList(SquadGrid.CurrentRow.Cells[2].Value.
+                        ToString());
+                    GroupGrid.DataSource = GroupClass.DTGroup;
+                }
             }
-            GroupClass.GetGroupList(SquadGrid.CurrentRow.Cells[2].Value.
-                ToString());
-            GroupGrid.DataSource = GroupClass.DTGroup;
         }
 
         private void AddButton_Click(object sender, EventArgs e)

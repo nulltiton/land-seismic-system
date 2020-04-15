@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -97,6 +101,12 @@
       <DependentUpon>GroupType.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupType\GroupTypeClass.cs" />
+    <Compile Include="InventoryList\AddInventoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryList\AddInventoryList.Designer.cs">
+      <DependentUpon>AddInventoryList.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventoryList\EditInventoryList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,7 +120,6 @@
       <DependentUpon>InventoryList.cs</DependentUpon>
     </Compile>
     <Compile Include="InventoryList\InventoryListClass.cs" />
-    <Compile Include="InventoryList\ResourceInListClass.cs" />
     <Compile Include="LocalityStandart\AddLocalityStandart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GroupType\GroupType.resx">
       <DependentUpon>GroupType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryList\AddInventoryList.resx">
+      <DependentUpon>AddInventoryList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryList\EditInventoryList.resx">
       <DependentUpon>EditInventoryList.cs</DependentUpon>

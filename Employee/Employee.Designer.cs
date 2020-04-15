@@ -47,6 +47,7 @@
             this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.FilterPanel = new System.Windows.Forms.Panel();
+            this.FilterByPositionButton = new System.Windows.Forms.Button();
             this.FilterCancellationButton = new System.Windows.Forms.Button();
             this.FilterByPositionComboBox = new System.Windows.Forms.ComboBox();
             this.FormBorderPanel.SuspendLayout();
@@ -64,7 +65,7 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(1146, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(1386, 45);
             this.FormBorderPanel.TabIndex = 0;
             // 
             // BackwardsButton
@@ -72,7 +73,7 @@
             this.BackwardsButton.FlatAppearance.BorderSize = 0;
             this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(1100, 10);
+            this.BackwardsButton.Location = new System.Drawing.Point(1340, 10);
             this.BackwardsButton.Name = "BackwardsButton";
             this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
             this.BackwardsButton.TabIndex = 2;
@@ -84,7 +85,7 @@
             this.AddButton.FlatAppearance.BorderSize = 0;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
-            this.AddButton.Location = new System.Drawing.Point(1051, 10);
+            this.AddButton.Location = new System.Drawing.Point(1291, 10);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(25, 25);
             this.AddButton.TabIndex = 1;
@@ -244,18 +245,29 @@
             // FilterPanel
             // 
             this.FilterPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.FilterPanel.Controls.Add(this.FilterByPositionButton);
             this.FilterPanel.Controls.Add(this.FilterCancellationButton);
             this.FilterPanel.Controls.Add(this.FilterByPositionComboBox);
             this.FilterPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FilterPanel.Location = new System.Drawing.Point(946, 45);
+            this.FilterPanel.Location = new System.Drawing.Point(1186, 45);
             this.FilterPanel.Name = "FilterPanel";
             this.FilterPanel.Size = new System.Drawing.Size(200, 381);
             this.FilterPanel.TabIndex = 2;
             // 
+            // FilterByPositionButton
+            // 
+            this.FilterByPositionButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FilterByPositionButton.Location = new System.Drawing.Point(0, 26);
+            this.FilterByPositionButton.Name = "FilterByPositionButton";
+            this.FilterByPositionButton.Size = new System.Drawing.Size(200, 30);
+            this.FilterByPositionButton.TabIndex = 2;
+            this.FilterByPositionButton.Text = "Фильтровать";
+            this.FilterByPositionButton.UseVisualStyleBackColor = true;
+            this.FilterByPositionButton.Click += new System.EventHandler(this.FilterByPositionButton_Click);
+            // 
             // FilterCancellationButton
             // 
-            this.FilterCancellationButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.FilterCancellationButton.Location = new System.Drawing.Point(0, 26);
+            this.FilterCancellationButton.Location = new System.Drawing.Point(0, 56);
             this.FilterCancellationButton.Name = "FilterCancellationButton";
             this.FilterCancellationButton.Size = new System.Drawing.Size(200, 30);
             this.FilterCancellationButton.TabIndex = 1;
@@ -273,14 +285,13 @@
             this.FilterByPositionComboBox.Name = "FilterByPositionComboBox";
             this.FilterByPositionComboBox.Size = new System.Drawing.Size(200, 26);
             this.FilterByPositionComboBox.TabIndex = 0;
-            this.FilterByPositionComboBox.SelectedValueChanged += new System.EventHandler(this.FilterByPositionComboBox_SelectedValueChanged);
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1146, 426);
+            this.ClientSize = new System.Drawing.Size(1386, 426);
             this.ControlBox = false;
             this.Controls.Add(this.FilterPanel);
             this.Controls.Add(this.EmployeeGrid);
@@ -323,5 +334,6 @@
         private System.Windows.Forms.Panel FilterPanel;
         private System.Windows.Forms.ComboBox FilterByPositionComboBox;
         private System.Windows.Forms.Button FilterCancellationButton;
+        private System.Windows.Forms.Button FilterByPositionButton;
     }
 }

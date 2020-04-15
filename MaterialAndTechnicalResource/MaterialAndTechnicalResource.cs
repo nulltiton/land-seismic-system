@@ -7,6 +7,7 @@ namespace LandSeismic.MaterialAndTechnicalResource
     {
         static public String MaterialAndTechnicalResourceId;
         static public String MaterialAndTechnicalResourceName;
+        static public Boolean MaterialAndTechnicalResourceIsConsumable;
 
         public MaterialAndTechnicalResource()
         {
@@ -44,6 +45,8 @@ namespace LandSeismic.MaterialAndTechnicalResource
                 MaterialAndTechnicalResourceName =
                     MaterialAndTechnicalResourceGrid.CurrentRow.Cells[3].Value.
                     ToString();
+                MaterialAndTechnicalResourceIsConsumable =
+                    Convert.ToBoolean(MaterialAndTechnicalResourceGrid.CurrentRow.Cells[4].Value);
                 var editMaterialAndTechnicalResource =
                     new EditMaterialAndTechnicalResource();
                 editMaterialAndTechnicalResource.Show();

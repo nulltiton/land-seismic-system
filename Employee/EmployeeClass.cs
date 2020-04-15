@@ -54,20 +54,20 @@ namespace LandSeismic.Employee
             DBConnection.DBConnection.sqlDataAdapter =
                 new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
             DBConnection.DBConnection.sqlCommand.CommandText =
-                "SELECT employee.id" +
-                ", employee.surname" +
-                ", employee.firstname" +
-                ", employee.middlename" +
-                ", employee.phone" +
-                ", employee.address" +
-                ", employee.contactPhone" +
-                ", position.name " +
-                "FROM employee" +
-                ", position " +
-                "WHERE employee.idPosition = position.id " +
-                "AND employee.isDeleted = 0 " +
-                "AND position.id = '" + positionId + "'" +
-                "ORDER BY employee.surname";
+                "SELECT `employee`.`id`" +
+                ", `employee`.`surname`" +
+                ", `employee`.`firstname`" +
+                ", `employee`.`middlename`" +
+                ", `employee`.`phone`" +
+                ", `employee`.`address`" +
+                ", `employee`.`contactPhone`" +
+                ", `position`.`name` " +
+                "FROM `employee`" +
+                ", `position` " +
+                "WHERE `employee`.`idPosition` = `position`.`id` " +
+                "AND `employee`.`isDeleted` = 0 " +
+                "AND `position`.`id` = '" + positionId + "'" +
+                "ORDER BY `employee`.`surname`";
             DTFilteredEmployee.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTFilteredEmployee);
         }
@@ -144,13 +144,32 @@ namespace LandSeismic.Employee
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "UPDATE employee " +
-                    "SET isDeleted = 1 " +
-                    "WHERE id = '" + id + "'";
-                if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
-                    return true;
+                    "SELECT COUNT(`id`) " +
+                    "FROM `squadmember` " +
+                    "WHERE `idEmployee` = '" + id + "'";
+                if (Convert.ToInt32(DBConnection.DBConnection.sqlCommand.
+                    ExecuteScalar()) == 0)
+                {
+                    DBConnection.DBConnection.sqlCommand.CommandText =
+                        "UPDATE employee " +
+                        "SET isDeleted = 1 " +
+                        "WHERE id = '" + id + "'";
+                    if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
+                        return true;
+                    else
+                        return false;
+                }
                 else
+                {
+                    System.Windows.Forms.MessageBox.Show(
+                        "Невозможно удалить сотрудника, так как он " +
+                        "записан в отряд.",
+                        "Ошибка удаления",
+                        System.Windows.Forms.MessageBoxButtons.OK,
+                        System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
+                }
+
             }
             catch (Exception ex)
             {

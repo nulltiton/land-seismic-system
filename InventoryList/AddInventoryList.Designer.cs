@@ -1,6 +1,6 @@
-﻿namespace LandSeismic.MaterialAndTechnicalResource
+﻿namespace LandSeismic.InventoryList
 {
-    partial class AddMaterialAndTechnicalResource
+    partial class AddInventoryList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMaterialAndTechnicalResource));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddInventoryList));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
+            this.FormNameLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.BackwardsButton = new System.Windows.Forms.Button();
-            this.FormNameLabel = new System.Windows.Forms.Label();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.NamePanel = new System.Windows.Forms.Panel();
-            this.FoodCheckBox = new System.Windows.Forms.CheckBox();
-            this.FoodLabel = new System.Windows.Forms.Label();
+            this.SquadComboBox = new System.Windows.Forms.ComboBox();
+            this.SquadLabel = new System.Windows.Forms.Label();
             this.FormBorderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +50,15 @@
             this.FormBorderPanel.Name = "FormBorderPanel";
             this.FormBorderPanel.Size = new System.Drawing.Size(263, 45);
             this.FormBorderPanel.TabIndex = 0;
+            // 
+            // FormNameLabel
+            // 
+            this.FormNameLabel.AutoSize = true;
+            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
+            this.FormNameLabel.Name = "FormNameLabel";
+            this.FormNameLabel.Size = new System.Drawing.Size(94, 18);
+            this.FormNameLabel.TabIndex = 0;
+            this.FormNameLabel.Text = "Добавление";
             // 
             // SaveButton
             // 
@@ -78,75 +84,37 @@
             this.BackwardsButton.UseVisualStyleBackColor = true;
             this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
             // 
-            // FormNameLabel
+            // SquadComboBox
             // 
-            this.FormNameLabel.AutoSize = true;
-            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
-            this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(94, 18);
-            this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Добавление";
+            this.SquadComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SquadComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SquadComboBox.ForeColor = System.Drawing.Color.Gray;
+            this.SquadComboBox.FormattingEnabled = true;
+            this.SquadComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SquadComboBox.Location = new System.Drawing.Point(29, 90);
+            this.SquadComboBox.Name = "SquadComboBox";
+            this.SquadComboBox.Size = new System.Drawing.Size(204, 26);
+            this.SquadComboBox.TabIndex = 62;
             // 
-            // NameTextBox
+            // SquadLabel
             // 
-            this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NameTextBox.ForeColor = System.Drawing.Color.Gray;
-            this.NameTextBox.Location = new System.Drawing.Point(31, 94);
-            this.NameTextBox.MaxLength = 25;
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(200, 19);
-            this.NameTextBox.TabIndex = 51;
+            this.SquadLabel.AutoSize = true;
+            this.SquadLabel.ForeColor = System.Drawing.Color.Gray;
+            this.SquadLabel.Location = new System.Drawing.Point(28, 69);
+            this.SquadLabel.Name = "SquadLabel";
+            this.SquadLabel.Size = new System.Drawing.Size(55, 18);
+            this.SquadLabel.TabIndex = 61;
+            this.SquadLabel.Text = "Отряд";
             // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.ForeColor = System.Drawing.Color.Gray;
-            this.NameLabel.Location = new System.Drawing.Point(28, 69);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(114, 18);
-            this.NameLabel.TabIndex = 53;
-            this.NameLabel.Text = "Наименование";
-            // 
-            // NamePanel
-            // 
-            this.NamePanel.BackColor = System.Drawing.Color.LightGray;
-            this.NamePanel.Location = new System.Drawing.Point(31, 115);
-            this.NamePanel.Name = "NamePanel";
-            this.NamePanel.Size = new System.Drawing.Size(200, 1);
-            this.NamePanel.TabIndex = 52;
-            // 
-            // FoodCheckBox
-            // 
-            this.FoodCheckBox.AutoSize = true;
-            this.FoodCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FoodCheckBox.Location = new System.Drawing.Point(33, 160);
-            this.FoodCheckBox.Name = "FoodCheckBox";
-            this.FoodCheckBox.Size = new System.Drawing.Size(12, 11);
-            this.FoodCheckBox.TabIndex = 86;
-            this.FoodCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // FoodLabel
-            // 
-            this.FoodLabel.AutoSize = true;
-            this.FoodLabel.ForeColor = System.Drawing.Color.Gray;
-            this.FoodLabel.Location = new System.Drawing.Point(28, 134);
-            this.FoodLabel.Name = "FoodLabel";
-            this.FoodLabel.Size = new System.Drawing.Size(71, 18);
-            this.FoodLabel.TabIndex = 85;
-            this.FoodLabel.Text = "Питание";
-            // 
-            // AddMaterialAndTechnicalResource
+            // AddInventoryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(263, 200);
+            this.ClientSize = new System.Drawing.Size(263, 147);
             this.ControlBox = false;
-            this.Controls.Add(this.FoodCheckBox);
-            this.Controls.Add(this.FoodLabel);
-            this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.NameLabel);
-            this.Controls.Add(this.NamePanel);
+            this.Controls.Add(this.SquadComboBox);
+            this.Controls.Add(this.SquadLabel);
             this.Controls.Add(this.FormBorderPanel);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
@@ -154,9 +122,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddMaterialAndTechnicalResource";
+            this.Name = "AddInventoryList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
+            this.Load += new System.EventHandler(this.AddInventoryList_Load);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -170,10 +139,7 @@
         private System.Windows.Forms.Label FormNameLabel;
         private System.Windows.Forms.Button BackwardsButton;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Panel NamePanel;
-        private System.Windows.Forms.CheckBox FoodCheckBox;
-        private System.Windows.Forms.Label FoodLabel;
+        private System.Windows.Forms.ComboBox SquadComboBox;
+        private System.Windows.Forms.Label SquadLabel;
     }
 }

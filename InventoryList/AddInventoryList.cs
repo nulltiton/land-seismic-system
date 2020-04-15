@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LandSeismic.InventoryList
 {
-    public partial class EditInventoryList : Form
+    public partial class AddInventoryList : Form
     {
-        public EditInventoryList()
+        public AddInventoryList()
         {
             InitializeComponent();
         }
@@ -22,25 +22,25 @@ namespace LandSeismic.InventoryList
             Close();
         }
 
+        private void AddInventoryList_Load(object sender, EventArgs e)
+        {
+            Squad.SquadClass.GetSquadList();
+            SquadComboBox.DataSource = Squad.SquadClass.DTSquad;
+            SquadComboBox.DisplayMember = "id";
+            SquadComboBox.ValueMember = "id";
+        }
+
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (InventoryListClass.EditInventoryList(
-                InventoryList.InventoryListId, UserComboBox.SelectedValue.
-                ToString()))
+            if (InventoryListClass.CreateInventoryList(SquadComboBox.Text, 
+                Authorization.AuthorizationClass.Login))
             {
                 InventoryListClass.GetInventoryList(Authorization.
                     AuthorizationClass.Login);
+                InventoryListClass.GetResourceInList(InventoryList.
+                    InventoryListId);
                 Close();
             }
-        }
-
-        private void EditInventoryList_Load(object sender, EventArgs e)
-        {
-            User.UserClass.GetGeologistList();
-            UserComboBox.DataSource = User.UserClass.DTGeologist;
-            UserComboBox.DisplayMember = "name";
-            UserComboBox.ValueMember = "login";
-            UserComboBox.Text = InventoryList.InventoryListGeologist;
         }
     }
 }

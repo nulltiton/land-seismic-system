@@ -22,14 +22,17 @@ namespace LandSeismic.MaterialAndTechnicalResource
                 DTMaterialAndTechnicalResource);
         }
 
-        static public Boolean AddMaterialAndTechnicalResource(String name)
+        static public Boolean AddMaterialAndTechnicalResource(String name, 
+            Boolean isConsumableValue)
         {
             try
             {
+                String isConsumable = isConsumableValue ? "1" : "0";
                 DBConnection.DBConnection.sqlCommand.CommandText =
                     "INSERT INTO MaterialAndTechnicalResource " +
                     "VALUES(NULL" +
-                    ", '" + name + "')";
+                    ", '" + name + "'" +
+                    ", '" + isConsumable + "')";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
                     return true;
                 else
@@ -48,13 +51,15 @@ namespace LandSeismic.MaterialAndTechnicalResource
         }
 
         static public Boolean EditMaterialAndTechnicalResource(String id, 
-            String name)
+            String name, Boolean isConsumableValue)
         {
             try
             {
+                String isConsumable = isConsumableValue ? "1" : "0";
                 DBConnection.DBConnection.sqlCommand.CommandText =
                     "UPDATE MaterialAndTechnicalResource " +
-                    "SET name = '" + name + "' " +
+                    "SET name = '" + name + "'" +
+                    ", isConsumable = '" + isConsumable + "' " +
                     "WHERE id = '" + id + "'";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
                     return true;

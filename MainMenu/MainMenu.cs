@@ -22,7 +22,9 @@ namespace LandSeismic.MainMenu
 
         private void ExitPictureBox_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
+            var authorization = new Authorization.Authorization();
+            authorization.Show();
         }
 
         private void EmployeeButton_Click(object sender, EventArgs e)

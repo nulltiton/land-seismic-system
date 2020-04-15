@@ -73,17 +73,17 @@ namespace LandSeismic.Employee
             }
         }
 
-        private void FilterByPositionComboBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            EmployeeClass.FilterByPosition(FilterByPositionComboBox.
-                SelectedValue.ToString());
-            EmployeeGrid.DataSource = EmployeeClass.DTFilteredEmployee;
-        }
-
         private void FilterCancellationButton_Click(object sender, EventArgs e)
         {
             EmployeeClass.GetEmployeeList();
             EmployeeGrid.DataSource = EmployeeClass.DTEmployee;
+        }
+
+        private void FilterByPositionButton_Click(object sender, EventArgs e)
+        {
+            EmployeeClass.FilterByPosition(FilterByPositionComboBox.
+                SelectedValue.ToString());
+            EmployeeGrid.DataSource = EmployeeClass.DTFilteredEmployee;
         }
     }
 }

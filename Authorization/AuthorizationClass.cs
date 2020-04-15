@@ -13,7 +13,8 @@ namespace LandSeismic.Authorization
                 DBConnection.DBConnection.sqlCommand.CommandText =
                     "SELECT COUNT(login) " +
                     "FROM user " +
-                    "WHERE login = '" + login + "'";
+                    "WHERE login = '" + login + "' " +
+                    "AND isDeleted = 0";
                 if (Convert.ToByte(DBConnection.DBConnection.sqlCommand.
                     ExecuteScalar()) > 0)
                 {
@@ -24,7 +25,8 @@ namespace LandSeismic.Authorization
                         "WHERE user.login = '" + login + "' " +
                         "AND user.password = '" + Validation.ValidationClass.
                             PasswordEncryption(password) + "' " +
-                        "AND user.idPosition = position.id";
+                        "AND user.idPosition = position.id " +
+                        "AND user.isDeleted = 0";
                     if (DBConnection.DBConnection.sqlCommand.
                         ExecuteScalar() != null)
                     {
@@ -32,7 +34,8 @@ namespace LandSeismic.Authorization
                             "SELECT position.name " +
                             "FROM user, position " +
                             "WHERE user.login = '" + login + "' " +
-                            "AND user.idPosition = position.id";
+                            "AND user.idPosition = position.id " +
+                            "AND user.isDeleted = 0";
                         Position = DBConnection.DBConnection.sqlCommand.
                             ExecuteScalar().ToString();
                         Login = login;

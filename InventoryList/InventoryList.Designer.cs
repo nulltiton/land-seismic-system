@@ -29,28 +29,31 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryList));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryList));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.FormBorderPanel = new System.Windows.Forms.Panel();
             this.FormNameLabel = new System.Windows.Forms.Label();
             this.InventoryListGrid = new System.Windows.Forms.DataGridView();
-            this.IdInventoryList = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoginGeologistInventoryList = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullNameInventoryList = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreationDateInventoryList = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.DeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ResourceGrid = new System.Windows.Forms.DataGridView();
-            this.BackwardsButton = new System.Windows.Forms.Button();
-            this.CreateButton = new System.Windows.Forms.Button();
             this.IdListResourceInList = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdResourceResourceList = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameResourceInList = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AmountResourceInList = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AddInventoryListButton = new System.Windows.Forms.Button();
+            this.BackwardsButton = new System.Windows.Forms.Button();
+            this.DocumentButton = new System.Windows.Forms.Button();
+            this.InventoryListSaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.IdInventoryList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdSquadInventoryList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoginGeologistInventoryList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullNameInventoryList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreationDateInventoryList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.FormBorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InventoryListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResourceGrid)).BeginInit();
@@ -59,8 +62,9 @@
             // FormBorderPanel
             // 
             this.FormBorderPanel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.FormBorderPanel.Controls.Add(this.AddInventoryListButton);
             this.FormBorderPanel.Controls.Add(this.BackwardsButton);
-            this.FormBorderPanel.Controls.Add(this.CreateButton);
+            this.FormBorderPanel.Controls.Add(this.DocumentButton);
             this.FormBorderPanel.Controls.Add(this.FormNameLabel);
             this.FormBorderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
@@ -89,6 +93,7 @@
             this.InventoryListGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InventoryListGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdInventoryList,
+            this.IdSquadInventoryList,
             this.LoginGeologistInventoryList,
             this.FullNameInventoryList,
             this.CreationDateInventoryList,
@@ -110,66 +115,6 @@
             this.InventoryListGrid.Size = new System.Drawing.Size(694, 359);
             this.InventoryListGrid.TabIndex = 1;
             this.InventoryListGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InventoryListGrid_CellContentClick);
-            // 
-            // IdInventoryList
-            // 
-            this.IdInventoryList.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.IdInventoryList.DataPropertyName = "id";
-            this.IdInventoryList.HeaderText = "ID";
-            this.IdInventoryList.Name = "IdInventoryList";
-            this.IdInventoryList.ReadOnly = true;
-            this.IdInventoryList.Width = 50;
-            // 
-            // LoginGeologistInventoryList
-            // 
-            this.LoginGeologistInventoryList.DataPropertyName = "logingeologist";
-            this.LoginGeologistInventoryList.HeaderText = "LoginGeologist";
-            this.LoginGeologistInventoryList.Name = "LoginGeologistInventoryList";
-            this.LoginGeologistInventoryList.ReadOnly = true;
-            this.LoginGeologistInventoryList.Visible = false;
-            // 
-            // FullNameInventoryList
-            // 
-            this.FullNameInventoryList.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FullNameInventoryList.DataPropertyName = "fullName";
-            this.FullNameInventoryList.HeaderText = "ФИО геолога";
-            this.FullNameInventoryList.Name = "FullNameInventoryList";
-            this.FullNameInventoryList.ReadOnly = true;
-            this.FullNameInventoryList.Width = 230;
-            // 
-            // CreationDateInventoryList
-            // 
-            this.CreationDateInventoryList.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CreationDateInventoryList.DataPropertyName = "creationDate";
-            this.CreationDateInventoryList.HeaderText = "Дата создания";
-            this.CreationDateInventoryList.Name = "CreationDateInventoryList";
-            this.CreationDateInventoryList.ReadOnly = true;
-            this.CreationDateInventoryList.Width = 140;
-            // 
-            // EditButton
-            // 
-            this.EditButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EditButton.DefaultCellStyle = dataGridViewCellStyle1;
-            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditButton.HeaderText = "";
-            this.EditButton.Name = "EditButton";
-            this.EditButton.ReadOnly = true;
-            this.EditButton.Text = "Редактировать";
-            this.EditButton.UseColumnTextForButtonValue = true;
-            this.EditButton.Width = 130;
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteButton.HeaderText = "";
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.ReadOnly = true;
-            this.DeleteButton.Text = "Удалить";
-            this.DeleteButton.UseColumnTextForButtonValue = true;
-            this.DeleteButton.Width = 85;
             // 
             // ResourceGrid
             // 
@@ -202,29 +147,6 @@
             this.ResourceGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ResourceGrid.Size = new System.Drawing.Size(694, 359);
             this.ResourceGrid.TabIndex = 2;
-            // 
-            // BackwardsButton
-            // 
-            this.BackwardsButton.FlatAppearance.BorderSize = 0;
-            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(826, 10);
-            this.BackwardsButton.Name = "BackwardsButton";
-            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
-            this.BackwardsButton.TabIndex = 2;
-            this.BackwardsButton.UseVisualStyleBackColor = true;
-            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
-            // 
-            // CreateButton
-            // 
-            this.CreateButton.FlatAppearance.BorderSize = 0;
-            this.CreateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateButton.Image = global::LandSeismic.Properties.Resources.document;
-            this.CreateButton.Location = new System.Drawing.Point(777, 10);
-            this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(25, 25);
-            this.CreateButton.TabIndex = 1;
-            this.CreateButton.UseVisualStyleBackColor = true;
             // 
             // IdListResourceInList
             // 
@@ -285,6 +207,109 @@
             this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn2.Width = 85;
             // 
+            // AddInventoryListButton
+            // 
+            this.AddInventoryListButton.FlatAppearance.BorderSize = 0;
+            this.AddInventoryListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddInventoryListButton.Image = global::LandSeismic.Properties.Resources.plus;
+            this.AddInventoryListButton.Location = new System.Drawing.Point(728, 10);
+            this.AddInventoryListButton.Name = "AddInventoryListButton";
+            this.AddInventoryListButton.Size = new System.Drawing.Size(25, 25);
+            this.AddInventoryListButton.TabIndex = 3;
+            this.AddInventoryListButton.UseVisualStyleBackColor = true;
+            this.AddInventoryListButton.Click += new System.EventHandler(this.AddInventoryListButton_Click);
+            // 
+            // BackwardsButton
+            // 
+            this.BackwardsButton.FlatAppearance.BorderSize = 0;
+            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
+            this.BackwardsButton.Location = new System.Drawing.Point(826, 10);
+            this.BackwardsButton.Name = "BackwardsButton";
+            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
+            this.BackwardsButton.TabIndex = 2;
+            this.BackwardsButton.UseVisualStyleBackColor = true;
+            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
+            // 
+            // DocumentButton
+            // 
+            this.DocumentButton.FlatAppearance.BorderSize = 0;
+            this.DocumentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DocumentButton.Image = global::LandSeismic.Properties.Resources.document;
+            this.DocumentButton.Location = new System.Drawing.Point(777, 10);
+            this.DocumentButton.Name = "DocumentButton";
+            this.DocumentButton.Size = new System.Drawing.Size(25, 25);
+            this.DocumentButton.TabIndex = 1;
+            this.DocumentButton.UseVisualStyleBackColor = true;
+            this.DocumentButton.Click += new System.EventHandler(this.DocumentButton_Click);
+            // 
+            // IdInventoryList
+            // 
+            this.IdInventoryList.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.IdInventoryList.DataPropertyName = "id";
+            this.IdInventoryList.HeaderText = "ID";
+            this.IdInventoryList.Name = "IdInventoryList";
+            this.IdInventoryList.ReadOnly = true;
+            this.IdInventoryList.Width = 50;
+            // 
+            // IdSquadInventoryList
+            // 
+            this.IdSquadInventoryList.DataPropertyName = "idSquad";
+            this.IdSquadInventoryList.HeaderText = "Отряд";
+            this.IdSquadInventoryList.Name = "IdSquadInventoryList";
+            this.IdSquadInventoryList.ReadOnly = true;
+            // 
+            // LoginGeologistInventoryList
+            // 
+            this.LoginGeologistInventoryList.DataPropertyName = "logingeologist";
+            this.LoginGeologistInventoryList.HeaderText = "LoginGeologist";
+            this.LoginGeologistInventoryList.Name = "LoginGeologistInventoryList";
+            this.LoginGeologistInventoryList.ReadOnly = true;
+            this.LoginGeologistInventoryList.Visible = false;
+            // 
+            // FullNameInventoryList
+            // 
+            this.FullNameInventoryList.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FullNameInventoryList.DataPropertyName = "fullName";
+            this.FullNameInventoryList.HeaderText = "ФИО геолога";
+            this.FullNameInventoryList.Name = "FullNameInventoryList";
+            this.FullNameInventoryList.ReadOnly = true;
+            this.FullNameInventoryList.Width = 230;
+            // 
+            // CreationDateInventoryList
+            // 
+            this.CreationDateInventoryList.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CreationDateInventoryList.DataPropertyName = "creationDate";
+            this.CreationDateInventoryList.HeaderText = "Дата создания";
+            this.CreationDateInventoryList.Name = "CreationDateInventoryList";
+            this.CreationDateInventoryList.ReadOnly = true;
+            this.CreationDateInventoryList.Width = 140;
+            // 
+            // EditButton
+            // 
+            this.EditButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EditButton.DefaultCellStyle = dataGridViewCellStyle1;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.HeaderText = "";
+            this.EditButton.Name = "EditButton";
+            this.EditButton.ReadOnly = true;
+            this.EditButton.Text = "Редактировать";
+            this.EditButton.UseColumnTextForButtonValue = true;
+            this.EditButton.Width = 130;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.HeaderText = "";
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.ReadOnly = true;
+            this.DeleteButton.Text = "Удалить";
+            this.DeleteButton.UseColumnTextForButtonValue = true;
+            this.DeleteButton.Width = 85;
+            // 
             // InventoryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -319,13 +344,7 @@
         private System.Windows.Forms.Label FormNameLabel;
         private System.Windows.Forms.DataGridView InventoryListGrid;
         private System.Windows.Forms.Button BackwardsButton;
-        private System.Windows.Forms.Button CreateButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdInventoryList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoginGeologistInventoryList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullNameInventoryList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreationDateInventoryList;
-        private System.Windows.Forms.DataGridViewButtonColumn EditButton;
-        private System.Windows.Forms.DataGridViewButtonColumn DeleteButton;
+        private System.Windows.Forms.Button DocumentButton;
         private System.Windows.Forms.DataGridView ResourceGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdListResourceInList;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdResourceResourceList;
@@ -333,5 +352,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AmountResourceInList;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.Button AddInventoryListButton;
+        private System.Windows.Forms.SaveFileDialog InventoryListSaveDialog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdInventoryList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdSquadInventoryList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoginGeologistInventoryList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullNameInventoryList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreationDateInventoryList;
+        private System.Windows.Forms.DataGridViewButtonColumn EditButton;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteButton;
     }
 }

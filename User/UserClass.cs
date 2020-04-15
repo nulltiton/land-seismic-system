@@ -92,16 +92,14 @@ namespace LandSeismic.User
 
         static public String GetUserFullName(String login)
         {
-            String fullName;
             DBConnection.DBConnection.sqlCommand.CommandText =
                 "SELECT CONCAT_WS(' ', surname " +
                 ", firstName" +
                 ", middleName) " +
                 "FROM user " +
                 "WHERE login = '" + login + "'";
-            fullName = DBConnection.DBConnection.sqlCommand.ExecuteScalar().
+            return DBConnection.DBConnection.sqlCommand.ExecuteScalar().
                 ToString();
-            return fullName;
         }
 
         static public Boolean AddUser(String login, String password, 
@@ -239,14 +237,52 @@ namespace LandSeismic.User
         {
             try
             {
+                Int32 result;
+
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "UPDATE user " +
-                    "SET isDeleted = 1 " +
-                    "WHERE login = '" + login + "'";
-                if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
-                    return true;
+                    "SELECT COUNT(`id`) " +
+                    "FROM `inventorylist` " +
+                    "WHERE `logingeologist` = '" + login + "'";
+                result = Convert.ToInt32(DBConnection.DBConnection.sqlCommand.
+                    ExecuteScalar());
+
+                DBConnection.DBConnection.sqlCommand.CommandText =
+                    "SELECT COUNT(`id`) " +
+                    "FROM `squad` " +
+                    "WHERE `loginsquadleader` = '" + login + "'";
+                result += Convert.ToInt32(DBConnection.DBConnection.sqlCommand.
+                    ExecuteScalar());
+
+                DBConnection.DBConnection.sqlCommand.CommandText =
+                    "SELECT COUNT(`id`) " +
+                    "FROM `locality` " +
+                    "WHERE `logingeologist` = '" + login + "' " +
+                    "OR `loginleadgeologist` = '" + login + "' " +
+                    "OR `loginsquadleader` = '" + login + "'";
+                result += Convert.ToInt32(DBConnection.DBConnection.sqlCommand.
+                    ExecuteScalar());
+
+                if (result == 0)
+                {
+                    DBConnection.DBConnection.sqlCommand.CommandText =
+                        "UPDATE user " +
+                        "SET isDeleted = 1 " +
+                        "WHERE login = '" + login + "'";
+                    if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
+                        return true;
+                    else
+                        return false;
+                }
                 else
+                {
+                    System.Windows.Forms.MessageBox.Show(
+                        "Невозможно удалить пользователя, так как на него " +
+                        "записаны данные.",
+                        "Ошибка удаления",
+                        System.Windows.Forms.MessageBoxButtons.OK,
+                        System.Windows.Forms.MessageBoxIcon.Error);
                     return false;
+                }
             }
             catch (Exception ex)
             {
