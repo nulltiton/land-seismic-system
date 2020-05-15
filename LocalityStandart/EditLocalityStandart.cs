@@ -8,6 +8,7 @@ namespace LandSeismic.LocalityStandart
         public EditLocalityStandart()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -72,6 +73,19 @@ namespace LandSeismic.LocalityStandart
 
             AmountNumericUpDown.Value = Convert.ToByte(LocalityStandart.
                 PrimordialAmount);
+        }
+
+        private void EditLocalityStandart_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void EditLocalityStandart_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Edit = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace LandSeismic.Position
+﻿namespace LandSeismic.Help
 {
-    partial class EditPosition
+    partial class AuthorizationHelp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPosition));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorizationHelp));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
-            this.SaveButton = new System.Windows.Forms.Button();
             this.BackwardsButton = new System.Windows.Forms.Button();
             this.FormNameLabel = new System.Windows.Forms.Label();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.NamePanel = new System.Windows.Forms.Panel();
+            this.HelpTextBox = new System.Windows.Forms.TextBox();
             this.FormBorderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormBorderPanel
             // 
             this.FormBorderPanel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.FormBorderPanel.Controls.Add(this.SaveButton);
             this.FormBorderPanel.Controls.Add(this.BackwardsButton);
             this.FormBorderPanel.Controls.Add(this.FormNameLabel);
             this.FormBorderPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -51,18 +47,6 @@
             this.FormBorderPanel.Name = "FormBorderPanel";
             this.FormBorderPanel.Size = new System.Drawing.Size(263, 45);
             this.FormBorderPanel.TabIndex = 0;
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.FlatAppearance.BorderSize = 0;
-            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveButton.Image = global::LandSeismic.Properties.Resources.save;
-            this.SaveButton.Location = new System.Drawing.Point(172, 10);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(25, 25);
-            this.SaveButton.TabIndex = 4;
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // BackwardsButton
             // 
@@ -81,49 +65,29 @@
             this.FormNameLabel.AutoSize = true;
             this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
             this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(128, 18);
+            this.FormNameLabel.Size = new System.Drawing.Size(87, 18);
             this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Редактирование";
+            this.FormNameLabel.Text = "Помощник";
             // 
-            // NameTextBox
+            // HelpTextBox
             // 
-            this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NameTextBox.ForeColor = System.Drawing.Color.Gray;
-            this.NameTextBox.Location = new System.Drawing.Point(31, 94);
-            this.NameTextBox.MaxLength = 20;
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(200, 19);
-            this.NameTextBox.TabIndex = 48;
-            this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
+            this.HelpTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HelpTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.HelpTextBox.Location = new System.Drawing.Point(0, 45);
+            this.HelpTextBox.Multiline = true;
+            this.HelpTextBox.Name = "HelpTextBox";
+            this.HelpTextBox.Size = new System.Drawing.Size(263, 344);
+            this.HelpTextBox.TabIndex = 1;
+            this.HelpTextBox.Text = "Для того, чтобы пройти регистрацию необходимо заполнить поля логин и пароль.";
             // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.ForeColor = System.Drawing.Color.Gray;
-            this.NameLabel.Location = new System.Drawing.Point(28, 69);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(114, 18);
-            this.NameLabel.TabIndex = 50;
-            this.NameLabel.Text = "Наименование";
-            // 
-            // NamePanel
-            // 
-            this.NamePanel.BackColor = System.Drawing.Color.LightGray;
-            this.NamePanel.Location = new System.Drawing.Point(31, 115);
-            this.NamePanel.Name = "NamePanel";
-            this.NamePanel.Size = new System.Drawing.Size(200, 1);
-            this.NamePanel.TabIndex = 49;
-            // 
-            // EditPosition
+            // AuthorizationHelp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(263, 147);
+            this.ClientSize = new System.Drawing.Size(263, 389);
             this.ControlBox = false;
-            this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.NameLabel);
-            this.Controls.Add(this.NamePanel);
+            this.Controls.Add(this.HelpTextBox);
             this.Controls.Add(this.FormBorderPanel);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
@@ -131,12 +95,11 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditPosition";
+            this.Name = "AuthorizationHelp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
-            this.Load += new System.EventHandler(this.EditPosition_Load);
-            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.EditPosition_HelpRequested);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditPosition_KeyDown);
+            this.Shown += new System.EventHandler(this.AuthorizationHelp_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AuthorizationHelp_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -149,9 +112,6 @@
         private System.Windows.Forms.Panel FormBorderPanel;
         private System.Windows.Forms.Label FormNameLabel;
         private System.Windows.Forms.Button BackwardsButton;
-        private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Panel NamePanel;
+        private System.Windows.Forms.TextBox HelpTextBox;
     }
 }

@@ -11,6 +11,7 @@ namespace LandSeismic.SeismicExplorationType
         public SeismicExplorationType()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -57,6 +58,19 @@ namespace LandSeismic.SeismicExplorationType
                         SeismicExplorationTypeClass.
                             GetSeismicExplorationTypeList();
             }
+        }
+
+        private void SeismicExplorationType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void SeismicExplorationType_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Table = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

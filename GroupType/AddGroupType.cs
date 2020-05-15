@@ -8,6 +8,7 @@ namespace LandSeismic.GroupType
         public AddGroupType()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -35,6 +36,19 @@ namespace LandSeismic.GroupType
                     "Ошибка корректности ввода",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+        }
+
+        private void AddGroupType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void AddGroupType_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Add = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

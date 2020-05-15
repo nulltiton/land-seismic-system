@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LandSeismic.InventoryList
@@ -15,6 +8,7 @@ namespace LandSeismic.InventoryList
         public EditInventoryList()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -41,6 +35,19 @@ namespace LandSeismic.InventoryList
             UserComboBox.DisplayMember = "name";
             UserComboBox.ValueMember = "login";
             UserComboBox.Text = InventoryList.InventoryListGeologist;
+        }
+
+        private void EditInventoryList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void EditInventoryList_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Edit = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

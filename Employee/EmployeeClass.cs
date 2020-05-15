@@ -4,33 +4,42 @@ using MySql.Data.MySqlClient;
 
 namespace LandSeismic.Employee
 {
+    /// <summary>
+    /// Класс сотрудника
+    /// </summary>
     class EmployeeClass
     {
         static public DataTable DTEmployee = new DataTable();
         static public DataTable DTFilteredEmployee = new DataTable();
 
+        /// <summary>
+        /// Заполнение таблицы информацией о сотрудниках
+        /// </summary>
         static public void GetEmployeeList()
         {
             DBConnection.DBConnection.sqlDataAdapter =
                 new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
             DBConnection.DBConnection.sqlCommand.CommandText =
-                "SELECT employee.id" +
-                ", employee.surname" +
-                ", employee.firstname" +
-                ", employee.middlename" +
-                ", employee.phone" +
-                ", employee.address" +
-                ", employee.contactPhone" +
-                ", position.name " +
-                "FROM employee" +
-                ", position " +
-                "WHERE employee.idPosition = position.id " +
-                "AND employee.isDeleted = 0 " +
-                "ORDER BY employee.surname";
+                "SELECT `employee`.`id`" +
+                ", `employee`.`surname`" +
+                ", `employee`.`firstname`" +
+                ", `employee`.`middlename`" +
+                ", `employee`.`phone`" +
+                ", `employee`.`address`" +
+                ", `employee`.`contactPhone`" +
+                ", `position`.`name` " +
+                "FROM `employee`" +
+                ", `position` " +
+                "WHERE `employee`.`idPosition` = `position`.`id` " +
+                "AND `employee`.`isDeleted` = 0 " +
+                "ORDER BY `employee`.`surname`";
             DTEmployee.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTEmployee);
         }
 
+        /// <summary>
+        /// Конкатенация имени
+        /// </summary>
         static public void GetEmployeeFullName()
         {
             DBConnection.DBConnection.sqlDataAdapter =
@@ -49,6 +58,10 @@ namespace LandSeismic.Employee
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTEmployee);
         }
 
+        /// <summary>
+        /// Фильтрация по должности
+        /// </summary>
+        /// <param name="positionId"></param>
         static public void FilterByPosition(String positionId)
         {
             DBConnection.DBConnection.sqlDataAdapter =
@@ -72,6 +85,17 @@ namespace LandSeismic.Employee
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTFilteredEmployee);
         }
 
+        /// <summary>
+        /// Добавление информации о сотруднике
+        /// </summary>
+        /// <param name="surname"></param>
+        /// <param name="firstName"></param>
+        /// <param name="middleName"></param>
+        /// <param name="phone"></param>
+        /// <param name="address"></param>
+        /// <param name="contactPhone"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
         static public Boolean AddEmployee(String surname, String firstName,
             String middleName, String phone, String address,
             String contactPhone, String position)
@@ -79,7 +103,7 @@ namespace LandSeismic.Employee
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                "INSERT INTO employee " +
+                "INSERT INTO `employee` " +
                 "VALUES(NULL" +
                 ", '" + surname + "'" +
                 ", '" + firstName + "'" +
@@ -95,10 +119,10 @@ namespace LandSeismic.Employee
                 else
                     return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Ошибка при добавлении сотрудника. " + ex.Message,
+                    "Ошибка при добавлении сотрудника",
                     "Ошибка добавления",
                     System.Windows.Forms.MessageBoxButtons.OK,
                     System.Windows.Forms.MessageBoxIcon.Error);
@@ -106,6 +130,18 @@ namespace LandSeismic.Employee
             }
         }
 
+        /// <summary>
+        /// Редактирование информации о сотруднике
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="surname"></param>
+        /// <param name="firstName"></param>
+        /// <param name="middleName"></param>
+        /// <param name="phone"></param>
+        /// <param name="address"></param>
+        /// <param name="contactPhone"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
         static public Boolean EditEmployee(String id, String surname,
             String firstName, String middleName, String phone, String address,
             String contactPhone, String position)
@@ -113,25 +149,25 @@ namespace LandSeismic.Employee
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "UPDATE employee " +
-                    "SET surname = '" + surname + "'" +
-                    ", firstName = '" + firstName + "'" +
-                    ", middleName = '" + middleName + "'" +
-                    ", phone = '" + phone + "'" +
-                    ", address = '" + address + "'" +
-                    ", contactPhone = '" + contactPhone + "'" +
-                    ", idPosition = '" + position + "' " +
-                    "WHERE id = '" + id + "'";
+                    "UPDATE `employee` " +
+                    "SET `surname` = '" + surname + "'" +
+                    ", `firstName` = '" + firstName + "'" +
+                    ", `middleName` = '" + middleName + "'" +
+                    ", `phone` = '" + phone + "'" +
+                    ", `address` = '" + address + "'" +
+                    ", `contactPhone` = '" + contactPhone + "'" +
+                    ", `idPosition` = '" + position + "' " +
+                    "WHERE `id` = '" + id + "'";
                 if (DBConnection.DBConnection.sqlCommand.
                     ExecuteNonQuery() > 0)
                     return true;
                 else
                     return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Ошибка при изменении пользователя. " + ex.Message,
+                    "Ошибка при изменении пользователя",
                     "Ошибка добавления",
                     System.Windows.Forms.MessageBoxButtons.OK,
                     System.Windows.Forms.MessageBoxIcon.Error);
@@ -139,6 +175,11 @@ namespace LandSeismic.Employee
             }
         }
 
+        /// <summary>
+        /// Удаление информации о соруднике
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         static public Boolean DropEmployee(String id)
         {
             try
@@ -151,9 +192,9 @@ namespace LandSeismic.Employee
                     ExecuteScalar()) == 0)
                 {
                     DBConnection.DBConnection.sqlCommand.CommandText =
-                        "UPDATE employee " +
-                        "SET isDeleted = 1 " +
-                        "WHERE id = '" + id + "'";
+                        "UPDATE `employee` " +
+                        "SET `isDeleted` = 1 " +
+                        "WHERE `id` = '" + id + "'";
                     if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
                         return true;
                     else
@@ -171,10 +212,10 @@ namespace LandSeismic.Employee
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Ошибка при удаления пользователя. " + ex.Message,
+                    "Ошибка при удаления пользователя",
                     "Ошибка удаления",
                     System.Windows.Forms.MessageBoxButtons.OK,
                     System.Windows.Forms.MessageBoxIcon.Error);

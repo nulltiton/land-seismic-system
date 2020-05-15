@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddLocality));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.BackwardsButton = new System.Windows.Forms.Button();
             this.FormNameLabel = new System.Windows.Forms.Label();
             this.SizeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.SizeLabel = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.SquadLeaderComboBox = new System.Windows.Forms.ComboBox();
             this.SquadLeaderLabel = new System.Windows.Forms.Label();
             this.UsabilityCheckBox = new System.Windows.Forms.CheckBox();
-            this.SaveButton = new System.Windows.Forms.Button();
-            this.BackwardsButton = new System.Windows.Forms.Button();
             this.FormBorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SizeNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,30 @@
             this.FormBorderPanel.Size = new System.Drawing.Size(263, 45);
             this.FormBorderPanel.TabIndex = 0;
             // 
+            // SaveButton
+            // 
+            this.SaveButton.FlatAppearance.BorderSize = 0;
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveButton.Image = global::LandSeismic.Properties.Resources.save;
+            this.SaveButton.Location = new System.Drawing.Point(172, 10);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(25, 25);
+            this.SaveButton.TabIndex = 4;
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // BackwardsButton
+            // 
+            this.BackwardsButton.FlatAppearance.BorderSize = 0;
+            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
+            this.BackwardsButton.Location = new System.Drawing.Point(220, 10);
+            this.BackwardsButton.Name = "BackwardsButton";
+            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
+            this.BackwardsButton.TabIndex = 3;
+            this.BackwardsButton.UseVisualStyleBackColor = true;
+            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
+            // 
             // FormNameLabel
             // 
             this.FormNameLabel.AutoSize = true;
@@ -80,6 +104,16 @@
             this.SizeNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SizeNumericUpDown.ForeColor = System.Drawing.Color.Gray;
             this.SizeNumericUpDown.Location = new System.Drawing.Point(31, 203);
+            this.SizeNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.SizeNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.SizeNumericUpDown.Name = "SizeNumericUpDown";
             this.SizeNumericUpDown.Size = new System.Drawing.Size(200, 22);
             this.SizeNumericUpDown.TabIndex = 71;
@@ -251,30 +285,6 @@
             this.UsabilityCheckBox.TabIndex = 84;
             this.UsabilityCheckBox.UseVisualStyleBackColor = true;
             // 
-            // SaveButton
-            // 
-            this.SaveButton.FlatAppearance.BorderSize = 0;
-            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveButton.Image = global::LandSeismic.Properties.Resources.save;
-            this.SaveButton.Location = new System.Drawing.Point(172, 10);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(25, 25);
-            this.SaveButton.TabIndex = 4;
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // BackwardsButton
-            // 
-            this.BackwardsButton.FlatAppearance.BorderSize = 0;
-            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(220, 10);
-            this.BackwardsButton.Name = "BackwardsButton";
-            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
-            this.BackwardsButton.TabIndex = 3;
-            this.BackwardsButton.UseVisualStyleBackColor = true;
-            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
-            // 
             // AddLocality
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -309,6 +319,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.AddLocality_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AddLocality_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddLocality_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SizeNumericUpDown)).EndInit();

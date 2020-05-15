@@ -11,6 +11,7 @@ namespace LandSeismic.GroupType
         public GroupType()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -51,6 +52,19 @@ namespace LandSeismic.GroupType
                         GroupTypeGrid.CurrentRow.Cells[2].Value.ToString()))
                         GroupTypeClass.GetGroupTypeList();
             }
+        }
+
+        private void GroupType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void GroupType_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Table = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

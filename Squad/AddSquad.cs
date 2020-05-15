@@ -8,6 +8,7 @@ namespace LandSeismic.Squad
         public AddSquad()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -22,7 +23,7 @@ namespace LandSeismic.Squad
             SquadLeaderComboBox.DisplayMember = "name";
             SquadLeaderComboBox.ValueMember = "login";
 
-            Locality.LocalityClass.GetLocalityList();
+            Locality.LocalityClass.GetLocalityListForSquad();
             LocalityComboBox.DataSource = Locality.LocalityClass.DTLocality;
             LocalityComboBox.DisplayMember = "id";
             LocalityComboBox.ValueMember = "id";
@@ -52,6 +53,19 @@ namespace LandSeismic.Squad
                 SquadClass.GetSquadList();
                 Close();
             }
+        }
+
+        private void AddSquad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void AddSquad_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Add = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

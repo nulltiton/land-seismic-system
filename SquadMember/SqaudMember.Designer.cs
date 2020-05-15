@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqaudMember));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.FormBorderPanel = new System.Windows.Forms.Panel();
+            this.BackwardsButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             this.FormNameLabel = new System.Windows.Forms.Label();
             this.SquadMemberGrid = new System.Windows.Forms.DataGridView();
             this.IdSquadMember = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +44,6 @@
             this.NamePositionSquadMember = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.BackwardsButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
             this.FormBorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SquadMemberGrid)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,30 @@
             this.FormBorderPanel.Name = "FormBorderPanel";
             this.FormBorderPanel.Size = new System.Drawing.Size(874, 45);
             this.FormBorderPanel.TabIndex = 0;
+            // 
+            // BackwardsButton
+            // 
+            this.BackwardsButton.FlatAppearance.BorderSize = 0;
+            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
+            this.BackwardsButton.Location = new System.Drawing.Point(826, 10);
+            this.BackwardsButton.Name = "BackwardsButton";
+            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
+            this.BackwardsButton.TabIndex = 2;
+            this.BackwardsButton.UseVisualStyleBackColor = true;
+            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
+            // 
+            // AddButton
+            // 
+            this.AddButton.FlatAppearance.BorderSize = 0;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
+            this.AddButton.Location = new System.Drawing.Point(777, 10);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(25, 25);
+            this.AddButton.TabIndex = 1;
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // FormNameLabel
             // 
@@ -88,14 +112,14 @@
             this.NamePositionSquadMember,
             this.EditButton,
             this.DeleteButton});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SquadMemberGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SquadMemberGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.SquadMemberGrid.Dock = System.Windows.Forms.DockStyle.Left;
             this.SquadMemberGrid.Location = new System.Drawing.Point(0, 45);
             this.SquadMemberGrid.Name = "SquadMemberGrid";
@@ -159,9 +183,9 @@
             // EditButton
             // 
             this.EditButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EditButton.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EditButton.DefaultCellStyle = dataGridViewCellStyle3;
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.HeaderText = "";
             this.EditButton.Name = "EditButton";
@@ -180,30 +204,6 @@
             this.DeleteButton.Text = "Удалить";
             this.DeleteButton.UseColumnTextForButtonValue = true;
             this.DeleteButton.Width = 85;
-            // 
-            // BackwardsButton
-            // 
-            this.BackwardsButton.FlatAppearance.BorderSize = 0;
-            this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(826, 10);
-            this.BackwardsButton.Name = "BackwardsButton";
-            this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
-            this.BackwardsButton.TabIndex = 2;
-            this.BackwardsButton.UseVisualStyleBackColor = true;
-            this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
-            // 
-            // AddButton
-            // 
-            this.AddButton.FlatAppearance.BorderSize = 0;
-            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
-            this.AddButton.Location = new System.Drawing.Point(777, 10);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(25, 25);
-            this.AddButton.TabIndex = 1;
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // SqaudMember
             // 
@@ -224,6 +224,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SqaudMember";
             this.Load += new System.EventHandler(this.SqaudMember_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.SqaudMember_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SqaudMember_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SquadMemberGrid)).EndInit();

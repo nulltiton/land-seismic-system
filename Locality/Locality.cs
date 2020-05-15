@@ -19,6 +19,7 @@ namespace LandSeismic.Locality
         public Locality()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -74,6 +75,19 @@ namespace LandSeismic.Locality
                         CurrentRow.Cells[2].Value.ToString()))
                         LocalityClass.GetLocalityList();
             }
+        }
+
+        private void Locality_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void Locality_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Table = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

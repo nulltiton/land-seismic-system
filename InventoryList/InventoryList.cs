@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace LandSeismic.InventoryList
@@ -13,6 +11,7 @@ namespace LandSeismic.InventoryList
         public InventoryList()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -83,6 +82,20 @@ namespace LandSeismic.InventoryList
                     Value.ToString()), InventoryListSaveDialog.FileName);
             }
         }
-                
+
+        private void InventoryList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void InventoryList_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Table = true;
+            Help.AuthorizationHelp.List = true;
+            Help.AuthorizationHelp.Filter = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
+        }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LandSeismic.InventoryList
@@ -15,6 +8,7 @@ namespace LandSeismic.InventoryList
         public AddInventoryList()
         {
             InitializeComponent();
+            KeyPreview = false;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -24,7 +18,7 @@ namespace LandSeismic.InventoryList
 
         private void AddInventoryList_Load(object sender, EventArgs e)
         {
-            Squad.SquadClass.GetSquadList();
+            Squad.SquadClass.GetSquadListForInventoryList();
             SquadComboBox.DataSource = Squad.SquadClass.DTSquad;
             SquadComboBox.DisplayMember = "id";
             SquadComboBox.ValueMember = "id";
@@ -41,6 +35,19 @@ namespace LandSeismic.InventoryList
                     InventoryListId);
                 Close();
             }
+        }
+
+        private void AddInventoryList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void AddInventoryList_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Add = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

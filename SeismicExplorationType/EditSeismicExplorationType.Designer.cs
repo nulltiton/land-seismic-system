@@ -134,6 +134,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.EditSeismicExplorationType_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.EditSeismicExplorationType_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditSeismicExplorationType_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);

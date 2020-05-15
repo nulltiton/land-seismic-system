@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LandSeismic.SeismicExplorationType
@@ -15,6 +8,7 @@ namespace LandSeismic.SeismicExplorationType
         public EditSeismicExplorationType()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -46,6 +40,19 @@ namespace LandSeismic.SeismicExplorationType
         {
             NameTextBox.Text = SeismicExplorationType.
                 SeismicExplorationTypeName;
+        }
+
+        private void EditSeismicExplorationType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void EditSeismicExplorationType_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Edit = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

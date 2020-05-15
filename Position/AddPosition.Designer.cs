@@ -134,6 +134,8 @@
             this.Name = "AddPosition";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AddPosition_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddPosition_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);

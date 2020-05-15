@@ -126,6 +126,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.AddSquadMember_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AddSquadMember_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddSquadMember_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);

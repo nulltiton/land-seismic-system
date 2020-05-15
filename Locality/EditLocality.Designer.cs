@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditLocality));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
-            this.FormNameLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.BackwardsButton = new System.Windows.Forms.Button();
+            this.FormNameLabel = new System.Windows.Forms.Label();
             this.UsabilityCheckBox = new System.Windows.Forms.CheckBox();
             this.UsabilityLabel = new System.Windows.Forms.Label();
             this.SquadLeaderComboBox = new System.Windows.Forms.ComboBox();
@@ -66,15 +66,6 @@
             this.FormBorderPanel.Size = new System.Drawing.Size(263, 45);
             this.FormBorderPanel.TabIndex = 0;
             // 
-            // FormNameLabel
-            // 
-            this.FormNameLabel.AutoSize = true;
-            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
-            this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(128, 18);
-            this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Редактирование";
-            // 
             // SaveButton
             // 
             this.SaveButton.FlatAppearance.BorderSize = 0;
@@ -98,6 +89,15 @@
             this.BackwardsButton.TabIndex = 3;
             this.BackwardsButton.UseVisualStyleBackColor = true;
             this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
+            // 
+            // FormNameLabel
+            // 
+            this.FormNameLabel.AutoSize = true;
+            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
+            this.FormNameLabel.Name = "FormNameLabel";
+            this.FormNameLabel.Size = new System.Drawing.Size(128, 18);
+            this.FormNameLabel.TabIndex = 0;
+            this.FormNameLabel.Text = "Редактирование";
             // 
             // UsabilityCheckBox
             // 
@@ -210,6 +210,11 @@
             this.SizeNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SizeNumericUpDown.ForeColor = System.Drawing.Color.Gray;
             this.SizeNumericUpDown.Location = new System.Drawing.Point(31, 203);
+            this.SizeNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.SizeNumericUpDown.Name = "SizeNumericUpDown";
             this.SizeNumericUpDown.Size = new System.Drawing.Size(200, 22);
             this.SizeNumericUpDown.TabIndex = 90;
@@ -307,6 +312,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.EditLocality_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.EditLocality_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditLocality_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SizeNumericUpDown)).EndInit();

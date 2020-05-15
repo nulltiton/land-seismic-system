@@ -17,6 +17,7 @@ namespace LandSeismic.User
         public User()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -66,6 +67,19 @@ namespace LandSeismic.User
                         CurrentRow.Cells[2].Value.ToString()))
                         UserClass.GetUserList();
             }
+        }
+
+        private void User_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void User_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Table = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

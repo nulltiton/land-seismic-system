@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPositionStandart));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
-            this.FormNameLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.BackwardsButton = new System.Windows.Forms.Button();
+            this.FormNameLabel = new System.Windows.Forms.Label();
             this.AmountNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.AmountLabel = new System.Windows.Forms.Label();
             this.ResourceComboBox = new System.Windows.Forms.ComboBox();
@@ -55,15 +55,6 @@
             this.FormBorderPanel.Name = "FormBorderPanel";
             this.FormBorderPanel.Size = new System.Drawing.Size(263, 45);
             this.FormBorderPanel.TabIndex = 0;
-            // 
-            // FormNameLabel
-            // 
-            this.FormNameLabel.AutoSize = true;
-            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
-            this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(128, 18);
-            this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Редактирование";
             // 
             // SaveButton
             // 
@@ -89,11 +80,25 @@
             this.BackwardsButton.UseVisualStyleBackColor = true;
             this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
             // 
+            // FormNameLabel
+            // 
+            this.FormNameLabel.AutoSize = true;
+            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
+            this.FormNameLabel.Name = "FormNameLabel";
+            this.FormNameLabel.Size = new System.Drawing.Size(128, 18);
+            this.FormNameLabel.TabIndex = 0;
+            this.FormNameLabel.Text = "Редактирование";
+            // 
             // AmountNumericUpDown
             // 
             this.AmountNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AmountNumericUpDown.ForeColor = System.Drawing.Color.Gray;
             this.AmountNumericUpDown.Location = new System.Drawing.Point(31, 203);
+            this.AmountNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.AmountNumericUpDown.Name = "AmountNumericUpDown";
             this.AmountNumericUpDown.Size = new System.Drawing.Size(200, 22);
             this.AmountNumericUpDown.TabIndex = 65;
@@ -181,6 +186,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.EditPositionStandart_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.EditPositionStandart_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditPositionStandart_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNumericUpDown)).EndInit();

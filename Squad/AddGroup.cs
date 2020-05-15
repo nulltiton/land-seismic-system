@@ -8,6 +8,7 @@ namespace LandSeismic.Squad
         public AddGroup()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -32,6 +33,19 @@ namespace LandSeismic.Squad
                 GroupClass.GetGroupList(Squad.GroupSquadId);
                 Close();
             }
+        }
+
+        private void AddGroup_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void AddGroup_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Add = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace LandSeismic.PositionStandart
         public PositionStandart()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -62,6 +63,19 @@ namespace LandSeismic.PositionStandart
                         PositionStandartGrid.CurrentRow.Cells[4].Value.ToString()))
                         PositionStandartClass.GetPositionStandartList();
             }
+        }
+
+        private void PositionStandart_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void PositionStandart_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Table = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

@@ -8,6 +8,7 @@ namespace LandSeismic.PositionStandart
         public AddPositionStandart()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -51,6 +52,19 @@ namespace LandSeismic.PositionStandart
                 DTMaterialAndTechnicalResource;
             ResourceComboBox.DisplayMember = "name";
             ResourceComboBox.ValueMember = "id";
+        }
+
+        private void AddPositionStandart_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void AddPositionStandart_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Add = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

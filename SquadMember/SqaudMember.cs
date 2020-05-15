@@ -11,6 +11,7 @@ namespace LandSeismic.SquadMember
         public SqaudMember()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -52,6 +53,19 @@ namespace LandSeismic.SquadMember
         {
             var addSquadMember = new AddSquadMember();
             addSquadMember.Show();
+        }
+
+        private void SqaudMember_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void SqaudMember_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Table = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

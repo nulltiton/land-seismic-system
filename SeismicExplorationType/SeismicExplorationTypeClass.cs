@@ -4,29 +4,40 @@ using MySql.Data.MySqlClient;
 
 namespace LandSeismic.SeismicExplorationType
 {
+    /// <summary>
+    /// Класс типа сейсморазведки
+    /// </summary>
     class SeismicExplorationTypeClass
     {
         static public DataTable DTSeismicExplorationType = new DataTable();
 
+        /// <summary>
+        /// Заполнение таблицы информацией о типах сейсморазведки
+        /// </summary>
         static public void GetSeismicExplorationTypeList()
         {
             DBConnection.DBConnection.sqlDataAdapter = new MySqlDataAdapter(
                 DBConnection.DBConnection.sqlCommand);
             DBConnection.DBConnection.sqlCommand.CommandText =
                 "SELECT * " +
-                "FROM seismicExplorationType " +
-                "ORDER BY name";
+                "FROM `seismicExplorationType` " +
+                "ORDER BY `name`";
             DTSeismicExplorationType.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(
                 DTSeismicExplorationType);
         }
 
+        /// <summary>
+        /// Добавление информации о типах сейсморазведки
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         static public Boolean AddSeismicExplorationType(String name)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "INSERT INTO seismicExplorationType " +
+                    "INSERT INTO `seismicExplorationType` " +
                     "VALUES(NULL" +
                     ", '" + name + "')";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
@@ -34,10 +45,10 @@ namespace LandSeismic.SeismicExplorationType
                 else
                     return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Ошибка при добавлении типа сейсморазведки. " + ex,
+                    "Ошибка при добавлении типа сейсморазведки",
                     "Ошибка добавления",
                     System.Windows.Forms.MessageBoxButtons.OK,
                     System.Windows.Forms.MessageBoxIcon.Error);
@@ -45,23 +56,29 @@ namespace LandSeismic.SeismicExplorationType
             }
         }
 
+        /// <summary>
+        /// Редактирование информации о типах сейсморазведки
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
         static public Boolean EditSeismicExplorationType(String id, String name)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "UPDATE seismicExplorationType " +
-                    "SET name = '" + name + "' " +
-                    "WHERE id = '" + id + "'";
+                    "UPDATE `seismicExplorationType` " +
+                    "SET `name` = '" + name + "' " +
+                    "WHERE `id` = '" + id + "'";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
                     return true;
                 else
                     return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                  "Ошибка при изменении типа сейсморазведки. " + ex,
+                  "Ошибка при изменении типа сейсморазведки",
                   "Ошибка изменения",
                   System.Windows.Forms.MessageBoxButtons.OK,
                   System.Windows.Forms.MessageBoxIcon.Error);
@@ -69,13 +86,18 @@ namespace LandSeismic.SeismicExplorationType
             }
         }
 
+        /// <summary>
+        /// Удаление информации о типах сейсморазведки
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         static public Boolean DropSeismicExplorationType(String id)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "DELETE FROM seismicExplorationType " +
-                    "WHERE id = '" + id + "'";
+                    "DELETE FROM `seismicExplorationType` " +
+                    "WHERE `id` = '" + id + "'";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
                     return true;
                 else
@@ -91,10 +113,10 @@ namespace LandSeismic.SeismicExplorationType
                    System.Windows.Forms.MessageBoxIcon.Error);
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                   "Ошибка при удалении типа сейсморазведки. " + ex,
+                   "Ошибка при удалении типа сейсморазведки",
                    "Ошибка удаления",
                    System.Windows.Forms.MessageBoxButtons.OK,
                    System.Windows.Forms.MessageBoxIcon.Error);

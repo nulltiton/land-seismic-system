@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LandSeismic.Position
@@ -15,6 +8,7 @@ namespace LandSeismic.Position
         public AddPosition()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -42,6 +36,19 @@ namespace LandSeismic.Position
         private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.ValidationClass.IsRussianSymbols(sender, e);
+        }
+
+        private void AddPosition_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void AddPosition_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Add = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

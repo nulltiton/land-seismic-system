@@ -17,6 +17,7 @@ namespace LandSeismic.Employee
         public Employee()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -84,6 +85,20 @@ namespace LandSeismic.Employee
             EmployeeClass.FilterByPosition(FilterByPositionComboBox.
                 SelectedValue.ToString());
             EmployeeGrid.DataSource = EmployeeClass.DTFilteredEmployee;
+        }
+
+        private void Employee_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void Employee_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Table = true;
+            Help.AuthorizationHelp.Filter = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

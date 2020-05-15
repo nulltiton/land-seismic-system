@@ -530,6 +530,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Squad";
             this.Load += new System.EventHandler(this.Squad_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Squad_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Squad_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupGrid)).EndInit();

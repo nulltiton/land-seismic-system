@@ -8,6 +8,7 @@ namespace LandSeismic.LocalityType
         public EditLocalityType()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -42,6 +43,19 @@ namespace LandSeismic.LocalityType
         private void EditLocalityType_Load(object sender, EventArgs e)
         {
             NameTextBox.Text = LocalityType.LocalityTypeName;
+        }
+
+        private void EditLocalityType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void EditLocalityType_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Edit = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

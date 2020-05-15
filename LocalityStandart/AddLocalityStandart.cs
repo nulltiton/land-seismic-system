@@ -8,6 +8,7 @@ namespace LandSeismic.LocalityStandart
         public AddLocalityStandart()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -52,6 +53,19 @@ namespace LandSeismic.LocalityStandart
                 DTMaterialAndTechnicalResource;
             ResourceComboBox.DisplayMember = "name";
             ResourceComboBox.ValueMember = "id";
+        }
+
+        private void AddLocalityStandart_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void AddLocalityStandart_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Add = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

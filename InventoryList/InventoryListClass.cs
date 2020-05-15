@@ -7,11 +7,18 @@ using System.Text;
 
 namespace LandSeismic.InventoryList
 {
+    /// <summary>
+    /// Класс перечня материально-технических ценностей
+    /// </summary>
     class InventoryListClass
     {
         static public DataTable DTInventoryList = new DataTable();
         static public DataTable DTResourceInListList = new DataTable();
 
+        /// <summary>
+        /// Заполнение таблицы информацией о перечнях
+        /// </summary>
+        /// <param name="login"></param>
         static public void GetInventoryList(String login)
         {
             DBConnection.DBConnection.sqlDataAdapter =
@@ -34,6 +41,10 @@ namespace LandSeismic.InventoryList
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTInventoryList);
         }
 
+        /// <summary>
+        /// Заполнение таблицы информацией о ресурсах в перечне
+        /// </summary>
+        /// <param name="idList"></param>
         static public void GetResourceInList(String idList)
         {
             DBConnection.DBConnection.sqlDataAdapter =
@@ -53,6 +64,12 @@ namespace LandSeismic.InventoryList
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTResourceInListList);
         }
 
+        /// <summary>
+        /// Изменить информацию о перечне
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="loginGeologist"></param>
+        /// <returns></returns>
         static public Boolean EditInventoryList(String id, 
             String loginGeologist)
         {
@@ -67,11 +84,11 @@ namespace LandSeismic.InventoryList
                 else
                     return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
                     "Ошибка при изменении перечня материально-технических " +
-                    "ресуров. " + ex,
+                    "ресуров",
                     "Ошибка добавления",
                     System.Windows.Forms.MessageBoxButtons.OK,
                     System.Windows.Forms.MessageBoxIcon.Error);
@@ -79,6 +96,11 @@ namespace LandSeismic.InventoryList
             }
         }
 
+        /// <summary>
+        /// Удалить информацию о перечне
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         static public Boolean DropInventoryList(String id)
         {
             try
@@ -100,11 +122,11 @@ namespace LandSeismic.InventoryList
                     System.Windows.Forms.MessageBoxIcon.Error);
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
                     "Ошибка при удалении перечня материально-технических " +
-                    "ресуров. " + ex,
+                    "ресуров",
                     "Ошибка добавления",
                     System.Windows.Forms.MessageBoxButtons.OK,
                     System.Windows.Forms.MessageBoxIcon.Error);
@@ -112,6 +134,12 @@ namespace LandSeismic.InventoryList
             }
         }
 
+        /// <summary>
+        /// Создание перечня
+        /// </summary>
+        /// <param name="idSquad"></param>
+        /// <param name="loginGeologist"></param>
+        /// <returns></returns>
         static public Boolean CreateInventoryList(String idSquad, 
             String loginGeologist)
         {
@@ -377,11 +405,11 @@ namespace LandSeismic.InventoryList
                 }
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
                     "Ошибка при оформлении перечня материально-технических " +
-                    "ресуров. " + ex,
+                    "ресуров",
                     "Ошибка добавления",
                     System.Windows.Forms.MessageBoxButtons.OK,
                     System.Windows.Forms.MessageBoxIcon.Error);
@@ -389,30 +417,42 @@ namespace LandSeismic.InventoryList
             }
         }
 
+        /// <summary>
+        /// Печать перечня
+        /// </summary>
+        /// <param name="idList"></param>
+        /// <param name="idSquad"></param>
+        /// <param name="departureDateValue"></param>
+        /// <param name="returnDateValue"></param>
+        /// <param name="path"></param>
+        /// <returns></returns>
         static public Boolean DocumentInventoryList(String idList,
             String idSquad, String departureDateValue, String returnDateValue,
             String path)
         {
             try
             {
-                var Resource = new List<String>();
-                var Amount = new List<String>();
+                var resource = new List<String>();
+                var amount = new List<String>();
                 DateTime departureDate = Convert.ToDateTime(departureDateValue);
                 DateTime returnDate = Convert.ToDateTime(returnDateValue);
 
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "SELECT `idResource`" +
-                    ", `Amount` " +
+                    "SELECT `materialandtechnicalresource`.`name` " +
+                    ", `resourceinlist`.`Amount` " +
                     "FROM `resourceinlist` " +
-                    "WHERE `idList` = '" + idList + "'";
+                    ", `materialandtechnicalresource` " +
+                    "WHERE `resourceinlist`.`idList` = '" + idList + "' " +
+                    "AND `materialandtechnicalresource`.`id` = " +
+                    " `resourceinlist`.`idResource`";
 
                 using (MySqlDataReader reader = DBConnection.DBConnection.
                     sqlCommand.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Resource.Add(reader[0].ToString());
-                        Amount.Add(reader[1].ToString());
+                        resource.Add(reader[0].ToString());
+                        amount.Add(reader[1].ToString());
                     }
                     reader.Close();
                 }
@@ -429,21 +469,31 @@ namespace LandSeismic.InventoryList
                 streamWriter.WriteLine(";с " + departureDate.
                     ToString("dd.MM.yyyy") + " по " + returnDate.
                     ToString("dd.MM.yyyy"));
+                streamWriter.WriteLine();
+                streamWriter.WriteLine(";ТМЦ;Количество");
 
-                for (Int32 i = 0; i < Resource.Count; i++)
-                    streamWriter.WriteLine(";" + Resource[i] + ";" + 
-                        Amount[i] + ";");
+                for (Int32 i = 0; i < resource.Count; i++)
+                    streamWriter.WriteLine(";" + resource[i] + ";" + 
+                        amount[i] + ";");
 
-                streamWriter.WriteLine(";;;;________");
-                streamWriter.WriteLine(";;;;подпись");
+                streamWriter.WriteLine();
+                streamWriter.WriteLine("Геолог;____________;____________");
+                streamWriter.WriteLine(";подпись;расшифровка");
+                streamWriter.WriteLine();
+                streamWriter.WriteLine("Ведущий;____________;____________");
+                streamWriter.WriteLine("геолог;подпись;расшифровка");
+                streamWriter.WriteLine();
+                streamWriter.WriteLine("Начальник;____________" +
+                    ";____________");
+                streamWriter.WriteLine("сейсмотряда;подпись;расшифровка");
                 streamWriter.Close();
                 fileStream.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Ошибка при создании документа. " + ex,
+                    "Ошибка при создании документа",
                     "Ошибка создания документа",
                     System.Windows.Forms.MessageBoxButtons.OK,
                     System.Windows.Forms.MessageBoxIcon.Error);
@@ -451,6 +501,11 @@ namespace LandSeismic.InventoryList
             }
         }
 
+        /// <summary>
+        /// Выбор даты отправки
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         static public String DepartureDateBySquad(String id)
         {
             DBConnection.DBConnection.sqlCommand.CommandText =
@@ -463,6 +518,11 @@ namespace LandSeismic.InventoryList
                 ToString();
         }
 
+        /// <summary>
+        /// Выбор даты возвращения
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         static public String ReturnDateBySquad(String id)
         {
             DBConnection.DBConnection.sqlCommand.CommandText =

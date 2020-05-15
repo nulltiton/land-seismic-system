@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LandSeismic.MaterialAndTechnicalResource
@@ -15,6 +8,7 @@ namespace LandSeismic.MaterialAndTechnicalResource
         public EditMaterialAndTechnicalResource()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -50,6 +44,19 @@ namespace LandSeismic.MaterialAndTechnicalResource
                 MaterialAndTechnicalResourceName;
             FoodCheckBox.Checked = MaterialAndTechnicalResource.
                 MaterialAndTechnicalResourceIsConsumable;
+        }
+
+        private void EditMaterialAndTechnicalResource_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void EditMaterialAndTechnicalResource_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Edit = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

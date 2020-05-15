@@ -4,10 +4,17 @@ using MySql.Data.MySqlClient;
 
 namespace LandSeismic.SquadMember
 {
+    /// <summary>
+    /// Класс члены отряда
+    /// </summary>
     class SquadMemberClass
     {
         static public DataTable DTSquadMember = new DataTable();
 
+        /// <summary>
+        /// Заполнение таблицы информацией о членах отряда
+        /// </summary>
+        /// <param name="idGroup"></param>
         static public void GetSquadMemberList(String idGroup)
         {
             DBConnection.DBConnection.sqlDataAdapter = new MySqlDataAdapter(
@@ -35,6 +42,12 @@ namespace LandSeismic.SquadMember
                 DTSquadMember);
         }
 
+        /// <summary>
+        /// Добавление информации о члене отряда
+        /// </summary>
+        /// <param name="idGroup"></param>
+        /// <param name="idEmployee"></param>
+        /// <returns></returns>
         static public Boolean AddSquadMember(String idGroup, String idEmployee)
         {
             try
@@ -48,7 +61,7 @@ namespace LandSeismic.SquadMember
                     ExecuteScalar()) == 0)
                 {
                     DBConnection.DBConnection.sqlCommand.CommandText =
-                        "INSERT INTO SquadMember " +
+                        "INSERT INTO `SquadMember` " +
                         "VALUES(NULL" +
                         ", '" + idGroup + "'" +
                         ", '" + idEmployee + "')";
@@ -79,6 +92,14 @@ namespace LandSeismic.SquadMember
             }
         }
 
+        /// <summary>
+        /// Редактирование информации о члене отряда
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="idGroup"></param>
+        /// <param name="idEmployee"></param>
+        /// <param name="modified"></param>
+        /// <returns></returns>
         static public Boolean EditSquadMember(String id, String idGroup, 
             String idEmployee, Boolean modified)
         {
@@ -87,10 +108,10 @@ namespace LandSeismic.SquadMember
                 if (modified)
                 {
                     DBConnection.DBConnection.sqlCommand.CommandText =
-                                        "SELECT COUNT(`id`) " +
-                                        "FROM `squadmember` " +
-                                        "WHERE `idGroup` = '" + idGroup + "' " +
-                                        "AND `idEmployee` = '" + idEmployee + "'";
+                        "SELECT COUNT(`id`) " +
+                        "FROM `squadmember` " +
+                        "WHERE `idGroup` = '" + idGroup + "' " +
+                        "AND `idEmployee` = '" + idEmployee + "'";
                     if (Convert.ToInt32(DBConnection.DBConnection.sqlCommand.
                         ExecuteScalar()) == 0)
                     {
@@ -129,13 +150,18 @@ namespace LandSeismic.SquadMember
             }
         }
 
+        /// <summary>
+        /// Удаление информации о члене отряда
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         static public Boolean DropSquadMember(String id)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "DELETE FROM SquadMember " +
-                    "WHERE id = '" + id + "'";
+                    "DELETE FROM `SquadMember` " +
+                    "WHERE `id` = '" + id + "'";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
                     return true;
                 else

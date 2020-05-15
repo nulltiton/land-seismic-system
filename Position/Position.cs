@@ -11,6 +11,7 @@ namespace LandSeismic.Position
         public Position()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -50,6 +51,19 @@ namespace LandSeismic.Position
                         CurrentRow.Cells[2].Value.ToString()))
                         PositionClass.GetPositionList();
             }
+        }
+
+        private void Position_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void Position_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Table = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

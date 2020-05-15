@@ -362,6 +362,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.AddLeadGeologist_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AddUser_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddUser_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);

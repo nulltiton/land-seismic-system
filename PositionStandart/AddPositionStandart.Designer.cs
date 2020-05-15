@@ -148,6 +148,11 @@
             this.AmountNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AmountNumericUpDown.ForeColor = System.Drawing.Color.Gray;
             this.AmountNumericUpDown.Location = new System.Drawing.Point(31, 203);
+            this.AmountNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.AmountNumericUpDown.Name = "AmountNumericUpDown";
             this.AmountNumericUpDown.Size = new System.Drawing.Size(200, 22);
             this.AmountNumericUpDown.TabIndex = 59;
@@ -181,6 +186,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.AddPositionStandart_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AddPositionStandart_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddPositionStandart_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNumericUpDown)).EndInit();

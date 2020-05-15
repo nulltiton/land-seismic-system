@@ -8,6 +8,7 @@ namespace LandSeismic.Employee
         public AddEmployee()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -67,6 +68,19 @@ namespace LandSeismic.Employee
         private void AddressTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.ValidationClass.IsRussianSymbolsOrNumeral(sender, e);
+        }
+
+        private void AddEmployee_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void AddEmployee_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Add = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

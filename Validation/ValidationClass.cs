@@ -5,8 +5,16 @@ using System.Windows.Forms;
 
 namespace LandSeismic.Validation
 {
+    /// <summary>
+    /// Класс валидации
+    /// </summary>
     class ValidationClass
     {
+        /// <summary>
+        /// Шифрование пароля
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
         static public string PasswordEncryption(string password)
         {
             byte[] Bytes = Encoding.Unicode.GetBytes(password);
@@ -18,7 +26,14 @@ namespace LandSeismic.Validation
             return hash;
         }
 
-        static public Boolean IsEnglishSybolsOrNumeral(object sender, KeyPressEventArgs e)
+        /// <summary>
+        /// Проверка на английские символы или числа
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        static public Boolean IsEnglishSybolsOrNumeral(object sender, 
+            KeyPressEventArgs e)
         {
             if (e.KeyChar >= 'А' && e.KeyChar <= 'я')
                 return true;
@@ -26,7 +41,14 @@ namespace LandSeismic.Validation
                 return false;
         }
 
-        static public Boolean IsNumeral(object sender, KeyPressEventArgs e)
+        /// <summary>
+        /// Проверка на числа
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        static public Boolean IsNumeral(object sender, 
+            KeyPressEventArgs e)
         {
             if (Char.IsNumber(e.KeyChar) && e.KeyChar != 8)
                 return true;
@@ -34,7 +56,14 @@ namespace LandSeismic.Validation
                 return false;
         }
 
-        static public Boolean IsRussianSymbols(object sender, KeyPressEventArgs e)
+        /// <summary>
+        /// Проверка на русские символы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        static public Boolean IsRussianSymbols(object sender, 
+            KeyPressEventArgs e)
         {
             if ((e.KeyChar < 'А' || e.KeyChar > 'я') && e.KeyChar != 8 && 
                 e.KeyChar != 32 && e.KeyChar != '-')
@@ -43,7 +72,14 @@ namespace LandSeismic.Validation
                 return false;
         }
 
-        static public Boolean IsRussianSymbolsOrNumeral(object sender, KeyPressEventArgs e)
+        /// <summary>
+        /// Проверка на русские символы или числа
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        static public Boolean IsRussianSymbolsOrNumeral(object sender, 
+            KeyPressEventArgs e)
         {
             if ((e.KeyChar < 'А' || e.KeyChar > 'я') && e.KeyChar != 8 &&
                 e.KeyChar != 32 && e.KeyChar != '.' && e.KeyChar != ',' &&

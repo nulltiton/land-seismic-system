@@ -4,52 +4,68 @@ using System.Data;
 
 namespace LandSeismic.Position
 {
+    /// <summary>
+    /// Класс должности
+    /// </summary>
     class PositionClass
     {
         static public DataTable DTPosition = new DataTable();
 
+        /// <summary>
+        /// Заполнение таблицы информацией о должностях
+        /// </summary>
         static public void GetPositionList()
         {
             DBConnection.DBConnection.sqlDataAdapter =
                 new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
             DBConnection.DBConnection.sqlCommand.CommandText =
                 "SELECT * " +
-                "FROM position " +
-                "ORDER BY name";
+                "FROM `position` " +
+                "ORDER BY `name`";
             DTPosition.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTPosition);
         }
 
+        /// <summary>
+        /// Заполнение таблицы информацией о должностях пользователей
+        /// </summary>
         static public void GetPositionListForUser()
         {
             DBConnection.DBConnection.sqlDataAdapter =
                 new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
             DBConnection.DBConnection.sqlCommand.CommandText =
                 "SELECT * " +
-                "FROM position " +
-                "WHERE name = 'Геолог' " +
-                "OR name = 'Начальник сейсмотряда' " +
-                "OR name = 'Ведущий геолог' " +
-                "ORDER BY name";
+                "FROM `position` " +
+                "WHERE `name` = 'Геолог' " +
+                "OR `name` = 'Начальник сейсмотряда' " +
+                "OR `name` = 'Ведущий геолог' " +
+                "ORDER BY `name`";
             DTPosition.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTPosition);
         }
 
+        /// <summary>
+        /// Заполнение таблицы информацией о должностях сотрудников
+        /// </summary>
         static public void GetPositionListForEmployee()
         {
             DBConnection.DBConnection.sqlDataAdapter =
                 new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
             DBConnection.DBConnection.sqlCommand.CommandText =
                 "SELECT * " +
-                "FROM position " +
-                "WHERE name <> 'Геолог' " +
-                "AND name <> 'Начальник сейсмотряда' " +
-                "AND name <> 'Ведущий геолог' " +
-                "ORDER BY name";
+                "FROM `position` " +
+                "WHERE `name` <> 'Геолог' " +
+                "AND `name` <> 'Начальник сейсмотряда' " +
+                "AND `name` <> 'Ведущий геолог' " +
+                "ORDER BY `name`";
             DTPosition.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTPosition);
         }
 
+        /// <summary>
+        /// Получить должность по id
+        /// </summary>
+        /// <param name="id"></param>
         static public void GetPositionById(String id)
         {
             DBConnection.DBConnection.sqlDataAdapter =
@@ -60,17 +76,22 @@ namespace LandSeismic.Position
                 ", `employee` " +
                 "WHERE `employee`.`idPosition` = `position`.`id` " +
                 "AND `position`.`id` = '" + id + "' " +
-                "ORDER BY name";
+                "ORDER BY `name`";
             DTPosition.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTPosition);
         }
 
+        /// <summary>
+        /// Добавление информации о должности
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         static public Boolean AddPosition(String name)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "INSERT INTO position " +
+                    "INSERT INTO `position` " +
                     "VALUES(NULL" +
                     ", '" + name + "')";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
@@ -78,10 +99,10 @@ namespace LandSeismic.Position
                 else
                     return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Ошибка при добавлении должности. " + ex, 
+                    "Ошибка при добавлении должности", 
                     "Ошибка добавления",
                     System.Windows.Forms.MessageBoxButtons.OK,  
                     System.Windows.Forms.MessageBoxIcon.Error);
@@ -89,23 +110,29 @@ namespace LandSeismic.Position
             }
         }
 
+        /// <summary>
+        /// Редактирование информации о должности
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
         static public Boolean EditPosition(String id, String name)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "UPDATE position " +
-                    "SET name = '" + name + "' " +
-                    "WHERE id = '" + id + "'";
+                    "UPDATE `position` " +
+                    "SET `name` = '" + name + "' " +
+                    "WHERE `id` = '" + id + "'";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
                     return true;
                 else
                     return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                  "Ошибка при изменении должности. " + ex,
+                  "Ошибка при изменении должности",
                   "Ошибка изменения",
                   System.Windows.Forms.MessageBoxButtons.OK,
                   System.Windows.Forms.MessageBoxIcon.Error);
@@ -113,13 +140,18 @@ namespace LandSeismic.Position
             }
         }
 
+        /// <summary>
+        /// Удаление информации о должности
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         static public Boolean DropPosition(String id)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "DELETE FROM position " +
-                    "WHERE id = '" + id + "'";
+                    "DELETE FROM `position` " +
+                    "WHERE `id` = '" + id + "'";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
                     return true;
                 else
@@ -135,10 +167,10 @@ namespace LandSeismic.Position
                    System.Windows.Forms.MessageBoxIcon.Error);
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                   "Ошибка при удалении должности. " + ex,
+                   "Ошибка при удалении должности",
                    "Ошибка удаления",
                    System.Windows.Forms.MessageBoxButtons.OK,
                    System.Windows.Forms.MessageBoxIcon.Error);

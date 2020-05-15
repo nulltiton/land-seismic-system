@@ -8,6 +8,7 @@ namespace LandSeismic.GroupType
         public EditGroupType()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -41,6 +42,19 @@ namespace LandSeismic.GroupType
         private void EditGroupType_Load(object sender, EventArgs e)
         {
             NameTextBox.Text = GroupType.GroupTypeName;
+        }
+
+        private void EditGroupType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void EditGroupType_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Edit = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

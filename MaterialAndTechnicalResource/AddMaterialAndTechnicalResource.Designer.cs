@@ -157,6 +157,8 @@
             this.Name = "AddMaterialAndTechnicalResource";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AddMaterialAndTechnicalResource_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddMaterialAndTechnicalResource_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);

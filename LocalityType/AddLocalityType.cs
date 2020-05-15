@@ -8,6 +8,7 @@ namespace LandSeismic.LocalityType
         public AddLocalityType()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -37,6 +38,19 @@ namespace LandSeismic.LocalityType
         private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Validation.ValidationClass.IsRussianSymbols(sender, e);
+        }
+
+        private void AddLocalityType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void AddLocalityType_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Add = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

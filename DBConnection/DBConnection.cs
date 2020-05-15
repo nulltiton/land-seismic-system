@@ -3,6 +3,10 @@ using MySql.Data.MySqlClient;
 
 namespace LandSeismic.DBConnection
 {
+
+    /// <summary>
+    /// Класс работы с базой данных
+    /// </summary>
     class DBConnection
     {
         static public String connectionString = "DataBase = landseismic; " +
@@ -12,6 +16,11 @@ namespace LandSeismic.DBConnection
         static public MySqlConnection sqlConnection;
         static public MySqlCommand sqlCommand;
 
+        /// <summary>
+        /// Подключение к базе данных
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <returns></returns>
         static public Boolean Connect(String connectionString)
         {
             try
@@ -22,10 +31,10 @@ namespace LandSeismic.DBConnection
                 sqlCommand.Connection = sqlConnection;
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Не удалось подключиться к базе данных. " + ex.Message,
+                    "Не удалось подключиться к базе данных",
                     "Ошибка подключения", System.Windows.Forms.
                     MessageBoxButtons.OK, System.Windows.Forms.
                     MessageBoxIcon.Error);

@@ -65,7 +65,7 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(1386, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(1370, 45);
             this.FormBorderPanel.TabIndex = 0;
             // 
             // BackwardsButton
@@ -249,7 +249,7 @@
             this.FilterPanel.Controls.Add(this.FilterCancellationButton);
             this.FilterPanel.Controls.Add(this.FilterByPositionComboBox);
             this.FilterPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FilterPanel.Location = new System.Drawing.Point(1186, 45);
+            this.FilterPanel.Location = new System.Drawing.Point(1170, 45);
             this.FilterPanel.Name = "FilterPanel";
             this.FilterPanel.Size = new System.Drawing.Size(200, 381);
             this.FilterPanel.TabIndex = 2;
@@ -291,7 +291,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1386, 426);
+            this.ClientSize = new System.Drawing.Size(1370, 426);
             this.ControlBox = false;
             this.Controls.Add(this.FilterPanel);
             this.Controls.Add(this.EmployeeGrid);
@@ -306,6 +306,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.Employee_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Employee_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Employee_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGrid)).EndInit();

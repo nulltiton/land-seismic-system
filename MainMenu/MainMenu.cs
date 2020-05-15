@@ -12,6 +12,7 @@ namespace LandSeismic.MainMenu
         public MainMenu()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void UserButton_Click(object sender, EventArgs e)
@@ -164,6 +165,23 @@ namespace LandSeismic.MainMenu
         {
             var inventoryList = new InventoryList.InventoryList();
             inventoryList.Show();
+        }
+
+        private void MainMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+            {
+                Close();
+                var authorization = new Authorization.Authorization();
+                authorization.Show();
+            }  
+        }
+
+        private void MainMenu_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.MainMenu = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

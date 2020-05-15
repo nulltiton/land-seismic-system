@@ -316,6 +316,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.EditEmployee_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.EditEmployee_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditEmployee_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);

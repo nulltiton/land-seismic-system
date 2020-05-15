@@ -183,6 +183,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GroupType";
             this.Load += new System.EventHandler(this.GroupType_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.GroupType_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GroupType_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupTypeGrid)).EndInit();

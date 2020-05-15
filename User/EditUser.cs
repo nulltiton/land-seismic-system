@@ -11,6 +11,7 @@ namespace LandSeismic.User
         public EditUser()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -95,6 +96,19 @@ namespace LandSeismic.User
         private void PasswordTextBox_TextChanged(object sender, EventArgs e)
         {
             modified = true;
+        }
+
+        private void EditUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void EditUser_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Edit = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

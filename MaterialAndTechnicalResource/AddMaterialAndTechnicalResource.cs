@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LandSeismic.MaterialAndTechnicalResource
@@ -15,6 +8,7 @@ namespace LandSeismic.MaterialAndTechnicalResource
         public AddMaterialAndTechnicalResource()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -40,6 +34,19 @@ namespace LandSeismic.MaterialAndTechnicalResource
                     "Ошибка корректности ввода",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+        }
+
+        private void AddMaterialAndTechnicalResource_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void AddMaterialAndTechnicalResource_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Add = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

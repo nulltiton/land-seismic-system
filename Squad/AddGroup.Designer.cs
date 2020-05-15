@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGroup));
             this.FormBorderPanel = new System.Windows.Forms.Panel();
-            this.FormNameLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.BackwardsButton = new System.Windows.Forms.Button();
+            this.FormNameLabel = new System.Windows.Forms.Label();
             this.GroupTypeLabel = new System.Windows.Forms.Label();
             this.GroupTypeComboBox = new System.Windows.Forms.ComboBox();
             this.FormBorderPanel.SuspendLayout();
@@ -50,15 +50,6 @@
             this.FormBorderPanel.Name = "FormBorderPanel";
             this.FormBorderPanel.Size = new System.Drawing.Size(263, 45);
             this.FormBorderPanel.TabIndex = 0;
-            // 
-            // FormNameLabel
-            // 
-            this.FormNameLabel.AutoSize = true;
-            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
-            this.FormNameLabel.Name = "FormNameLabel";
-            this.FormNameLabel.Size = new System.Drawing.Size(94, 18);
-            this.FormNameLabel.TabIndex = 0;
-            this.FormNameLabel.Text = "Добавление";
             // 
             // SaveButton
             // 
@@ -83,6 +74,15 @@
             this.BackwardsButton.TabIndex = 3;
             this.BackwardsButton.UseVisualStyleBackColor = true;
             this.BackwardsButton.Click += new System.EventHandler(this.BackwardsButton_Click);
+            // 
+            // FormNameLabel
+            // 
+            this.FormNameLabel.AutoSize = true;
+            this.FormNameLabel.Location = new System.Drawing.Point(12, 13);
+            this.FormNameLabel.Name = "FormNameLabel";
+            this.FormNameLabel.Size = new System.Drawing.Size(94, 18);
+            this.FormNameLabel.TabIndex = 0;
+            this.FormNameLabel.Text = "Добавление";
             // 
             // GroupTypeLabel
             // 
@@ -126,6 +126,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.Load += new System.EventHandler(this.AddGroup_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AddGroup_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddGroup_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.ResumeLayout(false);

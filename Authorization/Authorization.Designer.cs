@@ -173,6 +173,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authorization";
             this.Load += new System.EventHandler(this.Authorization_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Authorization_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Authorization_KeyDown);
             this.formBorderPanel.ResumeLayout(false);
             this.formBorderPanel.PerformLayout();
             this.ResumeLayout(false);

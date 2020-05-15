@@ -8,6 +8,7 @@ namespace LandSeismic.PositionStandart
         public EditPositionStandart()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void BackwardsButton_Click(object sender, EventArgs e)
@@ -72,6 +73,19 @@ namespace LandSeismic.PositionStandart
                                     "Ошибка корректности ввода",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Warning);
+        }
+
+        private void EditPositionStandart_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+                Close();
+        }
+
+        private void EditPositionStandart_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.AuthorizationHelp.Edit = true;
+            var authorizationHelp = new Help.AuthorizationHelp();
+            authorizationHelp.ShowDialog();
         }
     }
 }

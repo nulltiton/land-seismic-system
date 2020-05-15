@@ -2,40 +2,52 @@
 
 namespace LandSeismic.Authorization
 {
+    /// <summary>
+    /// Класс авторизации
+    /// </summary>
     class AuthorizationClass
     {
         static public String Login;
         static public String Position;
+
+        /// <summary>
+        /// Авторизация пользователя
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         static public String LogIn(String login, String password)
         {
             try
             {
                 DBConnection.DBConnection.sqlCommand.CommandText =
-                    "SELECT COUNT(login) " +
-                    "FROM user " +
-                    "WHERE login = '" + login + "' " +
-                    "AND isDeleted = 0";
+                    "SELECT COUNT(`login`) " +
+                    "FROM `user` " +
+                    "WHERE `login` = '" + login + "' " +
+                    "AND `isDeleted` = 0";
                 if (Convert.ToByte(DBConnection.DBConnection.sqlCommand.
                     ExecuteScalar()) > 0)
                 {
                     DBConnection.DBConnection.sqlCommand.CommandText =
-                        "SELECT position.name " +
-                        "FROM user" +
-                        ", position " +
-                        "WHERE user.login = '" + login + "' " +
-                        "AND user.password = '" + Validation.ValidationClass.
+                        "SELECT `position`.`name` " +
+                        "FROM `user`" +
+                        ", `position` " +
+                        "WHERE `user`.`login` = '" + login + "' " +
+                        "AND `user`.`password` = '" + 
+                        Validation.ValidationClass.
                             PasswordEncryption(password) + "' " +
-                        "AND user.idPosition = position.id " +
-                        "AND user.isDeleted = 0";
+                        "AND `user`.`idPosition` = `position`.`id` " +
+                        "AND `user`.`isDeleted` = 0";
                     if (DBConnection.DBConnection.sqlCommand.
                         ExecuteScalar() != null)
                     {
                         DBConnection.DBConnection.sqlCommand.CommandText =
-                            "SELECT position.name " +
-                            "FROM user, position " +
-                            "WHERE user.login = '" + login + "' " +
-                            "AND user.idPosition = position.id " +
-                            "AND user.isDeleted = 0";
+                            "SELECT `position`.`name` " +
+                            "FROM `user`" +
+                            ", `position` " +
+                            "WHERE `user`.`login` = '" + login + "' " +
+                            "AND `user`.`idPosition` = `position`.`id` " +
+                            "AND `user`.`isDeleted` = 0";
                         Position = DBConnection.DBConnection.sqlCommand.
                             ExecuteScalar().ToString();
                         Login = login;
@@ -63,10 +75,10 @@ namespace LandSeismic.Authorization
                     return "";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 System.Windows.Forms.MessageBox.Show(
-                    "Ошибка при попытке авторизации. " + ex.Message,
+                    "Ошибка при попытке авторизации",
                     "Ошибка авторизации",
                     System.Windows.Forms.MessageBoxButtons.OK,
                     System.Windows.Forms.MessageBoxIcon.Error);

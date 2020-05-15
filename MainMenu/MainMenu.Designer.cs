@@ -304,6 +304,8 @@
             this.Text = "MainMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
             this.Load += new System.EventHandler(this.MainMenu_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.MainMenu_HelpRequested);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainMenu_KeyDown);
             this.FormBorderPanel.ResumeLayout(false);
             this.FormBorderPanel.PerformLayout();
             this.SideMenuPanel.ResumeLayout(false);
