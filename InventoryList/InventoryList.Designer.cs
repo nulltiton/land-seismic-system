@@ -54,6 +54,10 @@
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.InventoryListSaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.CancellingFilterByCreationDate = new System.Windows.Forms.Button();
+            this.FilterByCreationDateButton = new System.Windows.Forms.Button();
+            this.FilterByCreationDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FilterByCreationDateLabel = new System.Windows.Forms.Label();
             this.FormBorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InventoryListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResourceGrid)).BeginInit();
@@ -70,7 +74,7 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(874, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(970, 45);
             this.FormBorderPanel.TabIndex = 0;
             // 
             // AddInventoryListButton
@@ -78,7 +82,7 @@
             this.AddInventoryListButton.FlatAppearance.BorderSize = 0;
             this.AddInventoryListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddInventoryListButton.Image = global::LandSeismic.Properties.Resources.plus;
-            this.AddInventoryListButton.Location = new System.Drawing.Point(728, 10);
+            this.AddInventoryListButton.Location = new System.Drawing.Point(826, 10);
             this.AddInventoryListButton.Name = "AddInventoryListButton";
             this.AddInventoryListButton.Size = new System.Drawing.Size(25, 25);
             this.AddInventoryListButton.TabIndex = 3;
@@ -90,7 +94,7 @@
             this.BackwardsButton.FlatAppearance.BorderSize = 0;
             this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(826, 10);
+            this.BackwardsButton.Location = new System.Drawing.Point(924, 10);
             this.BackwardsButton.Name = "BackwardsButton";
             this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
             this.BackwardsButton.TabIndex = 2;
@@ -102,7 +106,7 @@
             this.DocumentButton.FlatAppearance.BorderSize = 0;
             this.DocumentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DocumentButton.Image = global::LandSeismic.Properties.Resources.document;
-            this.DocumentButton.Location = new System.Drawing.Point(777, 10);
+            this.DocumentButton.Location = new System.Drawing.Point(875, 10);
             this.DocumentButton.Name = "DocumentButton";
             this.DocumentButton.Size = new System.Drawing.Size(25, 25);
             this.DocumentButton.TabIndex = 1;
@@ -312,13 +316,54 @@
             this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn2.Width = 85;
             // 
+            // CancellingFilterByCreationDate
+            // 
+            this.CancellingFilterByCreationDate.Location = new System.Drawing.Point(754, 128);
+            this.CancellingFilterByCreationDate.Name = "CancellingFilterByCreationDate";
+            this.CancellingFilterByCreationDate.Size = new System.Drawing.Size(216, 30);
+            this.CancellingFilterByCreationDate.TabIndex = 14;
+            this.CancellingFilterByCreationDate.Text = "Отмена";
+            this.CancellingFilterByCreationDate.UseVisualStyleBackColor = true;
+            this.CancellingFilterByCreationDate.Click += new System.EventHandler(this.CancellingFilterByCreationDate_Click);
+            // 
+            // FilterByCreationDateButton
+            // 
+            this.FilterByCreationDateButton.Location = new System.Drawing.Point(754, 98);
+            this.FilterByCreationDateButton.Name = "FilterByCreationDateButton";
+            this.FilterByCreationDateButton.Size = new System.Drawing.Size(216, 30);
+            this.FilterByCreationDateButton.TabIndex = 13;
+            this.FilterByCreationDateButton.Text = "Фильтровать";
+            this.FilterByCreationDateButton.UseVisualStyleBackColor = true;
+            this.FilterByCreationDateButton.Click += new System.EventHandler(this.FilterByCreationDateButton_Click);
+            // 
+            // FilterByCreationDateTimePicker
+            // 
+            this.FilterByCreationDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FilterByCreationDateTimePicker.Location = new System.Drawing.Point(755, 71);
+            this.FilterByCreationDateTimePicker.Name = "FilterByCreationDateTimePicker";
+            this.FilterByCreationDateTimePicker.Size = new System.Drawing.Size(214, 26);
+            this.FilterByCreationDateTimePicker.TabIndex = 12;
+            // 
+            // FilterByCreationDateLabel
+            // 
+            this.FilterByCreationDateLabel.AutoSize = true;
+            this.FilterByCreationDateLabel.Location = new System.Drawing.Point(760, 48);
+            this.FilterByCreationDateLabel.Name = "FilterByCreationDateLabel";
+            this.FilterByCreationDateLabel.Size = new System.Drawing.Size(207, 18);
+            this.FilterByCreationDateLabel.TabIndex = 11;
+            this.FilterByCreationDateLabel.Text = "Перечень по дате создания";
+            // 
             // InventoryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(874, 763);
+            this.ClientSize = new System.Drawing.Size(970, 763);
             this.ControlBox = false;
+            this.Controls.Add(this.CancellingFilterByCreationDate);
+            this.Controls.Add(this.FilterByCreationDateButton);
+            this.Controls.Add(this.FilterByCreationDateTimePicker);
+            this.Controls.Add(this.FilterByCreationDateLabel);
             this.Controls.Add(this.ResourceGrid);
             this.Controls.Add(this.InventoryListGrid);
             this.Controls.Add(this.FormBorderPanel);
@@ -339,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.InventoryListGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResourceGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -365,5 +411,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CreationDateInventoryList;
         private System.Windows.Forms.DataGridViewButtonColumn EditButton;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteButton;
+        private System.Windows.Forms.Button CancellingFilterByCreationDate;
+        private System.Windows.Forms.Button FilterByCreationDateButton;
+        private System.Windows.Forms.DateTimePicker FilterByCreationDateTimePicker;
+        private System.Windows.Forms.Label FilterByCreationDateLabel;
     }
 }

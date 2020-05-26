@@ -13,6 +13,7 @@ namespace LandSeismic.InventoryList
     class InventoryListClass
     {
         static public DataTable DTInventoryList = new DataTable();
+        static public DataTable DTFilterInventoryList = new DataTable();
         static public DataTable DTResourceInListList = new DataTable();
 
         /// <summary>
@@ -39,6 +40,37 @@ namespace LandSeismic.InventoryList
                 "AND `inventorylist`.`logingeologist` = '" + login + "'";
             DTInventoryList.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(DTInventoryList);
+        }
+
+        /// <summary>
+        /// Фильтрация перечня по дате создания
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="creationDate"></param>
+        static public void FilterInventoryListByCreationDate(String login, 
+            String creationDate)
+        {
+            DateTime date = Convert.ToDateTime(creationDate);
+            DBConnection.DBConnection.sqlDataAdapter =
+                new MySqlDataAdapter(DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT `inventorylist`.`id`" +
+                ", `inventorylist`.`idsquad`" +
+                ", `inventorylist`.`logingeologist`" +
+                ", CONCAT_WS(' '" +
+                ", `user`.`surname`" +
+                ", `user`.`firstname`" +
+                ", `user`.`middlename`) " +
+                "AS `fullName`" +
+                ", `inventorylist`.`creationDate` " +
+                "FROM `InventoryList`" +
+                ", `user` " +
+                "WHERE `inventorylist`.`logingeologist` = `user`.`login` " +
+                "AND `inventorylist`.`logingeologist` = '" + login + "' " +
+                "AND `inventorylist`.`creationDate` = " +
+                "'" + date.ToString("yyyy-MM-dd") + "'";
+            DTFilterInventoryList.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(DTFilterInventoryList);
         }
 
         /// <summary>
@@ -428,7 +460,7 @@ namespace LandSeismic.InventoryList
         /// <returns></returns>
         static public Boolean DocumentInventoryList(String idList,
             String idSquad, String departureDateValue, String returnDateValue,
-            String path)
+            String path, String creationDateValue, String login)
         {
             try
             {
@@ -436,6 +468,7 @@ namespace LandSeismic.InventoryList
                 var amount = new List<String>();
                 DateTime departureDate = Convert.ToDateTime(departureDateValue);
                 DateTime returnDate = Convert.ToDateTime(returnDateValue);
+                DateTime creationDate = Convert.ToDateTime(creationDateValue);
 
                 DBConnection.DBConnection.sqlCommand.CommandText =
                     "SELECT `materialandtechnicalresource`.`name` " +
@@ -469,6 +502,8 @@ namespace LandSeismic.InventoryList
                 streamWriter.WriteLine(";с " + departureDate.
                     ToString("dd.MM.yyyy") + " по " + returnDate.
                     ToString("dd.MM.yyyy"));
+                streamWriter.WriteLine("Документ создал: " + User.UserClass.
+                    GetUserFullName(login));
                 streamWriter.WriteLine();
                 streamWriter.WriteLine(";ТМЦ;Количество");
 
@@ -486,6 +521,9 @@ namespace LandSeismic.InventoryList
                 streamWriter.WriteLine("Начальник;____________" +
                     ";____________");
                 streamWriter.WriteLine("сейсмотряда;подпись;расшифровка");
+                streamWriter.WriteLine();
+                streamWriter.WriteLine(";;Дата создания: " + creationDate.
+                    ToString("dd.MM.yyyy"));
                 streamWriter.Close();
                 fileStream.Close();
                 return true;

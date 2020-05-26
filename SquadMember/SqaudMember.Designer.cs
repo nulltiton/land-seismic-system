@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqaudMember));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.FormBorderPanel = new System.Windows.Forms.Panel();
             this.BackwardsButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(874, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(723, 45);
             this.FormBorderPanel.TabIndex = 0;
             // 
             // BackwardsButton
@@ -66,7 +66,7 @@
             this.BackwardsButton.FlatAppearance.BorderSize = 0;
             this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(826, 10);
+            this.BackwardsButton.Location = new System.Drawing.Point(677, 10);
             this.BackwardsButton.Name = "BackwardsButton";
             this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
             this.BackwardsButton.TabIndex = 2;
@@ -78,7 +78,7 @@
             this.AddButton.FlatAppearance.BorderSize = 0;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Image = global::LandSeismic.Properties.Resources.plus;
-            this.AddButton.Location = new System.Drawing.Point(777, 10);
+            this.AddButton.Location = new System.Drawing.Point(628, 10);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(25, 25);
             this.AddButton.TabIndex = 1;
@@ -112,14 +112,14 @@
             this.NamePositionSquadMember,
             this.EditButton,
             this.DeleteButton});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SquadMemberGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SquadMemberGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.SquadMemberGrid.Dock = System.Windows.Forms.DockStyle.Left;
             this.SquadMemberGrid.Location = new System.Drawing.Point(0, 45);
             this.SquadMemberGrid.Name = "SquadMemberGrid";
@@ -183,9 +183,9 @@
             // EditButton
             // 
             this.EditButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EditButton.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EditButton.DefaultCellStyle = dataGridViewCellStyle1;
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.HeaderText = "";
             this.EditButton.Name = "EditButton";
@@ -210,7 +210,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(874, 426);
+            this.ClientSize = new System.Drawing.Size(723, 426);
             this.ControlBox = false;
             this.Controls.Add(this.SquadMemberGrid);
             this.Controls.Add(this.FormBorderPanel);

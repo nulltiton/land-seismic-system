@@ -97,7 +97,9 @@ namespace LandSeismic.MainMenu
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Log += ", время выхода: " + DateTime.Now.ToShortTimeString();
-            var fileStream = new FileStream("Log.txt", FileMode.Append,
+            String path = (Directory.GetCurrentDirectory() + 
+                "\\EventLog.txt").ToString();
+            var fileStream = new FileStream(path, FileMode.Append,
                 FileAccess.Write);
             var streamWriter = new StreamWriter(fileStream, Encoding.
                 UTF8);

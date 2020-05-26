@@ -79,7 +79,9 @@ namespace LandSeismic.InventoryList
                     DepartureDateBySquad(InventoryListGrid.CurrentRow.
                     Cells[3].Value.ToString()), InventoryListClass.
                     ReturnDateBySquad(InventoryListGrid.CurrentRow.Cells[3].
-                    Value.ToString()), InventoryListSaveDialog.FileName);
+                    Value.ToString()), InventoryListSaveDialog.FileName,
+                    InventoryListGrid.CurrentRow.Cells[6].Value.ToString(), 
+                    Authorization.AuthorizationClass.Login);
             }
         }
 
@@ -96,6 +98,34 @@ namespace LandSeismic.InventoryList
             Help.AuthorizationHelp.Filter = true;
             var authorizationHelp = new Help.AuthorizationHelp();
             authorizationHelp.ShowDialog();
+        }
+
+        private void CancellingFilterByCreationDate_Click(object sender, EventArgs e)
+        {
+            InventoryListClass.GetInventoryList(Authorization.
+                AuthorizationClass.Login);
+            InventoryListGrid.DataSource = InventoryListClass.DTInventoryList;
+            if (InventoryListGrid.Rows.Count != 0)
+            {
+                InventoryListClass.GetResourceInList(InventoryListGrid.CurrentRow.
+                    Cells[2].Value.ToString());
+                ResourceGrid.DataSource = InventoryListClass.DTResourceInListList;
+            }
+        }
+
+        private void FilterByCreationDateButton_Click(object sender, EventArgs e)
+        {
+            InventoryListClass.FilterInventoryListByCreationDate(
+                Authorization.AuthorizationClass.Login,
+                FilterByCreationDateTimePicker.Text);
+            InventoryListGrid.DataSource = InventoryListClass.
+                DTFilterInventoryList;
+            if (InventoryListGrid.Rows.Count != 0)
+            {
+                InventoryListClass.GetResourceInList(InventoryListGrid.CurrentRow.
+                    Cells[2].Value.ToString());
+                ResourceGrid.DataSource = InventoryListClass.DTResourceInListList;
+            }
         }
     }
 }

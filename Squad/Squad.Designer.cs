@@ -29,32 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Squad));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.FormBorderPanel = new System.Windows.Forms.Panel();
             this.BackwardsButton = new System.Windows.Forms.Button();
             this.FormNameLabel = new System.Windows.Forms.Label();
             this.GroupGrid = new System.Windows.Forms.DataGridView();
-            this.IdGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdSquadGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdGroupTypeGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameGroupTypeGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MemberButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.DeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SquadGrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SquadFilterPanel = new System.Windows.Forms.Panel();
             this.CancellingFilterByActualReturnDateTimePickerButton = new System.Windows.Forms.Button();
             this.FilterByActualReturnDateButton = new System.Windows.Forms.Button();
@@ -72,6 +56,27 @@
             this.AddGroupButton = new System.Windows.Forms.Button();
             this.AddSquadButton = new System.Windows.Forms.Button();
             this.JobAssignmentSaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.IdGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdSquadGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdGroupTypeGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameGroupTypeGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MemberButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.CancellingFilterByCreationDateTimePickerButton = new System.Windows.Forms.Button();
+            this.FilterByCreationDateButton = new System.Windows.Forms.Button();
+            this.FilterByCreationDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FilterByCreationDateLabel = new System.Windows.Forms.Label();
             this.FormBorderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GroupGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SquadGrid)).BeginInit();
@@ -87,7 +92,7 @@
             this.FormBorderPanel.ForeColor = System.Drawing.Color.White;
             this.FormBorderPanel.Location = new System.Drawing.Point(0, 0);
             this.FormBorderPanel.Name = "FormBorderPanel";
-            this.FormBorderPanel.Size = new System.Drawing.Size(1192, 45);
+            this.FormBorderPanel.Size = new System.Drawing.Size(1285, 45);
             this.FormBorderPanel.TabIndex = 0;
             // 
             // BackwardsButton
@@ -95,7 +100,7 @@
             this.BackwardsButton.FlatAppearance.BorderSize = 0;
             this.BackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackwardsButton.Image = ((System.Drawing.Image)(resources.GetObject("BackwardsButton.Image")));
-            this.BackwardsButton.Location = new System.Drawing.Point(1146, 10);
+            this.BackwardsButton.Location = new System.Drawing.Point(1238, 10);
             this.BackwardsButton.Name = "BackwardsButton";
             this.BackwardsButton.Size = new System.Drawing.Size(25, 25);
             this.BackwardsButton.TabIndex = 2;
@@ -128,97 +133,22 @@
             this.MemberButton,
             this.EditButton,
             this.DeleteButton});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GroupGrid.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GroupGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.GroupGrid.Location = new System.Drawing.Point(0, 390);
             this.GroupGrid.Name = "GroupGrid";
             this.GroupGrid.ReadOnly = true;
             this.GroupGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.GroupGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GroupGrid.Size = new System.Drawing.Size(978, 345);
+            this.GroupGrid.Size = new System.Drawing.Size(1071, 345);
             this.GroupGrid.TabIndex = 1;
             this.GroupGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GroupGrid_CellContentClick);
-            // 
-            // IdGroup
-            // 
-            this.IdGroup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.IdGroup.DataPropertyName = "id";
-            this.IdGroup.HeaderText = "id";
-            this.IdGroup.Name = "IdGroup";
-            this.IdGroup.ReadOnly = true;
-            this.IdGroup.Visible = false;
-            this.IdGroup.Width = 60;
-            // 
-            // IdSquadGroup
-            // 
-            this.IdSquadGroup.DataPropertyName = "idSquad";
-            this.IdSquadGroup.HeaderText = "IdSquad";
-            this.IdSquadGroup.Name = "IdSquadGroup";
-            this.IdSquadGroup.ReadOnly = true;
-            this.IdSquadGroup.Visible = false;
-            // 
-            // IdGroupTypeGroup
-            // 
-            this.IdGroupTypeGroup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.IdGroupTypeGroup.DataPropertyName = "IdGroupType";
-            this.IdGroupTypeGroup.HeaderText = "IdGroupType";
-            this.IdGroupTypeGroup.Name = "IdGroupTypeGroup";
-            this.IdGroupTypeGroup.ReadOnly = true;
-            this.IdGroupTypeGroup.Visible = false;
-            // 
-            // NameGroupTypeGroup
-            // 
-            this.NameGroupTypeGroup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.NameGroupTypeGroup.DataPropertyName = "Name";
-            this.NameGroupTypeGroup.HeaderText = "Тип группы";
-            this.NameGroupTypeGroup.Name = "NameGroupTypeGroup";
-            this.NameGroupTypeGroup.ReadOnly = true;
-            this.NameGroupTypeGroup.Width = 535;
-            // 
-            // MemberButton
-            // 
-            this.MemberButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MemberButton.DefaultCellStyle = dataGridViewCellStyle6;
-            this.MemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MemberButton.HeaderText = "";
-            this.MemberButton.Name = "MemberButton";
-            this.MemberButton.ReadOnly = true;
-            this.MemberButton.Text = "Список участников";
-            this.MemberButton.UseColumnTextForButtonValue = true;
-            this.MemberButton.Width = 170;
-            // 
-            // EditButton
-            // 
-            this.EditButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EditButton.DefaultCellStyle = dataGridViewCellStyle7;
-            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditButton.HeaderText = "";
-            this.EditButton.Name = "EditButton";
-            this.EditButton.ReadOnly = true;
-            this.EditButton.Text = "Редактировать";
-            this.EditButton.UseColumnTextForButtonValue = true;
-            this.EditButton.Width = 130;
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteButton.HeaderText = "";
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.ReadOnly = true;
-            this.DeleteButton.Text = "Удалить";
-            this.DeleteButton.UseColumnTextForButtonValue = true;
-            this.DeleteButton.Width = 85;
             // 
             // SquadGrid
             // 
@@ -237,114 +167,33 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
+            this.creationDate,
             this.dataGridViewButtonColumn1,
             this.dataGridViewButtonColumn2});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SquadGrid.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SquadGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.SquadGrid.Location = new System.Drawing.Point(0, 45);
             this.SquadGrid.Name = "SquadGrid";
             this.SquadGrid.ReadOnly = true;
             this.SquadGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.SquadGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SquadGrid.Size = new System.Drawing.Size(978, 345);
+            this.SquadGrid.Size = new System.Drawing.Size(1071, 345);
             this.SquadGrid.TabIndex = 2;
             this.SquadGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SquadGrid_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Номер";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "loginSquadLeader";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Логин начальника сейсмотряда";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "fullName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ФИО начальника";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "idLocality";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Участок";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "departureDate";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Дата выхода";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "returnDate";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Дата возвращения";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "actualReturnDate";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Фактическое возвращение";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 110;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewButtonColumn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewButtonColumn1.HeaderText = "";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "Редактировать";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn1.Width = 130;
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewButtonColumn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewButtonColumn2.HeaderText = "";
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Text = "Удалить";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn2.Width = 85;
             // 
             // SquadFilterPanel
             // 
             this.SquadFilterPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.SquadFilterPanel.Controls.Add(this.CancellingFilterByCreationDateTimePickerButton);
+            this.SquadFilterPanel.Controls.Add(this.FilterByCreationDateButton);
+            this.SquadFilterPanel.Controls.Add(this.FilterByCreationDateTimePicker);
+            this.SquadFilterPanel.Controls.Add(this.FilterByCreationDateLabel);
             this.SquadFilterPanel.Controls.Add(this.CancellingFilterByActualReturnDateTimePickerButton);
             this.SquadFilterPanel.Controls.Add(this.FilterByActualReturnDateButton);
             this.SquadFilterPanel.Controls.Add(this.FilterByActualReturnDateTimePicker);
@@ -361,7 +210,7 @@
             this.SquadFilterPanel.Controls.Add(this.AddGroupButton);
             this.SquadFilterPanel.Controls.Add(this.AddSquadButton);
             this.SquadFilterPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.SquadFilterPanel.Location = new System.Drawing.Point(978, 45);
+            this.SquadFilterPanel.Location = new System.Drawing.Point(1071, 45);
             this.SquadFilterPanel.Name = "SquadFilterPanel";
             this.SquadFilterPanel.Size = new System.Drawing.Size(214, 690);
             this.SquadFilterPanel.TabIndex = 3;
@@ -509,12 +358,217 @@
             this.AddSquadButton.UseVisualStyleBackColor = true;
             this.AddSquadButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Номер";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "loginSquadLeader";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Логин начальника сейсмотряда";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "fullName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ФИО начальника";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "idLocality";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Участок";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "departureDate";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Дата выхода";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "returnDate";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Дата возвращения";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "actualReturnDate";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Фактическое возвращение";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 110;
+            // 
+            // creationDate
+            // 
+            this.creationDate.DataPropertyName = "creationDate";
+            this.creationDate.HeaderText = "Дата создания";
+            this.creationDate.Name = "creationDate";
+            this.creationDate.ReadOnly = true;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewButtonColumn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataGridViewButtonColumn1.HeaderText = "";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Text = "Редактировать";
+            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn1.Width = 130;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewButtonColumn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataGridViewButtonColumn2.HeaderText = "";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            this.dataGridViewButtonColumn2.Text = "Удалить";
+            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn2.Width = 85;
+            // 
+            // IdGroup
+            // 
+            this.IdGroup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.IdGroup.DataPropertyName = "id";
+            this.IdGroup.HeaderText = "id";
+            this.IdGroup.Name = "IdGroup";
+            this.IdGroup.ReadOnly = true;
+            this.IdGroup.Visible = false;
+            this.IdGroup.Width = 60;
+            // 
+            // IdSquadGroup
+            // 
+            this.IdSquadGroup.DataPropertyName = "idSquad";
+            this.IdSquadGroup.HeaderText = "IdSquad";
+            this.IdSquadGroup.Name = "IdSquadGroup";
+            this.IdSquadGroup.ReadOnly = true;
+            this.IdSquadGroup.Visible = false;
+            // 
+            // IdGroupTypeGroup
+            // 
+            this.IdGroupTypeGroup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.IdGroupTypeGroup.DataPropertyName = "IdGroupType";
+            this.IdGroupTypeGroup.HeaderText = "IdGroupType";
+            this.IdGroupTypeGroup.Name = "IdGroupTypeGroup";
+            this.IdGroupTypeGroup.ReadOnly = true;
+            this.IdGroupTypeGroup.Visible = false;
+            // 
+            // NameGroupTypeGroup
+            // 
+            this.NameGroupTypeGroup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NameGroupTypeGroup.DataPropertyName = "Name";
+            this.NameGroupTypeGroup.HeaderText = "Тип группы";
+            this.NameGroupTypeGroup.Name = "NameGroupTypeGroup";
+            this.NameGroupTypeGroup.ReadOnly = true;
+            this.NameGroupTypeGroup.Width = 645;
+            // 
+            // MemberButton
+            // 
+            this.MemberButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MemberButton.DefaultCellStyle = dataGridViewCellStyle1;
+            this.MemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MemberButton.HeaderText = "";
+            this.MemberButton.Name = "MemberButton";
+            this.MemberButton.ReadOnly = true;
+            this.MemberButton.Text = "Список участников";
+            this.MemberButton.UseColumnTextForButtonValue = true;
+            this.MemberButton.Width = 170;
+            // 
+            // EditButton
+            // 
+            this.EditButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EditButton.DefaultCellStyle = dataGridViewCellStyle2;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.HeaderText = "";
+            this.EditButton.Name = "EditButton";
+            this.EditButton.ReadOnly = true;
+            this.EditButton.Text = "Редактировать";
+            this.EditButton.UseColumnTextForButtonValue = true;
+            this.EditButton.Width = 130;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.HeaderText = "";
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.ReadOnly = true;
+            this.DeleteButton.Text = "Удалить";
+            this.DeleteButton.UseColumnTextForButtonValue = true;
+            this.DeleteButton.Width = 85;
+            // 
+            // CancellingFilterByCreationDateTimePickerButton
+            // 
+            this.CancellingFilterByCreationDateTimePickerButton.Location = new System.Drawing.Point(0, 571);
+            this.CancellingFilterByCreationDateTimePickerButton.Name = "CancellingFilterByCreationDateTimePickerButton";
+            this.CancellingFilterByCreationDateTimePickerButton.Size = new System.Drawing.Size(214, 30);
+            this.CancellingFilterByCreationDateTimePickerButton.TabIndex = 22;
+            this.CancellingFilterByCreationDateTimePickerButton.Text = "Отмена";
+            this.CancellingFilterByCreationDateTimePickerButton.UseVisualStyleBackColor = true;
+            this.CancellingFilterByCreationDateTimePickerButton.Click += new System.EventHandler(this.CancellingFilterByCreationDateTimePickerButton_Click);
+            // 
+            // FilterByCreationDateButton
+            // 
+            this.FilterByCreationDateButton.Location = new System.Drawing.Point(0, 541);
+            this.FilterByCreationDateButton.Name = "FilterByCreationDateButton";
+            this.FilterByCreationDateButton.Size = new System.Drawing.Size(214, 30);
+            this.FilterByCreationDateButton.TabIndex = 21;
+            this.FilterByCreationDateButton.Text = "Фильтровать";
+            this.FilterByCreationDateButton.UseVisualStyleBackColor = true;
+            this.FilterByCreationDateButton.Click += new System.EventHandler(this.FilterByCreationDateButton_Click);
+            // 
+            // FilterByCreationDateTimePicker
+            // 
+            this.FilterByCreationDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FilterByCreationDateTimePicker.Location = new System.Drawing.Point(0, 514);
+            this.FilterByCreationDateTimePicker.Name = "FilterByCreationDateTimePicker";
+            this.FilterByCreationDateTimePicker.Size = new System.Drawing.Size(214, 26);
+            this.FilterByCreationDateTimePicker.TabIndex = 20;
+            // 
+            // FilterByCreationDateLabel
+            // 
+            this.FilterByCreationDateLabel.AutoSize = true;
+            this.FilterByCreationDateLabel.Location = new System.Drawing.Point(18, 490);
+            this.FilterByCreationDateLabel.Name = "FilterByCreationDateLabel";
+            this.FilterByCreationDateLabel.Size = new System.Drawing.Size(183, 18);
+            this.FilterByCreationDateLabel.TabIndex = 19;
+            this.FilterByCreationDateLabel.Text = "Отряд по дате создания";
+            // 
             // Squad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1192, 735);
+            this.ClientSize = new System.Drawing.Size(1285, 735);
             this.ControlBox = false;
             this.Controls.Add(this.SquadFilterPanel);
             this.Controls.Add(this.SquadGrid);
@@ -549,23 +603,7 @@
         private System.Windows.Forms.DataGridView GroupGrid;
         private System.Windows.Forms.Button BackwardsButton;
         private System.Windows.Forms.DataGridView SquadGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
         private System.Windows.Forms.Panel SquadFilterPanel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdSquadGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdGroupTypeGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameGroupTypeGroup;
-        private System.Windows.Forms.DataGridViewButtonColumn MemberButton;
-        private System.Windows.Forms.DataGridViewButtonColumn EditButton;
-        private System.Windows.Forms.DataGridViewButtonColumn DeleteButton;
         private System.Windows.Forms.Button AddSquadButton;
         private System.Windows.Forms.Button AddGroupButton;
         private System.Windows.Forms.Button JobAssignmentButton;
@@ -582,5 +620,26 @@
         private System.Windows.Forms.DateTimePicker FilterByActualReturnDateTimePicker;
         private System.Windows.Forms.Label FilterByActualReturnDateLabel;
         private System.Windows.Forms.SaveFileDialog JobAssignmentSaveDialog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn creationDate;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdGroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdSquadGroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdGroupTypeGroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameGroupTypeGroup;
+        private System.Windows.Forms.DataGridViewButtonColumn MemberButton;
+        private System.Windows.Forms.DataGridViewButtonColumn EditButton;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteButton;
+        private System.Windows.Forms.Button CancellingFilterByCreationDateTimePickerButton;
+        private System.Windows.Forms.Button FilterByCreationDateButton;
+        private System.Windows.Forms.DateTimePicker FilterByCreationDateTimePicker;
+        private System.Windows.Forms.Label FilterByCreationDateLabel;
     }
 }

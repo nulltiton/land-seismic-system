@@ -30,7 +30,8 @@ namespace LandSeismic.Squad
                 ", `Squad`.`idLocality`" +
                 ", `Squad`.`departureDate`" +
                 ", `Squad`.`returnDate`" +
-                ", `Squad`.`actualReturnDate` " +
+                ", `Squad`.`actualReturnDate`" +
+                ", `Squad`.`creationDate` " +
                 "FROM `Squad`" +
                 ", `User`" +
                 ", `Locality`" +
@@ -98,7 +99,8 @@ namespace LandSeismic.Squad
                 ", `Squad`.`idLocality`" +
                 ", `Squad`.`departureDate`" +
                 ", `Squad`.`returnDate`" +
-                ", `Squad`.`actualReturnDate` " +
+                ", `Squad`.`actualReturnDate`" +
+                ", `Squad`.`creationDate` " +
                 "FROM `Squad`" +
                 ", `User`" +
                 ", `Locality`" +
@@ -134,7 +136,8 @@ namespace LandSeismic.Squad
                 ", `Squad`.`idLocality`" +
                 ", `Squad`.`departureDate`" +
                 ", `Squad`.`returnDate`" +
-                ", `Squad`.`actualReturnDate` " +
+                ", `Squad`.`actualReturnDate`" +
+                ", `Squad`.`creationDate` " +
                 "FROM `Squad`" +
                 ", `User`" +
                 ", `Locality`" +
@@ -170,7 +173,8 @@ namespace LandSeismic.Squad
                 ", `Squad`.`idLocality`" +
                 ", `Squad`.`departureDate`" +
                 ", `Squad`.`returnDate`" +
-                ", `Squad`.`actualReturnDate` " +
+                ", `Squad`.`actualReturnDate`" +
+                ", `Squad`.`creationDate` " +
                 "FROM `Squad`" +
                 ", `User`" +
                 ", `Locality`" +
@@ -180,6 +184,43 @@ namespace LandSeismic.Squad
                 "AND `Position`.`name` = 'Начальник сейсмотряда' " +
                 "AND `Squad`.`idLocality` = `Locality`.`id` " +
                 "AND `Squad`.`actualReturnDate` = '" + date.ToString("yyyy-MM-dd") + "' " +
+                "ORDER BY `Squad`.`id`";
+            DTSquad.Clear();
+            DBConnection.DBConnection.sqlDataAdapter.Fill(
+                DTSquad);
+        }
+
+        /// <summary>
+        /// Фильтрация по дате создания
+        /// </summary>
+        /// <param name="creationDate"></param>
+        static public void FilterByCreationDate(String creationDate)
+        {
+            DateTime date = Convert.ToDateTime(creationDate);
+            DBConnection.DBConnection.sqlDataAdapter = new MySqlDataAdapter(
+                DBConnection.DBConnection.sqlCommand);
+            DBConnection.DBConnection.sqlCommand.CommandText =
+                "SELECT `Squad`.`id`" +
+                ", `Squad`.`loginSquadLeader`" +
+                ", CONCAT_WS(' '" +
+                ", `User`.`surname`" +
+                ", `User`.`firstName`" +
+                ", `User`.`middleName`) " +
+                "AS `fullName`" +
+                ", `Squad`.`idLocality`" +
+                ", `Squad`.`departureDate`" +
+                ", `Squad`.`returnDate`" +
+                ", `Squad`.`actualReturnDate`" +
+                ", `Squad`.`creationDate` " +
+                "FROM `Squad`" +
+                ", `User`" +
+                ", `Locality`" +
+                ", `Position` " +
+                "WHERE `Squad`.`loginSquadLeader` = `User`.`login` " +
+                "AND `User`.`idPosition` = `Position`.`id` " +
+                "AND `Position`.`name` = 'Начальник сейсмотряда' " +
+                "AND `Squad`.`idLocality` = `Locality`.`id` " +
+                "AND `Squad`.`creationDate` = '" + date.ToString("yyyy-MM-dd") + "' " +
                 "ORDER BY `Squad`.`id`";
             DTSquad.Clear();
             DBConnection.DBConnection.sqlDataAdapter.Fill(
@@ -206,6 +247,7 @@ namespace LandSeismic.Squad
                 DateTime formatReturnDate = Convert.ToDateTime(returnDate);
                 DateTime formatActualReturnDate = Convert.
                     ToDateTime(actualReturnDate);
+                DateTime creationDate = DateTime.Now;
                 DBConnection.DBConnection.sqlCommand.CommandText =
                     "INSERT INTO `Squad` " +
                     "VALUES(NULL" +
@@ -214,7 +256,8 @@ namespace LandSeismic.Squad
                     ", '" + formatDepartureDate.ToString("yyyy-MM-dd") + "'" +
                     ", '" + formatReturnDate.ToString("yyyy-MM-dd") + "'" +
                     ", '" + formatActualReturnDate.
-                    ToString("yyyy-MM-dd") + "')";
+                    ToString("yyyy-MM-dd") + "'" +
+                    ", '" + creationDate.ToString("yyyy-MM-dd") + "')";
                 if (DBConnection.DBConnection.sqlCommand.ExecuteNonQuery() > 0)
                     return true;
                 else

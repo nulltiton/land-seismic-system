@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
@@ -165,8 +166,8 @@ namespace LandSeismic.Squad
                 Int32 dateCount = returnDate.Day - departureDate.Day;
                 var app = new Word.Application();
                 app.Visible = false;
-                String path = Environment.CurrentDirectory + 
-                    @"\Templates\Служебное задание.docx";
+                String path = (Directory.GetCurrentDirectory() +
+                "\\Templates\\Assigment.docx").ToString();
                 var doc = app.Documents.Open(path);
                 doc.Activate();
 
@@ -204,6 +205,18 @@ namespace LandSeismic.Squad
             Help.AuthorizationHelp.Document = true;
             var authorizationHelp = new Help.AuthorizationHelp();
             authorizationHelp.ShowDialog();
+        }
+
+        private void CancellingFilterByCreationDateTimePickerButton_Click(object sender, EventArgs e)
+        {
+            SquadClass.GetSquadList();
+            SquadGrid.DataSource = SquadClass.DTSquad;
+        }
+
+        private void FilterByCreationDateButton_Click(object sender, EventArgs e)
+        {
+            SquadClass.FilterByCreationDate(FilterByCreationDateTimePicker.Text);
+            SquadGrid.DataSource = SquadClass.DTSquad;
         }
     }
 }

@@ -42,6 +42,27 @@ namespace LandSeismic.SquadMember
                 DTSquadMember);
         }
 
+        //static public DataTable GetReturnedMember()
+        //{
+        //    DataTable DTReturnedMember;
+        //    DBConnection.DBConnection.sqlDataAdapter = new MySqlDataAdapter(
+        //        DBConnection.DBConnection.sqlCommand);
+        //    DBConnection.DBConnection.sqlCommand.CommandText =
+        //        "SELECT `Employee`.`id`" +
+        //        ", CONCAT_WS(' '" +
+        //        ", `Employee`.`Surname`" +
+        //        ", `Employee`.`FirstName`" +
+        //        ", `Employee`.`MiddleName`) " +
+        //        " AS `fullName` " +
+        //        "FROM `Employee`" +
+        //        "," +
+        //        "WHERE ";
+        //    DTSquadMember.Clear();
+        //    DBConnection.DBConnection.sqlDataAdapter.Fill(
+        //        DTReturnedMember);
+        //    return DTReturnedMember;
+        //}
+
         /// <summary>
         /// Добавление информации о члене отряда
         /// </summary>
